@@ -1,0 +1,1205 @@
+---
+title: "lewisii-cardinalis phylogenomics & introgression"
+author: "Thom Nelson"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo=F}
+knitr::opts_chunk$set(echo = TRUE)
+
+# LOAD PACKAGES ----
+
+library(gplots)
+library(RColorBrewer)
+library(ape)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+# LOAD DATA --------
+
+lewcol  <- "darkorchid"
+parcol  <- "#1b9e77"
+cardcol <- "#d95f02"
+verbcol <- "firebrick4"
+
+maindir <- "/Users/thom/Dropbox/2.Fishman_Lab/Manuscripts/lewcard/phylogenomics/Data/"
+setwd(maindir)
+### LOAD ACCESSION INFORMATION ----------
+
+accessions <- read.table("popgenomics_accessions.csv",sep=",", header=T,
+                         stringsAsFactors = F)
+    # get rid of SLA4.1
+    accessions <- accessions[!(accessions$Short_name == "SLA4.1"),]
+cards <- accessions$Short_name[grepl("card",accessions$Species)]
+lews <- accessions$Short_name[grepl("lew",accessions$Species)]
+pars <- accessions$Short_name[grepl("par",accessions$Species)]
+verb <- accessions$Short_name[grepl("verb",accessions$Species)]
+
+### LOAD LINKAGE MAP ----------
+
+linkagemap <- "scaffold__linkage_map.tsv"
+linkagemap <- read.table(linkagemap, stringsAsFactors = F, header=F)
+names(linkagemap) <- c("lg","marker","cM","contig","orientation","contig.bp","bp","nodeIndex")
+
+### translate LG number to chromosome numbers
+###   index is chr, value is LG
+map2newchr <- c(1,3,8,5,2,7,4,6)
+
+### LOAD TARGETED CAPTURE HS METRICS ----------
+
+hsmetrics <- "HSoutputs.tsv"
+hsmet <- read.table(hsmetrics,sep="\t",header=T,stringsAsFactors = F)
+
+
+### LOAD SEQUENCE DIVERSITY, DIVERGENCE --------
+seqdir <- "scikit_allel/"
+chrs <- 1:8
+dxy <- NULL
+region <- NULL
+for (c in chrs) {
+    # read it chromosome-specific data, append to master dataframe
+    d <- read.table(paste0(seqdir,as.character(c),"_diversigence20191205.tsv"), sep="\t",header=T, stringsAsFactors = F)
+    r <- paste0(d$chr,":",d$start,"-",d$stop)
+    region <- append(region, r)
+    dxy <- rbind(dxy,d)
+}
+# calculate the length of all bait regions
+ncols <- dim(dxy)[2]
+span <- dxy$stop - dxy$start
+dxy$regionkeys <- paste0(
+        as.character(dxy$chr),
+        "_",
+        as.character(dxy$start))
+targets_total <- dim(dxy)[1]
+### LOAD LOCATIONS OF CAPTURE BAITS ----------
+baits <- read.table("probes2CE10pacbio_consensus.chromonome.regions",header=F)
+    names(baits) <- c("chr","start","stop")
+
+### LOAD ASTRAL SPECIES TREE
+
+astral.lcpv <- read.tree("GENETREES.speciesmap.quartetscore.astral.tree")
+
+    
+### LOAD TWISST RESULTS ----------
+
+twisst.wts <- "mainClades_complete.weights.csv"
+CPintro.wts <- "CPintrogression.weights.csv"
+CsLintro.wts <- "CsLintrogression.weights.csv"
+regions <- "GENETREES_CE10v2coords.numeric.treeregions"
+regions <- read.table(regions,header=T, stringsAsFactors = F)
+    names(regions)[4:6] <- c("CHR","START", "STOP")
+    regions$regionkeys <- paste0(
+        as.character(regions$CHR.myAssemb),
+        "_",
+        as.character(regions$START.myAssemb))
+
+### LOAD TWISST TREE TOPO CLADES
+
+treefile <- "mainClades_complete.topologies.trees"
+
+trees <- read.tree(treefile)
+ntrees <- length(trees)
+
+Slew <- "lewisii"
+Nlew <- "northernlew"
+card <- "cardinalis"
+par  <- "parishii"
+reds <- "reds"
+### LC clades
+NSlew <- rep(FALSE,ntrees)
+NSlew.tips <- c(Slew, Nlew)
+NSlewpar <- rep(FALSE,ntrees)
+NSlewpar.tips <- c(Slew, Nlew,par)
+Slewcard <- rep(FALSE,ntrees)
+Slewcard.tips <- c(Slew, card)
+NSlewcard <- rep(FALSE,ntrees)
+NSlewcard.tips <- c(Slew, Nlew, card)
+NSlewcardpar <- rep(FALSE,ntrees)
+NSlewcardpar.tips <- c(Slew, Nlew, card, par)
+
+### Lreds clades
+NSlewparreds <- rep(FALSE,ntrees)
+NSlewparreds.tips <- c(Slew, Nlew, reds, par)
+NSlewreds <- rep(FALSE,ntrees)
+NSlewreds.tips <- c(Slew, Nlew, reds)
+
+### CHLOROPLAST CLADES
+Slewcardpar <- rep(FALSE,ntrees)
+Slewcardpar.tips <- c(Slew, card, par)
+
+
+### SPECIES TREE CLADES
+parreds          <- rep(FALSE,ntrees)
+parreds.tips     <- c(par,reds)
+cardparreds      <- rep(FALSE,ntrees)
+cardparreds.tips <- c(card,par,reds)
+cardreds      <- rep(FALSE,ntrees)
+cardreds.tips <- c(card,reds)
+
+treeindexes <- 1:ntrees
+
+for (i in treeindexes) {
+    t <- trees[[i]]
+    NSlew[i]        <- is.monophyletic(t, NSlew.tips)
+    NSlewcard[i]    <- is.monophyletic(t, NSlewcard.tips)
+    NSlewcardpar[i] <- is.monophyletic(t, NSlewcardpar.tips)
+    Slewcardpar[i]  <- is.monophyletic(t, Slewcardpar.tips)
+    Slewcard[i]     <- is.monophyletic(t, Slewcard.tips)
+    parreds[i]      <- is.monophyletic(t, parreds.tips)
+    cardparreds[i]  <- is.monophyletic(t, cardparreds.tips)
+    cardreds[i]     <- is.monophyletic(t, cardreds.tips)
+    NSlewparreds[i] <- is.monophyletic(t, NSlewparreds.tips)
+    NSlewreds[i] <- is.monophyletic(t, NSlewreds.tips)
+}
+### DEFINE TOPOLOGY GROUPINGS
+species.topos <- (cardparreds | cardreds)
+lewcard.topos <- NSlewcardpar | Slewcardpar | NSlewcard | Slewcard
+lewreds.topos <- NSlewparreds | NSlewreds
+chlorop.topos <- Slewcardpar
+slewcard.topos <- Slewcardpar | Slewcard
+
+### LOAD TWISST WEIGHTS
+
+wts <- read.table(twisst.wts, header=T, sep = "\t")
+    n.topos <- dim(wts)[2]
+CPintro.wts <- read.table(CPintro.wts, header=T, sep = "\t")
+CsLintro.wts <- read.table(CsLintro.wts, header=T, sep = "\t")
+    # only works bc all trees have same number of tips & same number of subtrees
+    n.subtrees.pertree <- sum(wts[1,]) 
+    n.subtrees <- sum(apply(X=wts, MARGIN=1,FUN=sum))
+    # reorder to match region order
+    wts     <- wts[order(regions$CHR, regions$START),]
+    CPintro.wts <- CPintro.wts[order(regions$CHR, regions$START),]
+    CsLintro.wts <- CsLintro.wts[order(regions$CHR, regions$START),]
+    regions <- regions[order(regions$CHR, regions$START),]
+wts.fract <- wts / apply(X=wts,MARGIN=1,FUN=sum)
+    names(wts.fract) <- paste0(names(wts),".fract")
+    wts.fract.mainLCclades <- wts.fract[, NSlewcardpar]
+CPintro.wts.fract <- CPintro.wts / apply(X=CPintro.wts,MARGIN=1,FUN=sum)
+    names(CPintro.wts.fract) <- paste0(names(CPintro.wts),".fract")
+CsLintro.wts.fract <- CsLintro.wts / apply(X=CsLintro.wts,MARGIN=1,FUN=sum)
+    names(CsLintro.wts.fract) <- paste0(names(CsLintro.wts),".fract")
+# get totals for each topology weight
+wt.fract.sums <- apply(X=wts.fract,MARGIN=2,FUN=sum)
+    wt.fract.sums.percent <- wt.fract.sums / sum(wt.fract.sums)
+
+# twisst <- cbind(regions,wts,wts.fract)
+#     twisst <- twisst[order(twisst$CHR,twisst$START),]
+
+### LIMIT POLYMORPHISM DATA TO THOSE WITH GENE TREES --------
+regions <- regions[order(regions$CHR.myAssemb, regions$START.myAssemb),]
+
+dxy     <- dxy[dxy$regionkeys %in% regions$regionkeys,]
+dxy     <- dxy[order(dxy$chr,dxy$start),]
+dxy$CHR <- regions$CHR
+dxy$START <- regions$START
+dxy$STOP  <- regions$STOP
+    
+regions <- regions[order(regions$CHR, regions$START),]
+dxy     <- dxy[order(dxy$CHR,dxy$START),]
+targets_withtrees <- dim(dxy)[1]
+
+### LOAD GENOME-WIDE D(FOIL) ESTIMATES  --------
+
+Ddir <- "Dstats/"
+dfoil <- read.table(paste0(Ddir,"Dfoil/DFOILpairwise.tsv"),
+                    header=T, stringsAsFactors = F)
+dfoil_fixed <- read.table(paste0(Ddir,"Dfoil/Dfoil_fixedsitesonly.tsv"),
+                    header=T, stringsAsFactors = F)
+
+### LOAD GENOME-WIDE ABBA-BABA
+patsD <- read.table(paste0(Ddir,"PattersonsD/thin_1000bp_genomewide_pairwise.txt"),
+                    header=T, stringsAsFactors = F)
+
+### LOAD PATTERSON'S D SNP-WISE FOR REF ACCESSIONS TO JACKKNIFE
+patsD_snpwise <- read.table(paste0(Ddir,"PattersonsD/PatsD_CAR-C27_SNO8.tsv"),
+                    header=T, stringsAsFactors = F)
+
+
+
+```
+
+![](/Users/thom/Dropbox/2.Fishman_Lab/Manuscripts/lewcard/phylogenomics/figures/drafts/elevationmap.png)
+
+# Dataset summary
+## targeted capture metrics
+Variable sites in concat.phylip: 600,267
+Variable sites summed across 'X.variable.SNPs.phased.vcf': 740,887
+Sites in concat are variable within Erythranthe
+Sites across 'variable' include fixed sites btw Eryth and bicolor
+Sites included in 'X.SNPs.vcf', limited to capture regions defined by alignment and bedtools merge: 7,078,270
+Segregating in dataset w/o bicolor: 533,649
+``` {r HSMETRICS_SUMMARY, echo=F}
+
+ColNames <- c("min","quartile1st","median",
+                          "mean","quartile3rd","max")
+RowNames <- c("coverage","selectedPercent",
+                              "fold_enrichment")
+
+### all samples
+cov_sum <- round(summary(hsmet$MEAN_BAIT_COVERAGE), digits=1)
+sel_sum <- round(summary(hsmet$PCT_SELECTED_BASES), digits=1) * 100
+enr_sum <- round(summary(hsmet$FOLD_ENRICHMENT), digits=1)
+summat <- rbind(cov_sum, sel_sum,enr_sum)
+summaries <- data.frame(summat)
+    names(summaries) <- ColNames
+    row.names(summaries) <- RowNames
+kable(summaries, caption = "Summary stats for target enrichment, all accessions")
+
+### lewisii
+cov_sum <- round(summary(hsmet$MEAN_BAIT_COVERAGE[hsmet$SAMPLE %in% lews]), digits=1)
+sel_sum <- round(summary(hsmet$PCT_SELECTED_BASES[hsmet$SAMPLE %in% lews]), digits=1) * 100
+enr_sum <- round(summary(hsmet$FOLD_ENRICHMENT[hsmet$SAMPLE %in% lews]), digits=1)
+summat <- rbind(cov_sum, sel_sum,enr_sum)
+summaries <- data.frame(summat)
+    names(summaries) <- ColNames
+    row.names(summaries) <- RowNames
+kable(summaries, caption = "Summary stats for target enrichment, lewisii")
+### lewisii
+cov_sum <- round(summary(hsmet$MEAN_BAIT_COVERAGE[hsmet$SAMPLE %in% cards]), digits=1)
+sel_sum <- round(summary(hsmet$PCT_SELECTED_BASES[hsmet$SAMPLE %in% cards]), digits=1) * 100
+enr_sum <- round(summary(hsmet$FOLD_ENRICHMENT[hsmet$SAMPLE %in% cards]), digits=1)
+summat <- rbind(cov_sum, sel_sum,enr_sum)
+summaries <- data.frame(summat)
+    names(summaries) <- ColNames
+    row.names(summaries) <- RowNames
+kable(summaries, caption = "Summary stats for target enrichment, cardinalis")
+
+```
+
+
+``` {r HSMETRICS_PLOT, fig.width=8,fig.height=6,fig.align='center'}
+
+hsmet$color <- "black"
+hsmet$pch   <- ifelse(hsmet$SAMPLE %in% c(cards,lews,pars,verb), 20,1)
+hsmet$color[hsmet$SAMPLE %in% cards] <- cardcol
+hsmet$color[hsmet$SAMPLE %in% lews] <- lewcol
+hsmet$color[hsmet$SAMPLE %in% pars] <- parcol
+hsmet$color[hsmet$SAMPLE %in% verb] <- verbcol
+
+layout(matrix(1:4, 2,2,byrow=T))
+plot(hsmet$PCT_SELECTED_BASES, hsmet$MEAN_BAIT_COVERAGE,
+     col = hsmet$color, pch=hsmet$pch, xlim = c(0,1),
+     xlab = "selected bases, percent",
+     ylab = "bait coverage, mean")
+    legend(x='topleft', legend=c("lew","card","par","verb"),pch=20,
+           col = c(lewcol,cardcol,parcol,verbcol))
+plot(hsmet$FOLD_ENRICHMENT, hsmet$MEAN_BAIT_COVERAGE,
+     col = hsmet$color, pch=hsmet$pch, xlim = c(0,52),
+     xlab = "fold enrichment",
+     ylab = "bait coverage, mean")
+plot(hsmet$PCT_SELECTED_BASES, hsmet$MEAN_BAIT_COVERAGE,
+     col = hsmet$color, pch=hsmet$pch,
+     xlab = "selected bases, percent",
+     ylab = "bait coverage, mean")
+plot(hsmet$FOLD_ENRICHMENT, hsmet$MEAN_BAIT_COVERAGE,
+     col = hsmet$color, pch=hsmet$pch,
+     xlab = "fold enrichment",
+     ylab = "bait coverage, mean")
+
+```
+
+# Polymorphism and divergence
+
+```{r poly_and_div_hist, fig.width=6, fig.height=4}
+
+binmax <- 0.2
+xmax <- 0.075
+ymax <- 2000
+layout(matrix(1:6,2,3,byrow=T))
+    hist(dxy$pi.ccar, 
+         seq(0,binmax,by=0.0005), 
+         xlim = c(0,xmax),
+         ylim = c(0,ymax),
+         main="")
+      legend(x="topright", legend="pi, California cardinalis")
+    hist(dxy$pi.slew, 
+         seq(0,binmax,by=0.0005), 
+         xlim = c(0,xmax),
+         ylim = c(0,ymax),
+         main="")
+      legend(x="topright", legend="pi, Sierran lewisii")
+    hist(dxy$pi.nlew, 
+         seq(0,binmax,by=0.0005), 
+         xlim = c(0,xmax),
+         ylim = c(0,ymax),
+         main="")
+      legend(x="topright", legend="pi, Northern lewisii")
+    hist(dxy$dxy.slew.ccar, 
+         seq(0,binmax,by=0.0005), 
+         xlim = c(0,xmax),
+         ylim = c(0,ymax),
+         main="")
+      legend(x="topright", legend="dxy, Sierran lewisii <-> Cali cardinalis")
+    hist(dxy$dxy.slew.nlew, 
+         seq(0,binmax,by=0.0005), 
+         xlim = c(0,xmax),
+         ylim = c(0,ymax),
+         main="")
+      legend(x="topright", legend="dxy, Sierran lewisii <-> Northern lewisii")
+    hist(dxy$dxy.ccar.bic, 
+         seq(0,binmax,by=0.0005), 
+         xlim = c(0,xmax),
+         ylim = c(0,ymax),
+         main="")
+      legend(x="topright", legend="dxy, California cardinalis <-> bicolor")
+
+```
+
+```{r pi_table}
+
+summary.pi.slew <- summary(dxy$pi.slew)
+summary.pi.ccar <- summary(dxy$pi.ccar)
+summary.pi.nlew <- summary(dxy$pi.nlew)
+
+pi.summaries <- rbind(summary.pi.ccar, summary.pi.slew, summary.pi.nlew)
+
+kable(pi.summaries) %>% kable_styling("striped")
+```
+
+```{r}
+summary.dxy.slew.ccar <- summary(dxy$dxy.slew.ccar)
+summary.dxy.slew.nlew <- summary(dxy$dxy.slew.nlew)
+summary.dxy.ccar.bic <- summary(dxy$dxy.ccar.bic)
+
+dxy.summaries <- rbind(summary.dxy.slew.ccar, 
+                      summary.dxy.slew.nlew, 
+                      summary.dxy.ccar.bic)
+
+kable(dxy.summaries) %>% kable_styling("striped")
+
+
+```
+
+
+# Whole-genome phylogeny
+## Concatenation
+
+![](/Users/thom/Dropbox/2.Fishman_Lab/Data/LewCard/phylogenomics/concatenation/RAxML/RAxML_bipartitions.WGconcat.tree_geosort_names_alltips.png)
+
+
+## ASTRAL
+![](/Users/thom/Dropbox/2.Fishman_Lab/Manuscripts/lewcard/phylogenomics/figures/formatted/Suppl_astral.png)
+
+# CE10 physical vs genetic map
+
+We used targeted capture sequencing on *cardinalis* CxWFM F2s to generate the genetic map, capturing `r length(baits[,1])` genic regions. 
+
+``` {r cMMb, echo=F, fig.width=8,fig.height=10, fig.align='center'}
+
+figdir <- "/Users/thom/Dropbox/2.Fishman_Lab/Manuscripts/lewcard/phylogenomics/figures/drafts/"
+pdf(paste0(figdir,"linkagemaps_20200106.pdf"),width=6.5, height=8)
+ymax <- 80
+layout(matrix(1:8,4,2,byrow=T))
+for (lg in 1:8) {
+    # lg = 1
+    mapLG = map2newchr[lg]
+    lgmap <- linkagemap[linkagemap$lg == mapLG,]
+    lgbaits <- baits[baits$chr == mapLG,]
+    par(mar=c(4,4,1,1))
+    plot(lgmap$bp/1000000,lgmap$cM, ylim = c(0,ymax), xlim=c(0,50),
+         pch=19, cex = 0.5, col = rgb(0,0,0,0.25),
+        xlab = paste0("chr ",lg,", Mbp"),
+        ylab = paste0("LG ",lg,", cM"))
+    baitdens <- density(lgbaits$start/1000000, bw = 1,
+                        from=min(lgbaits$start)/1000000,
+                        to=max(lgbaits$start)/1000000)
+    baitdens$y <- (baitdens$y / max(baitdens$y,na.rm=T)) * 20
+    lines(baitdens)
+    points(x = lgbaits$start/1000000, y = rep(0,length(lgbaits$start)), 
+           pch=3, col = rgb(0,0,0,1))
+    # legend(x="topleft", legend=paste0("chr ",lg))
+    # if (lg == 1) {legend(x="topleft",pch=c("•","+","-"),legend=c("mapped marker","all baits", "bait density"))}
+}
+dev.off()
+
+```
+
+
+# TWISST
+
+We used TWISST (topology weighting by iterative sampling of species trees; [Martin & Van Belleghem 2017](https://www.genetics.org/content/206/1/429)) to quantify support for different species relationships across the *cardinalis* genome. TWISST takes an input gene tree and a pre-defined set of species to quantify support for every possible species tree given that gene tree. We applied this method to the targeted capture dataset, treating each capture region as a single locus.
+
+We analyzed each species as a separate taxon, with the exceptions of *lewisii* and the the red-flowered sky island species. Northern and Sierran races of *lewisii* were specified separately due to their dysjunct range and deep phylogenetic split. The 'sky island' species of *M. verbenaceus*, *M. rupestris*, and *M. eastwoodiae* were combined into a single taxon because (1) they formed a highly supported clade; (2) we were primarily interested in the relationships between *M. lewisii* and *M. cardinalis*; and (3) tree space increases geometrically with the number of taxa, and increasing the number of taxa from 5 to 7 would increase the number of topologies searched from 105 to 10395.
+
+## topologies of interest
+
+Here, we focus on two general species relationships. The first, which we refer to as the 'species tree', reflects the general topology inferred using maximum likelihood and ASTRAL (below, left). The second, the 'lew-card tree' (below, right), represents any tree topology where *M. lewisii* and *M. cardinalis* form a single clade. In the analyses below, we are agnostic to the placement of *M. parishii*.
+
+``` {r tree_topo_examples, fig.width=8,fig.height=4,fig.align='center', echo=F}
+
+lctree <- "(bicolor,((red_spp),(cardinalis,lewisii_Sierran,lewisii_Northern)));"
+sptree <- "(bicolor,lewisii_Sierran,lewisii_Northern,(red_spp,cardinalis));"
+
+lctree <- read.tree(text=lctree)
+sptree <- read.tree(text=sptree)
+layout(matrix(1:2,1,2))
+par(mar = c(1,1,1,1))
+plot.phylo(sptree, edge.color=cardcol, edge.width=2, cex=0.75)
+plot.phylo(lctree, edge.color=lewcol, edge.width=2, cex=0.75)
+
+```
+
+## Recombination rate
+
+To investigate the influence of recombination rate on support for these competing topologies, we used a mapping family of 93 *M. cardinalis* F2s to generate a linkage map and an initial scaffolding of the *M. cardinalis* CE10 reference PacBio contigs. This assembly differs from the final v2.0 chromosome-level assembly in the placement of some contigs but preserves the physical and genetic distances between markers in the F2 linkage map.
+
+
+``` {r RecRate_bins, echo=F}
+
+### USE LINKAGE MAP USED IN GENOME SCAFFOLDING TO
+###   CALCULATE RECOMBINATION RATE IN BINS
+
+binsize <- 1000000 # in bp
+
+mapbins <- NULL
+for (chrom in 1:8) {
+    chrommap <- linkagemap[linkagemap$lg == chrom,]
+    chrommap <- chrommap[order(chrommap$bp),]
+    
+    chromlen <- max(chrommap$bp)
+    binstart <- seq(1,chromlen,by=binsize)
+    binend   <- binstart + (binsize-1)
+    nbins    <- length(binstart)
+    cMMb     <- rep(-1,nbins)
+    for (i in 1:nbins) {
+        bs <- binstart[i]
+        be <- binend[i]
+        cMs <- chrommap$cM[chrommap$bp >= bs & chrommap$bp <= be]
+        bps <- chrommap$bp[chrommap$bp >= bs & chrommap$bp <= be]
+        if (length(cMs) < 2) {next}
+        genlen  <- max(cMs) - min(cMs)
+        physlen <- max(bps) - min(bps)
+        cMMb[i] <- genlen/(physlen/1000000)
+        # if (genlen/(physlen/1000000) > 100) {
+        #     print(chrom)
+        #     print(bs)
+        #     print(be)
+        # }
+        # cMMb[i] <- genlen/(binsize/1000000)
+    }
+    x <- cbind(rep(chrom,nbins), binstart, binend, cMMb)
+    mapbins <- rbind(mapbins, x)
+}
+mapbins <- as.data.frame(mapbins)
+names(mapbins)[1] <- "CHR"
+
+### if a bin is empty (currently -1) or extreme (>100 cM/Mb), it becomes the value of the nearest non-neg bin
+mapbins$cMMb[mapbins$cMMb > 100] <- -1
+for (i in 1:dim(mapbins)[1]) {
+    if (mapbins$cMMb[i] == -1) {
+        chrom      <- mapbins$CHR[i]
+        binstart   <- mapbins$binstart[i]
+        binsNonNeg <- mapbins[mapbins$CHR == chrom & mapbins$cMMb >= 0,]
+        binsNonNeg$dist <- binsNonNeg$binstart - binstart
+        nearest    <- binsNonNeg$cMMb[
+            which(
+                binsNonNeg$dist == min(abs(binsNonNeg$dist))
+                )
+            ][1]
+        mapbins$cMMb[i] <- nearest
+    }
+}
+
+```
+
+
+``` {r treetopos_RecBins, echo=F}
+
+### FIND RECOMBINATION RATE BINS FOR
+###  TWISST RESULTS
+
+regions$BinnedRecRate <- -1
+
+for (i in 1:dim(regions)[1]) {
+    r <- regions[i,]
+    newDist <- mapbins$cMMb[
+                                             mapbins$CHR == r$CHR.myAssemb[1] & 
+                                             mapbins$binstart <= r$START.myAssemb[1] &
+                                             mapbins$binend >= r$STOP.myAssemb[1]
+                                             ]
+    if (length(newDist) > 0) {regions$BinnedRecRate[i] <- newDist}
+}
+
+### how to break topo weightings into bins?
+binbreaks <- c(-1,
+               0,
+               5,
+               max(regions$BinnedRecRate[regions$BinnedRecRate>0],na.rm=T)
+               )
+
+```
+
+### The lew-card tree is overrepresented in regions of high recombination
+
+We binned the eight main chromosomes of the CE10 assembly into nonoverlapping 1 Mbp bins and computed recombination rate as the distance, in centiMorgans, between the two most distal markers in the bin divided by the size of the bin. (This will probably change to the physical distance between these markers.) We then computed support for the species tree and the lew-card tree in bins showing zero recombination (`r binbreaks[2]` cM/Mbp), low recombination (up to `r binbreaks[3]` cM/Mbp), and high recombination (> `r binbreaks[3]` cM/Mbp). In the plot below, the summed support for all topologies reflecting the species tree or lew-card tree are shown in bold lines, while the support for each individual topology is represented by a thin line.
+
+The species tree has by far the most support where recombination is low. Regions of low recombination should be more resistant to introgressed haplotypes because neutral or adaptive alleles cannot easily escape from any physically linked alleles that are deleterious unconditionally or in the recipient genetic background. Put another way, the abundance of support for the lew-card topology in regions of high recombination is evidence for massive introgression between these species. 
+
+``` {r twisst_recrateBinPlot, fig.width=4,fig.height=4,fig.align='center', echo=F}
+
+wts.fract.sp  <- apply(X=wts.fract[,species.topos], MARGIN=1,FUN=sum)
+wts.fract.lc  <- apply(X=wts.fract[,lewcard.topos], MARGIN=1,FUN=sum)
+wts.fract.slc  <- apply(X=wts.fract[,slewcard.topos], MARGIN=1,FUN=sum)
+wts.fract.lr  <- apply(X=wts.fract[,lewreds.topos], MARGIN=1,FUN=sum)
+wts.fract.cp  <- apply(X=wts.fract[,chlorop.topos], MARGIN=1,FUN=sum)
+
+sp <- NULL
+lc <- NULL
+lr <- NULL
+all.topos <- NULL
+
+
+
+for (i in 1:(length(binbreaks)-1)) {
+    indexes <- which(regions$BinnedRecRate >  binbreaks[i] & 
+                     regions$BinnedRecRate <= binbreaks[i+1])
+    sp.bin <- wts.fract.sp[indexes]
+    lc.bin <- wts.fract.lc[indexes]
+    lr.bin <- wts.fract.lr[indexes]
+    all.bin <- wts.fract[indexes,]
+    all.bin <- apply(X=all.bin, MARGIN = 2, FUN=sum)
+    all.bin <- all.bin / length(indexes)
+    all.topos <- rbind(all.topos,all.bin)
+    sp     <- append(sp,sum(sp.bin) / length(sp.bin))
+    lc     <- append(lc,sum(lc.bin) / length(lc.bin))
+    lr     <- append(lr,sum(lr.bin) / length(lr.bin))
+}
+
+plot(0,0,type='n', xlim = c(0,4), ylim = c(0,0.5), 
+     xaxt="n", xlab="recombination rate, cM/Mb",ylab="topology weight")
+    # segments(x0 = 1, x1 = 2, y0 = all.topos[1,], y1 = all.topos[2,])
+    # segments(x0 = 2, x1 = 3, y0 = all.topos[2,], y1 = all.topos[3,])
+    segments(x0 = 1, x1 = 2, 
+             y0 = all.topos[1,species.topos], y1 = all.topos[2,species.topos], 
+             col = cardcol)
+    segments(x0 = 2, x1 = 3, 
+             y0 = all.topos[2,species.topos], y1 = all.topos[3,species.topos], 
+             col = cardcol)
+    segments(x0 = 1, x1 = 2, 
+             y0 = all.topos[1,lewcard.topos], y1 = all.topos[2,lewcard.topos], 
+             col = lewcol)
+    segments(x0 = 2, x1 = 3, 
+             y0 = all.topos[2,lewcard.topos], y1 = all.topos[3,lewcard.topos], 
+             col = lewcol)
+    # segments(x0 = 1, x1 = 2, 
+    #          y0 = all.topos[1,lewreds.topos], y1 = all.topos[2,lewreds.topos], 
+    #          col = "gray50")
+    # segments(x0 = 2, x1 = 3, 
+    #          y0 = all.topos[2,lewreds.topos], y1 = all.topos[3,lewreds.topos], 
+    #          col = "gray50")
+    segments(x0 = 1, x1 = 2, y0 = sp[1], y1 = sp[2], col = cardcol, lwd=3)
+    segments(x0 = 2, x1 = 3, y0 = sp[2], y1 = sp[3], col = cardcol, lwd=3)
+    segments(x0 = 1, x1 = 2, y0 = lc[1], y1 = lc[2], col = lewcol, lwd=3)
+    segments(x0 = 2, x1 = 3, y0 = lc[2], y1 = lc[3], col = lewcol, lwd=3)
+    # segments(x0 = 1, x1 = 2, y0 = lr[1], y1 = lr[2], col = "gray50", lwd=3)
+    # segments(x0 = 2, x1 = 3, y0 = lr[2], y1 = lr[3], col = "gray50", lwd=3)
+    axis(1, at = c(1,2,3), labels=c("0", "0.5 - 5.0", ">5"))
+
+```
+
+``` {r twisst_recrateSmooth, fig.width=5, fig.height=4, fig.align='center'}
+### only include regions with estimated recombination rates
+RecEst <- which(regions$BinnedRecRate >= 0)
+
+### parameters for smoothing
+df <- 5
+
+### smoothed support
+spXrec <- smooth.spline(x=regions$BinnedRecRate[RecEst],
+                        y=wts.fract.sp[RecEst], df=df)
+lcXrec <- smooth.spline(x=regions$BinnedRecRate[RecEst],
+                        y=wts.fract.lc[RecEst], df=df)
+lcXrec.corr <- cor.test(x=regions$BinnedRecRate[RecEst],
+                        y=wts.fract.lc[RecEst], method="spearman")
+### histogram of region counts
+
+par(mar=c(5,4,1,4))
+plot(0,0,type='n', xlim=c(0,20),ylim=c(0.2,0.5),
+     xlab = "cM/Mb",ylab="topology weight")
+    lines(spXrec, lwd=2, col=cardcol)
+    lines(lcXrec, lwd=2, col=lewcol)
+    par(new=T)
+    hist(regions$BinnedRecRate[RecEst],xaxt="n",yaxt="n",
+         breaks = seq(0,20,by=1),
+         xlab="",ylab="",main="")
+    axis(4)
+    mtext("n regions",side=4, line=3)
+
+```
+
+### Whole-chromosome introgression?
+``` {r twisst_LCvsSpecies, echo=F, include=F}
+
+wts.fract.sp  <- apply(X=wts.fract[, species.topos], MARGIN=1,FUN=sum)
+wts.fract.lc  <- apply(X=wts.fract[, lewcard.topos], MARGIN=1,FUN=sum)
+wts.fract.lr  <- apply(X=wts.fract[, lewreds.topos], MARGIN=1,FUN=sum)
+wts.fract.cp  <- apply(X=wts.fract[, chlorop.topos], MARGIN=1,FUN=sum)
+
+genewindow <- 5
+genestep   <- 1
+
+```
+
+To look at tree topology support across physical genomic space, we mapped the capture regions to the CE10 v2 reference. 
+
+In the plots below, support for the species and lew-card trees is shown as stacked polygons, where the height at a position indicates the weight TWISST computes for a given topology at that locus. At each position, the average weight across a `r genewindow`-gene window is shown. Window midpoints are shown as crosses on the bottom of each plot. Across the large pericentromeric regions of the *M. cardinalis* chromosomes (which are relatively gene-poor), there is typically overwhelming support for either the species tree or the lew-card tree.
+
+``` {r twisst_LCvsSpecies_plot, fig.width=8,fig.height=16,fig.align='center', echo=F}
+
+XVALUES <- ""
+
+layout(matrix(1:8,nrow = 8, ncol=1, byrow=T))
+par(mar=c(5,4,1,1))
+for (chrom in 1:8) {
+    midpoint  <- NULL
+    weight.sp <- NULL
+    weight.lc <- NULL
+    weight.lr <- NULL
+    weight.cp <- NULL
+    c = chrom
+    wts.sp.chrom <- wts.fract.sp[regions$CHR == c]
+    wts.lc.chrom <- wts.fract.lc[regions$CHR == c]
+    wts.lr.chrom <- wts.fract.lr[regions$CHR == c]
+    wts.cp.chrom <- wts.fract.cp[regions$CHR == c]
+    reg.chrom <- regions[regions$CHR == c,]
+    ngenes <- length(wts.sp.chrom)
+    
+    genestarts <- seq(1, ngenes, by=genestep)
+    genestarts <- genestarts[genestarts <= (max(genestarts)-genewindow)]
+    for (i in 1:length(genestarts)) {
+        one  = genestarts[i]
+        two  = one + (genewindow-1)
+        w.1    = mean(wts.sp.chrom[one:two])
+        w.2    = mean(wts.lc.chrom[one:two])
+        w.3    = mean(wts.lr.chrom[one:two])
+        w.4    = mean(wts.cp.chrom[one:two])
+        midp   = mean(reg.chrom$START[one:two]) / 1000000
+        midpoint      <- append(midpoint, midp)
+        weight.sp     <- append(weight.sp, w.1)
+        weight.lc     <- append(weight.lc, w.2)
+        weight.lr     <- append(weight.lr, w.3)
+        weight.cp     <- append(weight.cp, w.4)
+    }
+    geneindex = 1:length(weight.lr)
+    xvalues <- midpoint
+    if (XVALUES  == "genespace") {xvalues <- geneindex}
+    ### TRANSFORM SOME Y VALUES SO WE CAN STACK POLYGONS
+    weight.lc <- weight.lc + weight.sp
+    polyx     <- c(xvalues,rev(xvalues))
+    xmax    = ifelse(XVALUES == "genespace", 1300, 65)
+    plot(xvalues, weight.lr, ylim = c(0,1), xlim = c(0,xmax),
+         type='n', col="gray50",
+         xlab = paste0("CHR ",c),
+         ylab = "weight")
+    if (c == 1) {
+        legend(x="topright",
+               pch = 15,col=c(cardcol,lewcol),cex=1.5,
+               legend=c("species tree","lew-card tree"), border="n")
+        }
+    polygon(x = polyx,
+            y = c(rep(0,length(weight.sp)),rev(weight.sp)),col=cardcol,border=NA)
+    polygon(x = polyx,
+            y = c(weight.sp,rev(weight.lc)),col=lewcol,border=NA)
+    points(midpoint, rep(0, length(midpoint)), pch=3, cex=0.5,col=rgb(0,0,0,0.25))
+}
+
+```
+
+
+``` {r Card2ParIntrogressionTWISST, fig.width=8,fig.height=16,fig.align='center', echo=F}
+
+genewindow <- 2
+genestep   <- 1
+
+XVALUES <- "genespace"
+
+layout(matrix(1:8,nrow = 8, ncol=1, byrow=T))
+par(mar=c(5,4,1,1))
+for (chrom in 1:8) {
+    midpoint     <- NULL
+    intro.wt     <- NULL
+    intro.wt.sC  <- NULL
+    c = chrom
+    intro.wt.chrom <- CPintro.wts.fract[regions$CHR == c, 2]
+    intro.wt.sC.chrom <- CPintro.wts.fract[regions$CHR == c, 3]
+    reg.chrom <- regions[regions$CHR == c,]
+    ngenes <- length(intro.wt.chrom)
+    
+    genestarts <- seq(1, ngenes, by=genestep)
+    genestarts <- genestarts[genestarts <= (max(genestarts)-genewindow)]
+    for (i in 1:length(genestarts)) {
+        one  = genestarts[i]
+        two  = one + (genewindow-1)
+        w.1    = mean(intro.wt.chrom[one:two])
+        w.2    = mean(intro.wt.sC.chrom[one:two])
+        midp   = mean(reg.chrom$START[one:two]) / 1000000
+        midpoint      <- append(midpoint, midp)
+        intro.wt      <- append(intro.wt, w.1)
+        intro.wt.sC   <- append(intro.wt.sC, w.2)
+    }
+    geneindex = 1:length(intro.wt)
+    xvalues <- midpoint
+    if (XVALUES  == "genespace") {xvalues <- geneindex}
+    ### TRANSFORM SOME Y VALUES SO WE CAN STACK POLYGONS
+    intro.wt.sC <- intro.wt.sC + intro.wt
+    polyx     <- c(xvalues,rev(xvalues))
+    xmax    = ifelse(XVALUES == "genespace", 1300, 65)
+    plot(xvalues, intro.wt, ylim = c(0,1), xlim = c(0,xmax),
+         type='n', col="gray50",
+         xlab = paste0("CHR ",c),
+         ylab = "weight")
+    # if (c == 1) {
+    #     legend(x="topright",
+    #            pch = 15,col=c(cardcol,lewcol),cex=1.5,
+    #            legend=c("southernCard+Par","sierranCard+Par"), border="n")
+    #     }
+    polygon(x = polyx,
+            y = c(rep(0,length(intro.wt)),rev(intro.wt)),col=cardcol,border=NA)
+    # polygon(x = polyx,
+    #         y = c(intro.wt,rev(intro.wt.sC)),col="red",border=NA)
+    points(xvalues, rep(0, length(midpoint)), pch=3, cex=0.5,col=rgb(0,0,0,0.25))
+}
+
+
+```
+
+```{r CPintrogression_percent_by_n_regions}
+
+percents <- seq(0,1,by=0.01)
+nbins    <- length(percents)
+nloci    <- rep(0,nbins)
+
+for (i in 1:nbins) {
+    cutoff <- percents[i]
+    nloci[i] <- dim(CPintro.wts.fract[CPintro.wts.fract$topo2.fract >= cutoff,])[1]
+}
+
+plot(percents, nloci,
+     xlab = "introgression topology weight",
+     ylab = "number of regions ≥ that weight")
+
+```
+
+
+```{r export_CPintrogression}
+
+intro_wt_min <- 0.95
+outfile <- paste0("/Users/thom/Dropbox/2.Fishman_Lab/Data/LewCard/popgenetics/twisst/CPintrogression_minimal/CPintrogression_minimal_regions_with_intro_wt_",intro_wt_min,"min_",Sys.Date(),".tsv")
+
+CPintro.wts.fract.with.regions <- cbind(regions, CPintro.wts.fract)
+    names(CPintro.wts.fract.with.regions)[8:10] <- c("species.wt",
+                                                    "SouthernCardPlusPar.wt",
+                                                    "SierranCardPlusPar.wt")
+     CPintro.wts.fract.with.regions[8:10] <- round(CPintro.wts.fract.with.regions[8:10], 3)     
+outdata <- CPintro.wts.fract.with.regions[CPintro.wts.fract.with.regions$SouthernCardPlusPar.wt >= intro_wt_min, ]
+treeindex <- row.names(outdata)
+outdata <- cbind(treeindex, outdata)
+write.table(outdata, outfile, row.names=F, col.names=T, quote=F, sep="\t")
+
+```
+
+
+``` {r SierranIntrogressionTWISST, fig.width=8,fig.height=16,fig.align='center', echo=F}
+
+genewindow <- 3
+genestep   <- 1
+
+XVALUES <- ""
+
+layout(matrix(1:8,nrow = 8, ncol=1, byrow=T))
+par(mar=c(5,4,1,1))
+for (chrom in 1:8) {
+    midpoint     <- NULL
+    intro.wt     <- NULL
+    intro.wt.nL  <- NULL
+    c = chrom
+    intro.wt.chrom <- CsLintro.wts.fract[regions$CHR == c, 1]
+    intro.wt.nL.chrom <- CsLintro.wts.fract[regions$CHR == c, 2]
+    reg.chrom <- regions[regions$CHR == c,]
+    ngenes <- length(intro.wt.chrom)
+    
+    genestarts <- seq(1, ngenes, by=genestep)
+    genestarts <- genestarts[genestarts <= (max(genestarts)-genewindow)]
+    for (i in 1:length(genestarts)) {
+        one  = genestarts[i]
+        two  = one + (genewindow-1)
+        w.1    = mean(intro.wt.chrom[one:two])
+        w.2    = mean(intro.wt.nL.chrom[one:two])
+        midp   = mean(reg.chrom$START[one:two]) / 1000000
+        midpoint      <- append(midpoint, midp)
+        intro.wt      <- append(intro.wt, w.1)
+        intro.wt.nL   <- append(intro.wt.nL, w.2)
+    }
+    geneindex = 1:length(intro.wt)
+    xvalues <- midpoint
+    if (XVALUES  == "genespace") {xvalues <- geneindex}
+    ### TRANSFORM SOME Y VALUES SO WE CAN STACK POLYGONS
+    intro.wt.nL <- intro.wt.nL + intro.wt
+    polyx     <- c(xvalues,rev(xvalues))
+    xmax    = ifelse(XVALUES == "genespace", 1300, 65)
+    plot(xvalues, intro.wt, ylim = c(0,1), xlim = c(0,xmax),
+         type='n', col="gray50",
+         xlab = paste0("CHR ",c),
+         ylab = "weight")
+    # if (c == 1) {
+    #     legend(x="topright",
+    #            pch = 15,col=c(cardcol,lewcol),cex=1.5,
+    #            legend=c("Card+sierranLew","Card+northernLew"), border="n")
+    #     }
+    polygon(x = polyx,
+            y = c(rep(0,length(intro.wt)),rev(intro.wt)),col=cardcol,border=NA)
+    # polygon(x = polyx,
+    #         y = c(intro.wt,rev(intro.wt.nL)),col="red",border=NA)
+    points(midpoint, rep(0, length(midpoint)), pch=3, cex=0.5,col=rgb(0,0,0,0.25))
+}
+
+
+```
+
+``` {r SierranIntrogressionTWISST_genespace, fig.width=8,fig.height=16,fig.align='center', echo=F}
+
+genewindow <- 3
+genestep   <- 1
+
+XVALUES <- "genespace"
+
+layout(matrix(1:8,nrow = 8, ncol=1, byrow=T))
+par(mar=c(5,4,1,1))
+for (chrom in 1:8) {
+    midpoint     <- NULL
+    intro.wt     <- NULL
+    intro.wt.nL  <- NULL
+    c = chrom
+    intro.wt.chrom <- CsLintro.wts.fract[regions$CHR == c, 1]
+    intro.wt.nL.chrom <- CsLintro.wts.fract[regions$CHR == c, 2]
+    reg.chrom <- regions[regions$CHR == c,]
+    ngenes <- length(intro.wt.chrom)
+    
+    genestarts <- seq(1, ngenes, by=genestep)
+    genestarts <- genestarts[genestarts <= (max(genestarts)-genewindow)]
+    for (i in 1:length(genestarts)) {
+        one  = genestarts[i]
+        two  = one + (genewindow-1)
+        w.1    = mean(intro.wt.chrom[one:two])
+        w.2    = mean(intro.wt.nL.chrom[one:two])
+        midp   = mean(reg.chrom$START[one:two]) / 1000000
+        midpoint      <- append(midpoint, midp)
+        intro.wt      <- append(intro.wt, w.1)
+        intro.wt.nL   <- append(intro.wt.nL, w.2)
+    }
+    geneindex = 1:length(intro.wt)
+    xvalues <- midpoint
+    if (XVALUES  == "genespace") {xvalues <- geneindex}
+    ### TRANSFORM SOME Y VALUES SO WE CAN STACK POLYGONS
+    intro.wt.nL <- intro.wt.nL + intro.wt
+    polyx     <- c(xvalues,rev(xvalues))
+    xmax    = ifelse(XVALUES == "genespace", 1300, 65)
+    plot(xvalues, intro.wt, ylim = c(0,1), xlim = c(0,xmax),
+         type='n', col="gray50",
+         xlab = paste0("CHR ",c),
+         ylab = "weight")
+    # if (c == 1) {
+    #     legend(x="topright",
+    #            pch = 15,col=c(cardcol,lewcol),cex=1.5,
+    #            legend=c("Card+sierranLew","Card+northernLew"), border="n")
+    #     }
+    polygon(x = polyx,
+            y = c(rep(0,length(intro.wt)),rev(intro.wt)),col=cardcol,border=NA)
+    # polygon(x = polyx,
+    #         y = c(intro.wt,rev(intro.wt.nL)),col="red",border=NA)
+    points(xvalues, rep(0, length(midpoint)), pch=3, cex=0.5,col=rgb(0,0,0,0.25))
+}
+
+
+```
+
+``` {r main15topos, include=F}
+
+### USE SIMPLIFIED TWISST RUN TO LOOK AT OVERALL SUPPORT
+###   FOR COMPETING TOPOLOGIES
+
+main15 <- "/Users/thom/Dropbox/2.Fishman_Lab/Data/LewCard/popgenetics/twisst/LEW_CARD_PAR_REDS/twisst.weights.csv"
+main15trees <- "/Users/thom/Dropbox/2.Fishman_Lab/Data/LewCard/popgenetics/twisst/LEW_CARD_PAR_REDS/twisst.topologies.trees"
+
+main15 <- read.table(main15,header=T,sep='\t')
+main15 <- main15 / apply(X=main15,MARGIN=1,FUN=sum)
+
+main15totals <- apply(X=main15,MARGIN=2,FUN=sum)
+main15totals <- main15totals / sum(main15totals)
+
+```
+
+## timing and direction of introgression
+
+
+### ABBA-BABA test for introgression
+
+For a first look at possible introgression between *lewisii* and *cardinalis*, I used the ABBA-BABA test [(Durand et al, 2011)](https://doi.org/10.1093/molbev/msr048) to enumerate the number of variant sites supporting discordant population tree topologies. Simon Martin has a good summary from his Evomics workshop [here](http://evomics.org/learning/population-and-speciation-genomics/2018-population-and-speciation-genomics/abba-baba-statistics/). First, I assumed a simplified, four-taxon tree based on the ML and ASTRAL species tree topologies:
+
+``` {r testtree_D, fig.width=3, fig.height=2,fig.align='center',echo=F}
+testtree <- "(bicolor,(lewisii,(cardinalis,verbenaceus)));"
+testtree <- read.tree(text=testtree)
+par(mar=c(0,0,0,0))
+plot(testtree, cex = 0.75)
+```
+
+I then looked for sites that support one of two discordant trees:
+``` {r D_discordant, fig.width=6, fig.height=2,fig.align='center',echo=F}
+ABBA <- "(bicolor,((lewisii,cardinalis),verbenaceus));"
+BABA <- "(bicolor,((lewisii,verbenaceus),cardinalis));"
+ABBA <- read.tree(text=ABBA)
+BABA <- read.tree(text=BABA)
+par(mar=c(0,0,0,0))
+layout(matrix(1:2,1,2,byrow=T))
+plot(ABBA, cex = 0.75)
+plot(BABA, cex = 0.75)
+```
+Incomplete lineage sorting will result in equal frequencies of sites supporting each of these discordant topologies. An excess of sites in support for the first or second topology is taken as evidence of introgression between *lewisii* and *cardinalis* or *lewisii* and *verbenaceus*, respectively.
+
+We use derived sites, labeled "B" (the outgroup state is always "A"), to distinguish between these discordant states. Sites supporting the species tree show the pattern "BBAA", with *cardinalis* and *verbenaceus* sharing the derived state. Projected onto the species tree, sites supporting *lewisii* as sister to *cardinalis* come up as "ABBA" and those supporting sisterhood of *lewisii* and *verbenaceus* are "BABA":
+
+``` {r ABBABABAtree, fig.width=3, fig.height=2,fig.align='center',echo=F}
+testtree <- "(bicolor,(lewisii,(cardinalis,verbenaceus)));"
+testtree <- read.tree(text=testtree)
+par(mar=c(0,0,0,0))
+plot.phylo(testtree, cex = 0.75, show.tip.label=T, tip.color="white")
+    text(x=3,y=4, pos=4, labels="B     A     B", cex = 0.75)
+    text(x=3,y=3, pos=4, labels="B     B     A", cex = 0.75)
+    text(x=3,y=2, pos=4, labels="A     B     B", cex = 0.75)
+    text(x=3,y=1, pos=4, labels="A     A     A", cex = 0.75)
+
+```
+
+The *D*-statistic measures the excess of ABBA sites over BABA:
+
+$$ D = \frac{nABBA - nBABA}{nABBA + nBABA} $$
+
+Positive values of *D* result from an excess of ABBA sites and introgression between *lew* and *card*. Negative values indicate an excess of BABA sites and overall support for introgression between *lew* and *verb*.
+
+This test classically uses a single haploid genome from each species, hence the nice, clean four-taxon relationship. Because I we have multiple samples from *lewisii* and *cardinalis*, I ran this test pairwise, using all combinations of accessions from *lewisii* and *cardinalis*. A good fraction of sites were heterozygous in these accessions, which were grown from seed collected in the field, so I included those by adding the support for ABBA and BABA states at each site by the number of possible patterns at that site.
+
+In the heatmap below, darker orange/red cells indicate more positive values of *D*.
+``` {r PatsDHeatmap, echo=F, fig.width=8,fig.height=6, fig.align='center'}
+
+cards <- unique(patsD$CARD)
+lews <- unique(patsD$LEW)
+
+pw.mat <- matrix(NA,nrow = length(cards), ncol=length(lews))
+pw.mat.summary <- summary(as.numeric(pw.mat))
+for (i in 1:length(cards)) {
+    for (j in 1:length(lews)) {
+        pw.mat[i,j] <- patsD$D[patsD$CARD == cards[i] & patsD$LEW == lews[j]]
+    }
+}
+colnames(pw.mat) <- lews
+rownames(pw.mat) <- cards
+YlOrRd <- brewer.pal(9,"YlOrRd")
+colfunc <- colorRampPalette(YlOrRd)
+col <- colfunc(16)
+heatmap.2(t(pw.mat), col=col,trace="none")
+
+```
+
+```{r jackknife}
+
+### compute jackknife p val from snpwise patterson's D
+###   dataset: patsD_snpwise
+###   chunk size: 1000000bp
+###   some of this taken from Simon Martin: http://evomics.org/learning/population-and-speciation-genomics/2018-population-and-speciation-genomics/abba-baba-statistics/
+
+chunk_size <- 1000000
+chunks <- NULL
+
+# get 1Mb chunk regions for each chromosome
+rownumber <- 1
+for (chrom in 1:8) {
+  D_chrom <- patsD_snpwise[patsD_snpwise$CHR == chrom,]
+  starts <- seq(0, max(D_chrom$POS), by=chunk_size)
+  ends   <- starts + (chunk_size - 1)
+  chunks <- rbind(chunks, cbind(rep(chrom, length(starts)), starts, ends))
+}
+
+# get pseudovalues
+
+D_pseudovalues <- rep(0, length(chunks[,1]))
+D_all <- (sum(patsD_snpwise$ABBA) - sum(patsD_snpwise$BABA)) /
+              (sum(patsD_snpwise$ABBA) + sum(patsD_snpwise$BABA))
+for (chunk in 1:nrow(chunks)) {
+  chrom <- chunks[chunk,1]
+  start <- chunks[chunk,2]
+  stop  <- chunks[chunk,3]
+  other_sites <- patsD_snpwise[which(!(patsD_snpwise$CHR == chrom
+                                       & patsD_snpwise$POS >= start
+                                       & patsD_snpwise$POS <= stop)),]
+  ABBABABA <- (sum(other_sites$ABBA) - sum(other_sites$BABA)) /
+              (sum(other_sites$ABBA) + sum(other_sites$BABA))
+  D_pseudovalues[chunk] <- ABBABABA
+}
+
+D_sd  <- sd(D_pseudovalues)
+D_err <- D_sd / sqrt(length(D_pseudovalues))
+D_Z <- D_all / D_err
+D_p <- 2*pnorm(-abs(D_Z))
+
+```
+
+
+``` {r D_jackknife}
+
+# get array index where lew-card combo has lowest genome-wide D
+
+Dmin.index <- which(pw.mat == min(pw.mat), arr.ind=T)
+Dmin.lew   <- colnames(pw.mat)[Dmin.index[2]]
+Dmin.card  <- rownames(pw.mat)[Dmin.index[1]]
+
+### LOAD GENOME-WIDE ABBA-BABA FOR LEWCARD PAIR W/ LOWEST D
+thin0file <- paste0("/Users/thom/Dropbox/2.Fishman_Lab/Data/LewCard/popgenetics/introgression/PattersonsD/V480_",Dmin.card,"_",Dmin.lew,"_bic_1_thin0bp.tsv")
+thin0file <- read.table(thin0file, header=T)
+thin1000file <- paste0("/Users/thom/Dropbox/2.Fishman_Lab/Data/LewCard/popgenetics/introgression/PattersonsD/V480_",Dmin.card,"_",Dmin.lew,"_bic_1_thin1000bp.tsv")
+thin1000file <- read.table(thin1000file, header=T)
+
+blocksize <- 1000000
+
+pattersonD <- function (countABBA,countBABA) {
+    return((countABBA- countBABA) / (countABBA + countBABA))
+}
+
+### get max values for each unique chromosome
+chroms <- unique(thin0file$CHR)
+maxbps <- rep(0, length(chroms))
+for (chrom in 1:length(chroms)) {
+    bpmax <- max(thin0file$POS[thin0file$CHR == chroms[chrom]], na.rm=T)
+    maxbps[chrom] <- bpmax
+}
+
+Djk <- NULL
+for (i in 1:length(chroms)) {
+    chrom <- chroms[i]
+    blockstarts <- seq(1, maxbps[i], by=blocksize)
+    blockends   <- blockstarts + (blocksize - 1)
+    for (j in 1:length(blockstarts)) {
+        blockindex <- thin0file$CHR == chrom & 
+                      thin0file$POS >= blockstarts[j] & 
+                      thin0file$POS <= blockends[j]
+        Dnoblock <- thin0file[!(blockindex),]
+        abba = sum(Dnoblock$ABBA)
+        baba = sum(Dnoblock$BABA)
+        Djk <- append(Djk, pattersonD(abba,baba))
+    }
+}
+thin0range <- range(Djk)
+
+### get max values for each unique chromosome
+chroms <- unique(thin1000file$CHR)
+maxbps <- rep(0, length(chroms))
+for (chrom in 1:length(chroms)) {
+    bpmax <- max(thin0file$POS[thin1000file$CHR == chroms[chrom]], na.rm=T)
+    maxbps[chrom] <- bpmax
+}
+
+Djk <- NULL
+for (i in 1:length(chroms)) {
+    chrom <- chroms[i]
+    blockstarts <- seq(1, maxbps[i], by=blocksize)
+    blockends   <- blockstarts + (blocksize - 1)
+    for (j in 1:length(blockstarts)) {
+        blockindex <- thin1000file$CHR == chrom & 
+                      thin1000file$POS >= blockstarts[j] & 
+                      thin1000file$POS <= blockends[j]
+        Dnoblock <- thin1000file[!(blockindex),]
+        abba = sum(Dnoblock$ABBA)
+        baba = sum(Dnoblock$BABA)
+        Djk <- append(Djk, pattersonD(abba,baba))
+    }
+}
+thin1000range <- range(Djk)
+
+
+```
+
+### Most introgression is probably old
+
+I used D~FOIL~ ([Pease & Hahn 2015](https://academic.oup.com/sysbio/article/64/4/651/1650669)) to assess the timing of introgression between *lewisii* and *cardinalis*. D~FOIL~ uses a five-taxon symmetric phylogeny and computes what amounts to Patterson's D statistics ([Patterson et al 2012](https://www.genetics.org/content/192/3/1065), [Green et al 2010](https://science.sciencemag.org/content/328/5979/710)) for four-taxon subset of that tree. Here, I computed D~FOIL~ using the following tree:
+
+``` {r dfoiltree, echo=F, fig.width=4,fig.height=4,fig.align='center'}
+
+par(mar=c(1,1,1,1))
+plot(read.tree(text="(bicolor,((verbenaceus,cardinalis),(S lewisii,N lewisii)));"))
+
+```
+
+We then compute four D statistics, and the combination of values of those stats indicates the timing and (potentially) the direction of introgression between ingroup taxa on that tree.
+
+I computed D~FOIL~ between all pairwise combinations of *cardinalis* and Sierran *lewisii* accessions, keeping SPC fixed as the Northern *lewisii* accession.
+
+``` {r dfoilpairwise, echo=F}
+
+ncomparisons <- dim(dfoil)[1]
+DFO <- dfoil$DFO
+DIL <- dfoil$DIL
+DFI <- dfoil$DFI
+DOL <- dfoil$DOL
+
+stat <- factor(c(rep("DFO",ncomparisons),
+          rep("DIL",ncomparisons),
+          rep("DFI",ncomparisons),
+          rep("DOL",ncomparisons)), ordered=T, levels=c("DFO","DIL","DFI","DOL"))
+value <- c(DFO,DIL,DFI,DOL)
+forboxplot <- data.frame(stat,value)
+boxplot(value ~ stat, forboxplot, ylim = c(-0.3,0.3))
+    abline(h=0,lty="dotted", ylab="D statistic")
+
+```
+
+This combination of D components indicates that the majority of our introgression signal is coming from introgression between *cardinalis* and the ancestor of Northern and Sierran *lewisii*. Unfortunately, this combination of components also means we cannot detect the direction of introgression.
+
+### Direction of introgression: D2
+
+``` {r D2, fig.width = 4, fig.height = 3, fig.align='center'}
+
+LVgivenCV <- dxy$dxy.slew.verb[which(wts.fract.sp==1)]
+CVgivenCV <- dxy$dxy.ccar.verb[which(wts.fract.sp==1)]
+LVgivenCL <- dxy$dxy.slew.verb[which(wts.fract.lc==1)]
+D2.t      <- t.test(LVgivenCL, LVgivenCV)
+
+LVgivenCV.dens <- density(LVgivenCV)
+CVgivenCV.dens <- density(CVgivenCV)
+LVgivenCL.dens <- density(LVgivenCL)
+
+LVgivenCV.polyx     <- c(LVgivenCV.dens$x, rev(LVgivenCV.dens$x))
+    LVgivenCV.polyy <- c(LVgivenCV.dens$y, rep(0,length(LVgivenCV.dens$y)))
+CVgivenCV.polyx     <- c(CVgivenCV.dens$x, rev(CVgivenCV.dens$x))
+    CVgivenCV.polyy <- c(CVgivenCV.dens$y, rep(0,length(CVgivenCV.dens$y)))
+LVgivenCL.polyx     <- c(LVgivenCL.dens$x, rev(LVgivenCL.dens$x))
+    LVgivenCL.polyy <- c(LVgivenCL.dens$y, rep(0,length(LVgivenCL.dens$y)))
+
+plot(CVgivenCV.dens, type="n",
+     xlab = "dxy[lew-verb]", ylab = "density", main = "",
+     yaxt = "n")
+    polygon(x = CVgivenCV.polyx, y = CVgivenCV.polyy,
+            col = adjustcolor("gray50",alpha=0.5),
+            border = "gray50")
+    polygon(x = LVgivenCV.polyx, y = LVgivenCV.polyy,
+            col = adjustcolor(cardcol,alpha=0.5),
+            border = cardcol)
+    polygon(x = LVgivenCL.polyx, y = LVgivenCL.polyy,
+            col = adjustcolor(lewcol,alpha=0.5),
+            border = lewcol)
+    legend(x='topright', lwd=2, col = c(cardcol,lewcol), cex=.75,
+           legend = c("species tree","lew-card tree"))
+    text(x = 0.02, y = 25, labels = paste0("p = ",round(D2.t$p.value, 2)))
+
+```
+
+
+``` {r LCdivergence}
+
+dxyGivenSpecies <- dxy$dxy.slew.ccar[which(wts.fract.sp==1)]
+dxyGivenLewcard <- dxy$dxy.slew.ccar[which(wts.fract.lc==1)]
+
+t.test(dxyGivenSpecies, dxyGivenLewcard)
+
+
+```

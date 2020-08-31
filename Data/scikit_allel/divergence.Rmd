@@ -1,0 +1,291 @@
+---
+title: "Erythranthe divergence"
+author: "Thom Nelson"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+### LOAD LIBRARIES --------
+library(hexbin)
+
+### SET SOME GLOBAL SCHTUFF-------
+lewcol  <- "darkorchid"
+cardcol <- "red"
+parcol  <- "#1b9e77"
+verbcol <- "#d95f02"
+
+### LOAD SEQUENCE DIVERSITY, DIVERGENCE --------
+maindir <- "/Users/thom/Dropbox/2.Fishman_Lab/Data/LewCard/popgenetics/scikit_allel/"
+chrs <- 1:8
+dxy <- NULL
+region <- NULL
+for (c in chrs) {
+    # read it chromosome-specific data, append to master dataframe
+    d <- read.table(paste0(maindir,as.character(c),"_diversigence20190827.tsv"), sep="\t",header=T, stringsAsFactors = F)
+    r <- paste0(d$chr,":",d$start,"-",d$stop)
+    region <- append(region, r)
+    dxy <- rbind(dxy,d)
+}
+# calculate the length of all bait regions
+ncols <- dim(dxy)[2]
+span <- dxy$stop - dxy$start
+# export to file
+dxy <- data.frame(dxy[,1:3],region,span,dxy[,4:ncols],stringsAsFactors = F)
+write.table(dxy,paste0(maindir,"diversigence20190827.tsv"),
+            sep="\t",quote=F,row.names=F,col.names=T)
+
+# import relatedness info from VCFTools --relatedness
+rel <- read.table(paste0(maindir,"diversity_GATK_CE10chromonome.8.SNPs.relatedness"),
+                  sep="\t",header=T)
+rel <- rel[rel$INDV1 != rel$INDV2,]
+rel <- rel[order(rel$RELATEDNESS_AJK,decreasing=T),]
+
+# linkage map
+linkagemap <- "/Users/thom/Dropbox/2.Fishman_Lab/Carnation/resources/Mimulus/cardinalis/CE10/pacbio/chromonomer/scaffold__linkage_map.tsv"
+linkagemap <- read.table(linkagemap, stringsAsFactors = F, header=F)
+names(linkagemap) <- c("lg","marker","cM","contig","orientation","contig.bp","bp","nodeIndex")
+
+
+# LOAD CAPTURE REGION LINEAGE SORTING -------
+
+sorting <- "/Users/thom/Dropbox/2.Fishman_Lab/Data/LewCard/phylogenomics/capture/trees/sorting20190827.tsv"
+    sorting <- read.table(sorting,header=T, stringsAsFactors = F)
+    sorting$region <- paste0(sorting$CHR,":",sorting$start,"-",sorting$stop)
+
+# LOAD IBD TRACK DATA
+trackdir <- "/Users/thom/Dropbox/2.Fishman_Lab/Data/LewCard/phylogenomics/asm2asm_mapping/VCF/"
+tracks <- NULL
+for (i in as.character(1:8)) {
+    intracks <- paste0(trackdir,"identityTracks.",i,".tsv")
+    intracks <- read.table(intracks,sep="\t",header=T)
+    tracks   <- rbind(tracks,intracks)
+}
+tracks <- tracks[order(tracks$tracklen),]
+tracks$logtracklen <- log10(tracks$tracklen)
+tracks$SNPperKB    <- tracks$nSNPs / (tracks$tracklen/1000)
+tracks <- tracks[tracks$tracklen > 1 & tracks$nSNPs > 10,]
+
+
+```
+
+## Length of bait regions
+
+```{r baitlen, fig.width=8,fig.height=4}
+
+covered <- sum(dxy$span)
+minlen   <- min(dxy$span)
+maxlen   <- max(dxy$span)
+stepsize <- 1
+sizes    <- seq(minlen,maxlen,stepsize)
+lengths  <- NULL
+nbaits   <- NULL
+for (s in sizes) {
+    lengths <- append(lengths, sum(dxy$span[dxy$span >= s]))
+    nbaits  <- append(nbaits, length(dxy$span[dxy$span >= s]))
+}
+
+layout(matrix(1:2,1,2))
+plot(sizes, lengths/1000000, type='l', las=1,
+     xlab = "min bait size, bp",
+     ylab = "genome len covered, Mbp")
+plot(sizes, nbaits, type='l', las=1,
+     xlab = "min bait size, bp",
+     ylab = "baits, n")
+
+```
+
+``` {r lewcard_diversigence, fig.height=3,fig.width=8}
+
+layout(matrix(1:3,1,3))
+hist(dxy$pi.slew, col=lewcol,main="",
+     xlab = "pi, lewisii",
+     xlim=c(0,0.06), breaks = seq(0,0.06,by=0.001))
+hist(dxy$pi.ccar, col=cardcol,main="",
+     xlab = "pi, cardinalis",
+     xlim=c(0,0.06), breaks = seq(0,0.06,by=0.001))
+hist(dxy$dxy.slew.ccar, col="gray50",main="",
+     xlab = "dxy, lew-card",
+     xlim=c(0,0.06), breaks = seq(0,0.06,by=0.001))
+
+```
+
+
+``` {r lineagesorting, fig.width=8,fig.height=5,fig.align='center'}
+
+loci <- intersect(sorting$region,dxy$region)
+sorting <- sorting[sorting$region %in% loci,]
+    sorting <- sorting[order(sorting$CHR,sorting$start),]
+dxy     <- dxy[dxy$region %in% loci, ]
+    dxy <- dxy[order(dxy$chr,dxy$start),]
+    
+species.index <- (sorting$CPVmono ==1 | sorting$CVmono == 1) & sorting$sLmono == 1
+lewcard.index <- sorting$sLCPmono == 1 | sorting$sLCmono == 1 | sorting$LCmono == 1 
+CP.index      <- sorting$sLCPmono == 1 & sorting$sLmono == 1
+
+dxy.in.species <- dxy$dxy.slew.ccar[species.index]
+    sp.dens    <- density(dxy.in.species)
+    sp.dens$y  <- sp.dens$y / max(sp.dens$y)
+dxy.in.lewcard <- dxy$dxy.slew.ccar[lewcard.index]
+    lc.dens    <- density(dxy.in.lewcard)
+    lc.dens$y  <- lc.dens$y / max(lc.dens$y)
+dxy.cp         <- dxy$dxy.slew.ccar[CP.index]
+dxy.dens       <- density(dxy$dxy.slew.ccar)
+    dxy.dens$y <- dxy.dens$y / max(dxy.dens$y)
+
+    
+plot(dxy.dens, type='n',lwd=2,main="",xlab="dxy, Sierran lew-western cardinalis")
+    polygon(x = c(sp.dens$x,rev(         sp.dens$x)),
+            y = c(sp.dens$y,rep(0,length(sp.dens$y))),
+            col = adjustcolor(cardcol,alpha=0.5), border = cardcol,lwd=2)  
+    polygon(x = c(lc.dens$x,rev(         lc.dens$x)),
+            y = c(lc.dens$y,rep(0,length(lc.dens$y))),
+            col = adjustcolor(lewcol,alpha=0.5), border = lewcol,lwd=2)  
+    polygon(x = c(dxy.dens$x,rev(         dxy.dens$x)),
+            y = c(dxy.dens$y,rep(0,length(dxy.dens$y))),
+            col = adjustcolor("gray50",alpha=0.5), border = "gray50",lwd=2)  
+    # lines(sp.dens, lwd=2,col=cardcol)
+    # lines(lc.dens, lwd=2,col=lewcol)
+    legend(x="topright", lwd=2, col=c("black",cardcol,lewcol),
+           legend=c(paste0("all loci, n=",length(dxy$dxy.slew.ccar)),
+                    paste0("loci supporting species tree, n=",length(dxy.in.species)),
+                    paste0("loci supporting lewcard sister, n=",length(dxy.in.lewcard))))
+
+```
+
+### lew-card introgression, or massive card-verb introgression?
+
+We hypothesized that the discordance between our inferred species tree and the molecular phylogeny of Beardsley et al is due to more recent introgression between *lewisii* and *cardinalis*. However, it may be the case that the placement here of *cardinalis* sister to the other hummingbird-pollinated species is due to massive introgression from that clade into *cardinalis*. 
+
+We tested these two possibilities by examining sequence divergence between putative sister taxa at genes whose genealogies support that sister relationship. Introgression will result in more recent shared ancestry between *cardinalis* and the donor species than between *cardinalis* and its true sister species. Therefore, if the placement of cardinalis sister to the HP clade is due to massive introgression, sequence divergence between *cardinalis* and a HP species in genomic regions supporting the introgression topology [((CARD,VERB),LEW)] will be lower than divergence between *cardinalis* and *lewisii* in regions supporting the species tree from Beardsley et al [((CARD,LEW),VERB)]. However, the inverse will be true if the ML topology we inferred here represents the true species history.  
+
+``` {r CLvsCVdivergence, fig.width=8,fig.height=5,fig.align='center'}
+
+species.index <- (sorting$CPVmono ==1 | sorting$CVmono == 1) & sorting$sLmono == 1
+lewcard.index <- sorting$sLCPmono == 1 | sorting$sLCmono == 1 | sorting$LCmono == 1 
+CP.index      <- sorting$sLCPmono == 1 & sorting$sLmono == 1
+
+CVgivenSpecies <- dxy$dxy.ccar.verb[species.index]
+CVgivenSpecies.RND <- dxy$dxy.ccar.verb[species.index] /
+                     dxy$dxy.CV.bic[species.index]
+CLgivenBeardsley <- dxy$dxy.slew.ccar[lewcard.index] 
+CLgivenBeardsley.RND <- dxy$dxy.slew.ccar[lewcard.index] / 
+                      dxy$dxy.sLC.bic[lewcard.index]
+
+breaks.RND <- seq(0,4,by=0.05)
+breaks     <- seq(0,0.06,by=0.001)
+
+layout(matrix(1:2,1,2,byrow=T))
+hist(CVgivenSpecies, breaks = breaks,
+     main="",xlab="DXY",col=adjustcolor(cardcol,alpha=0.5))
+    hist(CLgivenBeardsley, breaks = breaks,add=T,
+         col=adjustcolor(lewcol,alpha=0.5))
+    legend(x="topright", cex=0.6,
+           fill=adjustcolor(c(cardcol,lewcol),alpha=0.5),
+           legend=c(
+                    paste0("dxy(card-verb) | ((C,V),L), n=",
+                           length(dxy.in.species)),
+                    paste0("dxy(card-lew) | ((C,L),V), n=",
+                           length(dxy.in.lewcard))))
+hist(CVgivenSpecies.RND, breaks = breaks.RND, xlim = c(0,2),
+     main="",xlab="RND",col=adjustcolor(cardcol,alpha=0.5))
+    hist(CLgivenBeardsley.RND, breaks = breaks.RND,add=T,
+         col=adjustcolor(lewcol,alpha=0.5))
+
+```
+
+Levels of sequence divergence from *cardinalis* indicate that sistership with *lewisii* is due to introgression between *cardinalis* and *lewisii*. d~XY~^*LC*^ in genomic regions supporting a *lewisii-cardinalis* sister relationship is generally lower than d~XY~^*CV*^ in genomic regions supporting the ML topology.
+
+
+``` {r MarkAndMattsD2, fig.width=8,fig.height=5,fig.align='center'}
+
+loci <- intersect(sorting$region,dxy$region)
+sorting <- sorting[sorting$region %in% loci,]
+    sorting <- sorting[order(sorting$CHR,sorting$start),]
+dxy     <- dxy[dxy$region %in% loci, ]
+    dxy <- dxy[order(dxy$chr,dxy$start),]
+
+treeAB.index <- sorting$CPVmono  == 1 | sorting$CVmono  == 1
+treeBC.index <- sorting$sLCPmono == 1 | sorting$sLCmono == 1
+
+
+
+dxy.sLverb.AB <- dxy$dxy.slew.verb[treeAB.index]
+    AB.dens    <- density(dxy.sLverb.AB)
+    AB.dens$y  <- AB.dens$y / max(AB.dens$y)
+dxy.sLverb.BC <- dxy$dxy.slew.verb[treeBC.index]
+    BC.dens    <- density(dxy.sLverb.BC)
+    BC.dens$y  <- BC.dens$y / max(BC.dens$y)
+dxy.dens       <- density(dxy$dxy.slew.verb)
+    dxy.dens$y <- dxy.dens$y / max(dxy.dens$y)
+
+    
+plot(dxy.dens, type='n',lwd=2,main="",xlab="dxy, Sierran lew-verbenaceus")
+    polygon(x = c(AB.dens$x,rev(         AB.dens$x)),
+            y = c(AB.dens$y,rep(0,length(AB.dens$y))),
+            col = adjustcolor(cardcol,alpha=0.5), border = cardcol,lwd=2)  
+    polygon(x = c(BC.dens$x,rev(         BC.dens$x)),
+            y = c(BC.dens$y,rep(0,length(BC.dens$y))),
+            col = adjustcolor(lewcol,alpha=0.5), border = lewcol,lwd=2)  
+    polygon(x = c(dxy.dens$x,rev(         dxy.dens$x)),
+            y = c(dxy.dens$y,rep(0,length(dxy.dens$y))),
+            col = adjustcolor("gray50",alpha=0.5), border = "gray50",lwd=2)  
+    # lines(sp.dens, lwd=2,col=cardcol)
+    # lines(lc.dens, lwd=2,col=lewcol)
+    legend(x="topright", lwd=2, col=c("black",cardcol,lewcol),
+           legend=c(paste0("all loci, n=",length(dxy$dxy.slewverb)),
+                    paste0("((VERB,CARD),sLEW), n=",length(dxy.sLverb.AB)),
+                    paste0("(VERB,(CARD,sLEW)), n=",length(dxy.sLverb.BC))))
+
+```
+
+
+
+``` {r chromoplot, fig.height=8,fig.width=8,fig.align='center'}
+
+### RELATIVE DISTRIBUTION OF TREE TOPOLOGIES ON CHROMOSOMES
+
+linelen <- 0.25
+lwd     <- 1
+lalpha  <- 0.25
+
+layout(matrix(1:2, 2,1,byrow=T))
+plot(c(0,1500),c(-9,0),type="n",yaxt='n',ylab="chr",xlab="gene index")
+    axis(2, at = -1:-8,labels=1:8,las=1)
+    for (c in 1:8) {
+        chrsort <- sorting[sorting$CHR == c,]
+        chrsort$index <- 1:length(chrsort$CHR)
+        rect(xleft=0,xright=max(chrsort$index),
+             ybottom=(-1*c)-linelen,ytop=(-1*c)+linelen)
+        sp <- chrsort$index[(chrsort$CPVmono ==1 | chrsort$CVmono == 1) & 
+                                chrsort$sLmono == 1]
+        lc <- chrsort$index[chrsort$sLCPmono == 1 | chrsort$sLCmono == 1]
+        cp <- chrsort$index[chrsort$sLCPmono == 1 & chrsort$sLmono == 1]
+        segments(x0 = sp, x1 = sp, y0 = (-1*c), y1 = (-1*c)+linelen,col=cardcol)
+        segments(x0 = lc, x1 = lc, y0 = (-1*c), y1 = (-1*c)-linelen,col=lewcol)
+    }
+plot(c(0,max(sorting$stop)/1000000),c(-9,0),type="n",yaxt='n',ylab="chr",xlab="Mb")
+    axis(2, at = -1:-8,labels=1:8,las=1)
+    for (c in 1:8) {
+        chrsort <- sorting[sorting$CHR == c,]
+        chrsort$index <- 1:length(chrsort$CHR)
+        rect(xleft=0,xright=max(chrsort$stop)/1000000,
+             ybottom=(-1*c)-linelen,ytop=(-1*c)+linelen)
+        sp <- chrsort$start[(chrsort$CPVmono ==1 | chrsort$CVmono == 1) & 
+                                chrsort$sLmono == 1]/1000000
+        lc <- chrsort$start[chrsort$sLCPmono == 1 | chrsort$sLCmono == 1]/1000000
+        cp <- chrsort$start[chrsort$sLCPmono == 1 & chrsort$sLmono == 1]/1000000
+        segments(x0 = sp, x1 = sp, y0 = (-1*c), y1 = (-1*c)+linelen,col=cardcol)
+        segments(x0 = lc, x1 = lc, y0 = (-1*c), y1 = (-1*c)-linelen,col=lewcol)
+    }
+
+```
+
+
+
+``` {r blank, include=F}
+
+### I NEED TO SEE IF I CAN REPEAT THE SUBSTITUTION RATE STUFF THAT QIAOSHAN HAD. 
+
+```

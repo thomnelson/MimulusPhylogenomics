@@ -1,0 +1,63 @@
+Analyzing genotype information for samples:
+  bic_1
+  V480
+  CAR-C27.1
+  SNO8.1
+Assuming population tree:
+  (((V480,CAR-C27.1),SNO8.1),bic_1)
+
+Chromosome 1: 3819 SNPs analyzed...
+  BBAA sites: 1786
+  ABBA sites: 1102
+  BABA sites: 931
+  Patterson's D: 0.0841
+
+Chromosome 2: 2709 SNPs analyzed...
+  BBAA sites: 964
+  ABBA sites: 1058
+  BABA sites: 687
+  Patterson's D: 0.2126
+
+Chromosome 3: 3926 SNPs analyzed...
+  BBAA sites: 1748
+  ABBA sites: 1149
+  BABA sites: 1029
+  Patterson's D: 0.0551
+
+Chromosome 4: 4029 SNPs analyzed...
+  BBAA sites: 1610
+  ABBA sites: 1339
+  BABA sites: 1080
+  Patterson's D: 0.1071
+
+Chromosome 5: 2742 SNPs analyzed...
+  BBAA sites: 1141
+  ABBA sites: 861
+  BABA sites: 740
+  Patterson's D: 0.0756
+
+Chromosome 6: 3810 SNPs analyzed...
+  BBAA sites: 1348
+  ABBA sites: 1528
+  BABA sites: 934
+  Patterson's D: 0.2413
+
+Chromosome 7: 4728 SNPs analyzed...
+  BBAA sites: 2247
+  ABBA sites: 1433
+  BABA sites: 1048
+  Patterson's D: 0.1552
+
+Chromosome 8: 3737 SNPs analyzed...
+  BBAA sites: 1417
+  ABBA sites: 1412
+  BABA sites: 908
+  Patterson's D: 0.2172
+
+GRAND TOTAL:
+  BBAA sites: 12261
+  ABBA sites: 9882
+  BABA sites: 7357
+  Patterson's D: 0.14647
+
+Writing positional ABBA-BABA classification to stdout...

@@ -1,0 +1,53 @@
+Chromosome 1: 6843 SNPs analyzed...
+  BBAA sites: 2327.25
+  ABBA sites: 1396.5
+  BABA sites: 1575.25
+  Patterson's D: -0.0601
+
+Chromosome 2: 5123 SNPs analyzed...
+  BBAA sites: 1385.5
+  ABBA sites: 1319.25
+  BABA sites: 1190.0
+  Patterson's D: 0.0515
+
+Chromosome 3: 7108 SNPs analyzed...
+  BBAA sites: 2308.5
+  ABBA sites: 1508.75
+  BABA sites: 1694.75
+  Patterson's D: -0.0581
+
+Chromosome 4: 7122 SNPs analyzed...
+  BBAA sites: 2132.25
+  ABBA sites: 1713.0
+  BABA sites: 1718.0
+  Patterson's D: -0.0015
+
+Chromosome 5: 4982 SNPs analyzed...
+  BBAA sites: 1544.0
+  ABBA sites: 1123.0
+  BABA sites: 1236.0
+  Patterson's D: -0.0479
+
+Chromosome 6: 7035 SNPs analyzed...
+  BBAA sites: 1802.75
+  ABBA sites: 1955.0
+  BABA sites: 1562.25
+  Patterson's D: 0.1117
+
+Chromosome 7: 8335 SNPs analyzed...
+  BBAA sites: 2889.5
+  ABBA sites: 1816.0
+  BABA sites: 1903.0
+  Patterson's D: -0.0234
+
+Chromosome 8: 6581 SNPs analyzed...
+  BBAA sites: 1873.5
+  ABBA sites: 1727.25
+  BABA sites: 1576.0
+  Patterson's D: 0.0458
+
+GRAND TOTAL:
+  BBAA sites: 16263.25
+  ABBA sites: 12558.75
+  BABA sites: 12455.25
+  Patterson's D: 0.00414
