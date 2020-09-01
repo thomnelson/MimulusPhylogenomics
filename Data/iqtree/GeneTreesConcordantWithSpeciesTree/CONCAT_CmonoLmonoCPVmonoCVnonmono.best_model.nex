@@ -1,0 +1,938 @@
+#nexus
+begin sets;
+  charset 1_10608850-10609473.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_10608850-10609473.phylip: ;
+  charset 1_10804377-10805030.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_10804377-10805030.phylip: ;
+  charset 1_10806927-10808466.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_10806927-10808466.phylip: ;
+  charset 1_12405972-12407584.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_12405972-12407584.phylip: ;
+  charset 1_12541960-12543439.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_12541960-12543439.phylip: ;
+  charset 1_12876551-12878089.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_12876551-12878089.phylip: ;
+  charset 1_13408153-13408621.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_13408153-13408621.phylip: ;
+  charset 1_13618305-13618586.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_13618305-13618586.phylip: ;
+  charset 1_13836402-13836859.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_13836402-13836859.phylip: ;
+  charset 1_14140335-14141873.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_14140335-14141873.phylip: ;
+  charset 1_14431376-14431828.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_14431376-14431828.phylip: ;
+  charset 1_15017451-15018375.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_15017451-15018375.phylip: ;
+  charset 1_15840109-15841663.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_15840109-15841663.phylip: ;
+  charset 1_15931140-15932324.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_15931140-15932324.phylip: ;
+  charset 1_15975892-15976692.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_15975892-15976692.phylip: ;
+  charset 1_16025309-16026736.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_16025309-16026736.phylip: ;
+  charset 1_16090808-16092281.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_16090808-16092281.phylip: ;
+  charset 1_16560395-16560788.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_16560395-16560788.phylip: ;
+  charset 1_16776217-16777715.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_16776217-16777715.phylip: ;
+  charset 1_17025734-17027227.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_17025734-17027227.phylip: ;
+  charset 1_17163103-17164646.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_17163103-17164646.phylip: ;
+  charset 1_18672411-18673973.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_18672411-18673973.phylip: ;
+  charset 1_18703937-18704712.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_18703937-18704712.phylip: ;
+  charset 1_18711489-18712354.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_18711489-18712354.phylip: ;
+  charset 1_18850386-18850916.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_18850386-18850916.phylip: ;
+  charset 1_19180380-19180879.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_19180380-19180879.phylip: ;
+  charset 1_19955256-19956207.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_19955256-19956207.phylip: ;
+  charset 1_20057101-20058670.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_20057101-20058670.phylip: ;
+  charset 1_20300661-20301413.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_20300661-20301413.phylip: ;
+  charset 1_20349299-20350235.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_20349299-20350235.phylip: ;
+  charset 1_20453707-20454138.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_20453707-20454138.phylip: ;
+  charset 1_20706770-20708324.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_20706770-20708324.phylip: ;
+  charset 1_20723978-20725344.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_20723978-20725344.phylip: ;
+  charset 1_20729375-20730225.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_20729375-20730225.phylip: ;
+  charset 1_22264850-22265533.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_22264850-22265533.phylip: ;
+  charset 1_2344836-2345481.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_2344836-2345481.phylip: ;
+  charset 1_2477249-2478617.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_2477249-2478617.phylip: ;
+  charset 1_25081035-25081515.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_25081035-25081515.phylip: ;
+  charset 1_25335438-25336275.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_25335438-25336275.phylip: ;
+  charset 1_25387704-25388806.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_25387704-25388806.phylip: ;
+  charset 1_25400344-25400917.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_25400344-25400917.phylip: ;
+  charset 1_25618763-25619938.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_25618763-25619938.phylip: ;
+  charset 1_25631783-25633158.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_25631783-25633158.phylip: ;
+  charset 1_25957180-25958415.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_25957180-25958415.phylip: ;
+  charset 1_27249825-27251248.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_27249825-27251248.phylip: ;
+  charset 1_27588170-27588524.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_27588170-27588524.phylip: ;
+  charset 1_27725317-27725764.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_27725317-27725764.phylip: ;
+  charset 1_27987476-27988428.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_27987476-27988428.phylip: ;
+  charset 1_28198111-28199630.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_28198111-28199630.phylip: ;
+  charset 1_28945028-28945728.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_28945028-28945728.phylip: ;
+  charset 1_30176433-30177067.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_30176433-30177067.phylip: ;
+  charset 1_30191555-30192180.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_30191555-30192180.phylip: ;
+  charset 1_30338154-30338988.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_30338154-30338988.phylip: ;
+  charset 1_30732795-30734360.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_30732795-30734360.phylip: ;
+  charset 1_30939957-30941047.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_30939957-30941047.phylip: ;
+  charset 1_31402551-31403861.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_31402551-31403861.phylip: ;
+  charset 1_31984743-31986138.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_31984743-31986138.phylip: ;
+  charset 1_32287924-32289367.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_32287924-32289367.phylip: ;
+  charset 1_32857457-32858368.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_32857457-32858368.phylip: ;
+  charset 1_34075410-34076920.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_34075410-34076920.phylip: ;
+  charset 1_3459727-3460748.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_3459727-3460748.phylip: ;
+  charset 1_35664002-35664909.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_35664002-35664909.phylip: ;
+  charset 1_35692189-35692816.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_35692189-35692816.phylip: ;
+  charset 1_36522744-36523610.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_36522744-36523610.phylip: ;
+  charset 1_3664580-3664960.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_3664580-3664960.phylip: ;
+  charset 1_36868807-36870333.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_36868807-36870333.phylip: ;
+  charset 1_3712658-3713550.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_3712658-3713550.phylip: ;
+  charset 1_37841064-37842608.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_37841064-37842608.phylip: ;
+  charset 1_37886560-37888111.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_37886560-37888111.phylip: ;
+  charset 1_38280102-38280703.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_38280102-38280703.phylip: ;
+  charset 1_3997614-3999164.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_3997614-3999164.phylip: ;
+  charset 1_4065728-4066339.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_4065728-4066339.phylip: ;
+  charset 1_4171993-4173548.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_4171993-4173548.phylip: ;
+  charset 1_41865507-41867034.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_41865507-41867034.phylip: ;
+  charset 1_41975813-41976393.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_41975813-41976393.phylip: ;
+  charset 1_42381310-42382787.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_42381310-42382787.phylip: ;
+  charset 1_42669088-42670126.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_42669088-42670126.phylip: ;
+  charset 1_43982405-43983156.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_43982405-43983156.phylip: ;
+  charset 1_44670203-44671148.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_44670203-44671148.phylip: ;
+  charset 1_44683778-44685322.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_44683778-44685322.phylip: ;
+  charset 1_5211150-5211863.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_5211150-5211863.phylip: ;
+  charset 1_5214424-5215779.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_5214424-5215779.phylip: ;
+  charset 1_5790344-5790796.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_5790344-5790796.phylip: ;
+  charset 1_6384176-6385618.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_6384176-6385618.phylip: ;
+  charset 1_6482638-6483277.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_6482638-6483277.phylip: ;
+  charset 1_6716982-6718496.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_6716982-6718496.phylip: ;
+  charset 1_6838034-6839133.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_6838034-6839133.phylip: ;
+  charset 1_7259825-7260806.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_7259825-7260806.phylip: ;
+  charset 1_7538286-7538845.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_7538286-7538845.phylip: ;
+  charset 1_7636418-7637157.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_7636418-7637157.phylip: ;
+  charset 1_7694512-7695428.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_7694512-7695428.phylip: ;
+  charset 1_7826075-7827308.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_7826075-7827308.phylip: ;
+  charset 1_7843277-7844578.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_7843277-7844578.phylip: ;
+  charset 1_7882514-7884065.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_7882514-7884065.phylip: ;
+  charset 1_9901640-9902439.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/1_9901640-9902439.phylip: ;
+  charset 2_1181226-1181985.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_1181226-1181985.phylip: ;
+  charset 2_13161097-13162354.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_13161097-13162354.phylip: ;
+  charset 2_1319532-1321034.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_1319532-1321034.phylip: ;
+  charset 2_14101671-14102680.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_14101671-14102680.phylip: ;
+  charset 2_15892783-15893251.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_15892783-15893251.phylip: ;
+  charset 2_2027280-2030243.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_2027280-2030243.phylip: ;
+  charset 2_2054167-2055343.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_2054167-2055343.phylip: ;
+  charset 2_2472193-2473416.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_2472193-2473416.phylip: ;
+  charset 2_29513686-29515232.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_29513686-29515232.phylip: ;
+  charset 2_29735106-29736528.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_29735106-29736528.phylip: ;
+  charset 2_29785169-29786722.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_29785169-29786722.phylip: ;
+  charset 2_29855445-29856973.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_29855445-29856973.phylip: ;
+  charset 2_3191228-3192526.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_3191228-3192526.phylip: ;
+  charset 2_32822684-32824246.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_32822684-32824246.phylip: ;
+  charset 2_33486486-33488049.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_33486486-33488049.phylip: ;
+  charset 2_34308328-34309862.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_34308328-34309862.phylip: ;
+  charset 2_34456870-34457415.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_34456870-34457415.phylip: ;
+  charset 2_3459805-3460969.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_3459805-3460969.phylip: ;
+  charset 2_34632486-34634047.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_34632486-34634047.phylip: ;
+  charset 2_34855421-34856905.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_34855421-34856905.phylip: ;
+  charset 2_34857596-34858865.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_34857596-34858865.phylip: ;
+  charset 2_39482725-39484079.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_39482725-39484079.phylip: ;
+  charset 2_41378757-41379759.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_41378757-41379759.phylip: ;
+  charset 2_42258449-42259757.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_42258449-42259757.phylip: ;
+  charset 2_42336295-42337159.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_42336295-42337159.phylip: ;
+  charset 2_42338053-42338582.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_42338053-42338582.phylip: ;
+  charset 2_4248412-4249362.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_4248412-4249362.phylip: ;
+  charset 2_43715942-43717080.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_43715942-43717080.phylip: ;
+  charset 2_4570262-4571043.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_4570262-4571043.phylip: ;
+  charset 2_4578161-4578896.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_4578161-4578896.phylip: ;
+  charset 2_4580080-4581606.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_4580080-4581606.phylip: ;
+  charset 2_4824727-4826056.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_4824727-4826056.phylip: ;
+  charset 2_5290397-5291315.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_5290397-5291315.phylip: ;
+  charset 2_6903321-6904871.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_6903321-6904871.phylip: ;
+  charset 2_6980843-6982289.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_6980843-6982289.phylip: ;
+  charset 2_9486735-9487423.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/2_9486735-9487423.phylip: ;
+  charset 3_10016595-10017495.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_10016595-10017495.phylip: ;
+  charset 3_10372668-10374162.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_10372668-10374162.phylip: ;
+  charset 3_10429446-10429803.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_10429446-10429803.phylip: ;
+  charset 3_10483005-10483561.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_10483005-10483561.phylip: ;
+  charset 3_14297994-14298968.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_14297994-14298968.phylip: ;
+  charset 3_14602431-14603108.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_14602431-14603108.phylip: ;
+  charset 3_14627303-14628575.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_14627303-14628575.phylip: ;
+  charset 3_18450067-18451373.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_18450067-18451373.phylip: ;
+  charset 3_18454303-18455387.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_18454303-18455387.phylip: ;
+  charset 3_18895533-18895891.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_18895533-18895891.phylip: ;
+  charset 3_18896453-18897511.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_18896453-18897511.phylip: ;
+  charset 3_19783263-19783975.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_19783263-19783975.phylip: ;
+  charset 3_20064883-20066437.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_20064883-20066437.phylip: ;
+  charset 3_20579472-20580215.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_20579472-20580215.phylip: ;
+  charset 3_22717838-22718903.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_22717838-22718903.phylip: ;
+  charset 3_22826163-22827689.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_22826163-22827689.phylip: ;
+  charset 3_23897807-23899101.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_23897807-23899101.phylip: ;
+  charset 3_23949623-23951179.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_23949623-23951179.phylip: ;
+  charset 3_24293677-24295269.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_24293677-24295269.phylip: ;
+  charset 3_27914756-27915939.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_27914756-27915939.phylip: ;
+  charset 3_28802249-28803194.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_28802249-28803194.phylip: ;
+  charset 3_29097271-29098818.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_29097271-29098818.phylip: ;
+  charset 3_29242972-29244424.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_29242972-29244424.phylip: ;
+  charset 3_29551212-29552099.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_29551212-29552099.phylip: ;
+  charset 3_29709027-29709817.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_29709027-29709817.phylip: ;
+  charset 3_30050818-30051468.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_30050818-30051468.phylip: ;
+  charset 3_30576665-30577709.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_30576665-30577709.phylip: ;
+  charset 3_30798826-30800365.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_30798826-30800365.phylip: ;
+  charset 3_31228548-31229619.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_31228548-31229619.phylip: ;
+  charset 3_31248471-31250018.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_31248471-31250018.phylip: ;
+  charset 3_31332188-31332941.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_31332188-31332941.phylip: ;
+  charset 3_31694245-31694654.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_31694245-31694654.phylip: ;
+  charset 3_31966641-31967192.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_31966641-31967192.phylip: ;
+  charset 3_34387671-34388306.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_34387671-34388306.phylip: ;
+  charset 3_35469159-35470708.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_35469159-35470708.phylip: ;
+  charset 3_35699825-35700796.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_35699825-35700796.phylip: ;
+  charset 3_36202097-36203613.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_36202097-36203613.phylip: ;
+  charset 3_36362308-36363875.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_36362308-36363875.phylip: ;
+  charset 3_36469034-36470045.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_36469034-36470045.phylip: ;
+  charset 3_36578585-36579646.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_36578585-36579646.phylip: ;
+  charset 3_36673996-36675556.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_36673996-36675556.phylip: ;
+  charset 3_36867166-36867685.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_36867166-36867685.phylip: ;
+  charset 3_36933083-36934286.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_36933083-36934286.phylip: ;
+  charset 3_37545085-37546713.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_37545085-37546713.phylip: ;
+  charset 3_37966428-37967561.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_37966428-37967561.phylip: ;
+  charset 3_38020342-38020869.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_38020342-38020869.phylip: ;
+  charset 3_39954466-39955990.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_39954466-39955990.phylip: ;
+  charset 3_40001700-40002980.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_40001700-40002980.phylip: ;
+  charset 3_40040380-40041153.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_40040380-40041153.phylip: ;
+  charset 3_40101768-40103301.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_40101768-40103301.phylip: ;
+  charset 3_40411496-40412936.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_40411496-40412936.phylip: ;
+  charset 3_41310348-41311890.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_41310348-41311890.phylip: ;
+  charset 3_41796554-41798109.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_41796554-41798109.phylip: ;
+  charset 3_42160937-42162232.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_42160937-42162232.phylip: ;
+  charset 3_42359687-42361250.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_42359687-42361250.phylip: ;
+  charset 3_43761478-43762169.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_43761478-43762169.phylip: ;
+  charset 3_44136262-44137583.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_44136262-44137583.phylip: ;
+  charset 3_44567539-44568846.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_44567539-44568846.phylip: ;
+  charset 3_8683675-8684741.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/3_8683675-8684741.phylip: ;
+  charset 4_10866587-10867147.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_10866587-10867147.phylip: ;
+  charset 4_11272292-11273522.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_11272292-11273522.phylip: ;
+  charset 4_11592299-11592628.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_11592299-11592628.phylip: ;
+  charset 4_11764721-11765353.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_11764721-11765353.phylip: ;
+  charset 4_11832818-11833491.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_11832818-11833491.phylip: ;
+  charset 4_11844726-11845656.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_11844726-11845656.phylip: ;
+  charset 4_13569096-13569687.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_13569096-13569687.phylip: ;
+  charset 4_1372128-1373562.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_1372128-1373562.phylip: ;
+  charset 4_13845419-13846887.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_13845419-13846887.phylip: ;
+  charset 4_15278320-15279837.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_15278320-15279837.phylip: ;
+  charset 4_19780398-19781799.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_19780398-19781799.phylip: ;
+  charset 4_21344405-21345989.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_21344405-21345989.phylip: ;
+  charset 4_2389072-2390523.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_2389072-2390523.phylip: ;
+  charset 4_2392928-2393793.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_2392928-2393793.phylip: ;
+  charset 4_2405367-2406680.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_2405367-2406680.phylip: ;
+  charset 4_2445452-2446156.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_2445452-2446156.phylip: ;
+  charset 4_2844529-2844811.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_2844529-2844811.phylip: ;
+  charset 4_28697910-28698442.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_28697910-28698442.phylip: ;
+  charset 4_29248329-29249888.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_29248329-29249888.phylip: ;
+  charset 4_29870095-29871068.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_29870095-29871068.phylip: ;
+  charset 4_30422016-30422405.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_30422016-30422405.phylip: ;
+  charset 4_30672710-30674097.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_30672710-30674097.phylip: ;
+  charset 4_30709553-30710230.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_30709553-30710230.phylip: ;
+  charset 4_32731727-32733180.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_32731727-32733180.phylip: ;
+  charset 4_33036331-33037438.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_33036331-33037438.phylip: ;
+  charset 4_3409825-3410606.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_3409825-3410606.phylip: ;
+  charset 4_34305826-34307239.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_34305826-34307239.phylip: ;
+  charset 4_34558083-34559642.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_34558083-34559642.phylip: ;
+  charset 4_3456192-3457745.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_3456192-3457745.phylip: ;
+  charset 4_34811577-34813014.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_34811577-34813014.phylip: ;
+  charset 4_34843333-34843948.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_34843333-34843948.phylip: ;
+  charset 4_35190091-35191206.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_35190091-35191206.phylip: ;
+  charset 4_35285961-35287476.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_35285961-35287476.phylip: ;
+  charset 4_35538073-35539484.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_35538073-35539484.phylip: ;
+  charset 4_35680131-35681008.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_35680131-35681008.phylip: ;
+  charset 4_35974643-35975745.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_35974643-35975745.phylip: ;
+  charset 4_36060529-36062050.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_36060529-36062050.phylip: ;
+  charset 4_3638898-3640449.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_3638898-3640449.phylip: ;
+  charset 4_36532709-36533255.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_36532709-36533255.phylip: ;
+  charset 4_37317558-37319199.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_37317558-37319199.phylip: ;
+  charset 4_38088626-38089922.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_38088626-38089922.phylip: ;
+  charset 4_38211206-38211835.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_38211206-38211835.phylip: ;
+  charset 4_38231292-38232177.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_38231292-38232177.phylip: ;
+  charset 4_4514095-4514864.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_4514095-4514864.phylip: ;
+  charset 4_5302218-5302962.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_5302218-5302962.phylip: ;
+  charset 4_5787196-5788537.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_5787196-5788537.phylip: ;
+  charset 4_6727835-6728597.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/4_6727835-6728597.phylip: ;
+  charset 5_10703552-10704931.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_10703552-10704931.phylip: ;
+  charset 5_11619676-11620728.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_11619676-11620728.phylip: ;
+  charset 5_12305607-12306945.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_12305607-12306945.phylip: ;
+  charset 5_1332123-1333668.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_1332123-1333668.phylip: ;
+  charset 5_13636116-13636807.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_13636116-13636807.phylip: ;
+  charset 5_14095802-14096690.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_14095802-14096690.phylip: ;
+  charset 5_14186788-14187847.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_14186788-14187847.phylip: ;
+  charset 5_14345707-14346492.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_14345707-14346492.phylip: ;
+  charset 5_14441786-14442510.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_14441786-14442510.phylip: ;
+  charset 5_14657858-14659145.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_14657858-14659145.phylip: ;
+  charset 5_14875927-14877346.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_14875927-14877346.phylip: ;
+  charset 5_15641242-15641879.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_15641242-15641879.phylip: ;
+  charset 5_15736531-15736831.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_15736531-15736831.phylip: ;
+  charset 5_15736964-15737723.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_15736964-15737723.phylip: ;
+  charset 5_16267402-16268290.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_16267402-16268290.phylip: ;
+  charset 5_16393874-16394217.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_16393874-16394217.phylip: ;
+  charset 5_16670634-16671535.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_16670634-16671535.phylip: ;
+  charset 5_16923315-16923801.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_16923315-16923801.phylip: ;
+  charset 5_21402746-21403226.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_21402746-21403226.phylip: ;
+  charset 5_22190166-22191652.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_22190166-22191652.phylip: ;
+  charset 5_22352833-22353508.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_22352833-22353508.phylip: ;
+  charset 5_22360025-22360702.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_22360025-22360702.phylip: ;
+  charset 5_22570269-22571412.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_22570269-22571412.phylip: ;
+  charset 5_23353229-23354741.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_23353229-23354741.phylip: ;
+  charset 5_23749797-23751265.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_23749797-23751265.phylip: ;
+  charset 5_23847694-23848066.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_23847694-23848066.phylip: ;
+  charset 5_24058916-24059832.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_24058916-24059832.phylip: ;
+  charset 5_24128925-24130278.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_24128925-24130278.phylip: ;
+  charset 5_24134307-24135588.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_24134307-24135588.phylip: ;
+  charset 5_2445811-2447350.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_2445811-2447350.phylip: ;
+  charset 5_25645278-25646188.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_25645278-25646188.phylip: ;
+  charset 5_26748794-26750338.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_26748794-26750338.phylip: ;
+  charset 5_27908948-27910494.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_27908948-27910494.phylip: ;
+  charset 5_28163187-28164179.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_28163187-28164179.phylip: ;
+  charset 5_28385608-28386445.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_28385608-28386445.phylip: ;
+  charset 5_30601631-30603168.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_30601631-30603168.phylip: ;
+  charset 5_31060407-31061622.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_31060407-31061622.phylip: ;
+  charset 5_31524551-31524846.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_31524551-31524846.phylip: ;
+  charset 5_31741765-31742974.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_31741765-31742974.phylip: ;
+  charset 5_32541954-32542574.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_32541954-32542574.phylip: ;
+  charset 5_32689786-32691324.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_32689786-32691324.phylip: ;
+  charset 5_32763255-32764338.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_32763255-32764338.phylip: ;
+  charset 5_32923028-32924519.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_32923028-32924519.phylip: ;
+  charset 5_33846778-33848275.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_33846778-33848275.phylip: ;
+  charset 5_33852454-33853397.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_33852454-33853397.phylip: ;
+  charset 5_33918796-33919720.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_33918796-33919720.phylip: ;
+  charset 5_35586639-35587219.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_35586639-35587219.phylip: ;
+  charset 5_37031760-37033301.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_37031760-37033301.phylip: ;
+  charset 5_37108157-37109730.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_37108157-37109730.phylip: ;
+  charset 5_39779357-39780208.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_39779357-39780208.phylip: ;
+  charset 5_40036623-40038132.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_40036623-40038132.phylip: ;
+  charset 5_40061562-40062916.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_40061562-40062916.phylip: ;
+  charset 5_6066959-6067842.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_6066959-6067842.phylip: ;
+  charset 5_6941741-6942265.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_6941741-6942265.phylip: ;
+  charset 5_9248915-9250451.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_9248915-9250451.phylip: ;
+  charset 5_9256175-9257027.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/5_9256175-9257027.phylip: ;
+  charset 6_20700442-20701929.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_20700442-20701929.phylip: ;
+  charset 6_21008323-21009828.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_21008323-21009828.phylip: ;
+  charset 6_22063542-22064923.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_22063542-22064923.phylip: ;
+  charset 6_22445818-22447201.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_22445818-22447201.phylip: ;
+  charset 6_22695627-22696137.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_22695627-22696137.phylip: ;
+  charset 6_23185571-23187135.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_23185571-23187135.phylip: ;
+  charset 6_23738766-23740288.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_23738766-23740288.phylip: ;
+  charset 6_23815628-23817059.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_23815628-23817059.phylip: ;
+  charset 6_24120991-24121766.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_24120991-24121766.phylip: ;
+  charset 6_24134595-24135373.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_24134595-24135373.phylip: ;
+  charset 6_24284483-24286002.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_24284483-24286002.phylip: ;
+  charset 6_24332732-24334177.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_24332732-24334177.phylip: ;
+  charset 6_24476359-24477431.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_24476359-24477431.phylip: ;
+  charset 6_24900540-24901982.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_24900540-24901982.phylip: ;
+  charset 6_27070150-27071098.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_27070150-27071098.phylip: ;
+  charset 6_27321971-27323132.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_27321971-27323132.phylip: ;
+  charset 6_28327875-28328849.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_28327875-28328849.phylip: ;
+  charset 6_29111543-29112328.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_29111543-29112328.phylip: ;
+  charset 6_29190841-29192390.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_29190841-29192390.phylip: ;
+  charset 6_29455671-29456400.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_29455671-29456400.phylip: ;
+  charset 6_29880079-29881567.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_29880079-29881567.phylip: ;
+  charset 6_30385424-30386057.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_30385424-30386057.phylip: ;
+  charset 6_30388728-30389481.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_30388728-30389481.phylip: ;
+  charset 6_30817192-30818747.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_30817192-30818747.phylip: ;
+  charset 6_30825644-30826958.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_30825644-30826958.phylip: ;
+  charset 6_31588631-31590184.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_31588631-31590184.phylip: ;
+  charset 6_31763080-31764165.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_31763080-31764165.phylip: ;
+  charset 6_31978677-31980122.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_31978677-31980122.phylip: ;
+  charset 6_32317901-32319415.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_32317901-32319415.phylip: ;
+  charset 6_32833006-32834101.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_32833006-32834101.phylip: ;
+  charset 6_32870535-32871990.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_32870535-32871990.phylip: ;
+  charset 6_5159757-5160344.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_5159757-5160344.phylip: ;
+  charset 6_6804096-6805252.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_6804096-6805252.phylip: ;
+  charset 6_8313722-8314976.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/6_8313722-8314976.phylip: ;
+  charset 7_10202289-10203830.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_10202289-10203830.phylip: ;
+  charset 7_10899036-10899342.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_10899036-10899342.phylip: ;
+  charset 7_10984509-10985372.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_10984509-10985372.phylip: ;
+  charset 7_11244178-11245683.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_11244178-11245683.phylip: ;
+  charset 7_11901037-11901853.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_11901037-11901853.phylip: ;
+  charset 7_12509114-12509976.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_12509114-12509976.phylip: ;
+  charset 7_13660695-13662233.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_13660695-13662233.phylip: ;
+  charset 7_14161910-14163267.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_14161910-14163267.phylip: ;
+  charset 7_1466868-1468346.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_1466868-1468346.phylip: ;
+  charset 7_14747797-14749158.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_14747797-14749158.phylip: ;
+  charset 7_1480629-1482084.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_1480629-1482084.phylip: ;
+  charset 7_1529100-1530523.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_1529100-1530523.phylip: ;
+  charset 7_1704679-1705594.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_1704679-1705594.phylip: ;
+  charset 7_17197729-17199138.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_17197729-17199138.phylip: ;
+  charset 7_17492109-17493540.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_17492109-17493540.phylip: ;
+  charset 7_17639209-17640624.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_17639209-17640624.phylip: ;
+  charset 7_18463331-18464826.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_18463331-18464826.phylip: ;
+  charset 7_18728407-18729330.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_18728407-18729330.phylip: ;
+  charset 7_18783519-18784535.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_18783519-18784535.phylip: ;
+  charset 7_18941786-18943299.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_18941786-18943299.phylip: ;
+  charset 7_18981748-18982780.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_18981748-18982780.phylip: ;
+  charset 7_20441414-20442071.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_20441414-20442071.phylip: ;
+  charset 7_21115366-21116104.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_21115366-21116104.phylip: ;
+  charset 7_21481289-21481873.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_21481289-21481873.phylip: ;
+  charset 7_21489243-21490622.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_21489243-21490622.phylip: ;
+  charset 7_2150593-2152031.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_2150593-2152031.phylip: ;
+  charset 7_22415159-22415781.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_22415159-22415781.phylip: ;
+  charset 7_22709437-22710284.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_22709437-22710284.phylip: ;
+  charset 7_22798374-22799363.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_22798374-22799363.phylip: ;
+  charset 7_22824743-22826291.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_22824743-22826291.phylip: ;
+  charset 7_23045973-23046888.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_23045973-23046888.phylip: ;
+  charset 7_23491748-23493244.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_23491748-23493244.phylip: ;
+  charset 7_2408328-2409408.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_2408328-2409408.phylip: ;
+  charset 7_24266836-24268335.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_24266836-24268335.phylip: ;
+  charset 7_24419543-24420417.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_24419543-24420417.phylip: ;
+  charset 7_25055332-25056854.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_25055332-25056854.phylip: ;
+  charset 7_25943566-25945730.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_25943566-25945730.phylip: ;
+  charset 7_25963787-25965342.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_25963787-25965342.phylip: ;
+  charset 7_26394495-26395759.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_26394495-26395759.phylip: ;
+  charset 7_26484866-26485501.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_26484866-26485501.phylip: ;
+  charset 7_27139495-27140785.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_27139495-27140785.phylip: ;
+  charset 7_27181613-27182405.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_27181613-27182405.phylip: ;
+  charset 7_27250739-27251947.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_27250739-27251947.phylip: ;
+  charset 7_28004926-28006455.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_28004926-28006455.phylip: ;
+  charset 7_28122081-28123616.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_28122081-28123616.phylip: ;
+  charset 7_28353971-28355503.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_28353971-28355503.phylip: ;
+  charset 7_28480789-28482338.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_28480789-28482338.phylip: ;
+  charset 7_2858035-2859274.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_2858035-2859274.phylip: ;
+  charset 7_28802645-28803505.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_28802645-28803505.phylip: ;
+  charset 7_28828144-28828795.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_28828144-28828795.phylip: ;
+  charset 7_28860369-28861364.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_28860369-28861364.phylip: ;
+  charset 7_29024040-29025563.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_29024040-29025563.phylip: ;
+  charset 7_29120031-29121553.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_29120031-29121553.phylip: ;
+  charset 7_29599945-29600760.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_29599945-29600760.phylip: ;
+  charset 7_29724446-29725610.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_29724446-29725610.phylip: ;
+  charset 7_29730470-29731089.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_29730470-29731089.phylip: ;
+  charset 7_32092299-32093180.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_32092299-32093180.phylip: ;
+  charset 7_32355433-32356250.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_32355433-32356250.phylip: ;
+  charset 7_32932779-32934326.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_32932779-32934326.phylip: ;
+  charset 7_3295980-3297489.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_3295980-3297489.phylip: ;
+  charset 7_33168502-33169000.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_33168502-33169000.phylip: ;
+  charset 7_33228903-33230043.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_33228903-33230043.phylip: ;
+  charset 7_3394080-3395612.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_3394080-3395612.phylip: ;
+  charset 7_34093887-34094286.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_34093887-34094286.phylip: ;
+  charset 7_34724248-34725612.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_34724248-34725612.phylip: ;
+  charset 7_36087271-36087798.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_36087271-36087798.phylip: ;
+  charset 7_36107233-36107675.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_36107233-36107675.phylip: ;
+  charset 7_36406446-36407067.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_36406446-36407067.phylip: ;
+  charset 7_36929832-36930119.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_36929832-36930119.phylip: ;
+  charset 7_37381167-37382664.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_37381167-37382664.phylip: ;
+  charset 7_38564701-38565602.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_38564701-38565602.phylip: ;
+  charset 7_39027471-39028541.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_39027471-39028541.phylip: ;
+  charset 7_40560697-40562250.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_40560697-40562250.phylip: ;
+  charset 7_40886073-40887168.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_40886073-40887168.phylip: ;
+  charset 7_40989664-40990363.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_40989664-40990363.phylip: ;
+  charset 7_41281041-41281714.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_41281041-41281714.phylip: ;
+  charset 7_41348763-41349411.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_41348763-41349411.phylip: ;
+  charset 7_41484363-41485778.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_41484363-41485778.phylip: ;
+  charset 7_41595639-41596628.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_41595639-41596628.phylip: ;
+  charset 7_41936885-41937681.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_41936885-41937681.phylip: ;
+  charset 7_42042194-42043350.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_42042194-42043350.phylip: ;
+  charset 7_42297463-42298998.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_42297463-42298998.phylip: ;
+  charset 7_42309709-42311272.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_42309709-42311272.phylip: ;
+  charset 7_43554806-43555748.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_43554806-43555748.phylip: ;
+  charset 7_44197754-44198217.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_44197754-44198217.phylip: ;
+  charset 7_4572832-4574324.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_4572832-4574324.phylip: ;
+  charset 7_541446-542212.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_541446-542212.phylip: ;
+  charset 7_552150-553410.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_552150-553410.phylip: ;
+  charset 7_662483-663799.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_662483-663799.phylip: ;
+  charset 7_6671435-6672664.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_6671435-6672664.phylip: ;
+  charset 7_7616269-7617730.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_7616269-7617730.phylip: ;
+  charset 7_7819434-7820667.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_7819434-7820667.phylip: ;
+  charset 7_8019996-8020561.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_8019996-8020561.phylip: ;
+  charset 7_888343-889865.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_888343-889865.phylip: ;
+  charset 7_9307114-9308368.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/7_9307114-9308368.phylip: ;
+  charset 8_102630-104176.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_102630-104176.phylip: ;
+  charset 8_11502313-11503685.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_11502313-11503685.phylip: ;
+  charset 8_12322660-12324197.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_12322660-12324197.phylip: ;
+  charset 8_12836432-12837177.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_12836432-12837177.phylip: ;
+  charset 8_13314694-13315605.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_13314694-13315605.phylip: ;
+  charset 8_1465647-1467065.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_1465647-1467065.phylip: ;
+  charset 8_15004146-15005681.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_15004146-15005681.phylip: ;
+  charset 8_15506295-15507851.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_15506295-15507851.phylip: ;
+  charset 8_16030318-16031847.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_16030318-16031847.phylip: ;
+  charset 8_16462680-16464239.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_16462680-16464239.phylip: ;
+  charset 8_20730542-20732101.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_20730542-20732101.phylip: ;
+  charset 8_20991652-20993054.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_20991652-20993054.phylip: ;
+  charset 8_22560380-22561124.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_22560380-22561124.phylip: ;
+  charset 8_2303809-2305299.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_2303809-2305299.phylip: ;
+  charset 8_23997337-23998392.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_23997337-23998392.phylip: ;
+  charset 8_2644818-2645909.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_2644818-2645909.phylip: ;
+  charset 8_26627720-26629099.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_26627720-26629099.phylip: ;
+  charset 8_27632897-27634440.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_27632897-27634440.phylip: ;
+  charset 8_27903597-27905106.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_27903597-27905106.phylip: ;
+  charset 8_28120088-28120965.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_28120088-28120965.phylip: ;
+  charset 8_2853778-2854250.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_2853778-2854250.phylip: ;
+  charset 8_28957948-28959433.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_28957948-28959433.phylip: ;
+  charset 8_29095033-29096071.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_29095033-29096071.phylip: ;
+  charset 8_29406669-29407594.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_29406669-29407594.phylip: ;
+  charset 8_29664438-29665139.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_29664438-29665139.phylip: ;
+  charset 8_31805566-31806277.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_31805566-31806277.phylip: ;
+  charset 8_33017553-33019088.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_33017553-33019088.phylip: ;
+  charset 8_34600816-34602361.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_34600816-34602361.phylip: ;
+  charset 8_34650878-34652077.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_34650878-34652077.phylip: ;
+  charset 8_35443415-35444361.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_35443415-35444361.phylip: ;
+  charset 8_36182960-36184500.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_36182960-36184500.phylip: ;
+  charset 8_38696837-38698184.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_38696837-38698184.phylip: ;
+  charset 8_40119049-40119867.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_40119049-40119867.phylip: ;
+  charset 8_41165112-41166062.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_41165112-41166062.phylip: ;
+  charset 8_41172597-41173658.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_41172597-41173658.phylip: ;
+  charset 8_41292967-41294482.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_41292967-41294482.phylip: ;
+  charset 8_43473475-43474604.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_43473475-43474604.phylip: ;
+  charset 8_44931670-44933031.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_44931670-44933031.phylip: ;
+  charset 8_45475547-45477088.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_45475547-45477088.phylip: ;
+  charset 8_4641232-4642693.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_4641232-4642693.phylip: ;
+  charset 8_6443762-6444205.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_6443762-6444205.phylip: ;
+  charset 8_706693-707372.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_706693-707372.phylip: ;
+  charset 8_8368350-8369893.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_8368350-8369893.phylip: ;
+  charset 8_8648428-8649420.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_8648428-8649420.phylip: ;
+  charset 8_9087965-9088642.phylip = /home/thom_nelson/LewCard/seq/popgenetics/phylip_CmonoLmonoCPVmonoCVnonmono/8_9087965-9088642.phylip: ;
+  charpartition mymodels =
+    GTR{0.51292,7.93049,2.73545,0.464328,5.61252}+F{0.154661,0.314354,0.38215,0.148835}+ASC+G4{0.768247}: 1_10608850-10609473.phylip,
+    GTR{12.2988,29.3689,6.65062,7.80207,30.9231}+F{0.238865,0.2838,0.225463,0.251872}+ASC+G4{998.417}: 1_10804377-10805030.phylip,
+    GTR{3.64299,14.8227,2.7669,2.70643,5.71887}+F{0.183682,0.309618,0.188806,0.317895}+ASC+G4{1.04856}: 1_10806927-10808466.phylip,
+    GTR{0.953729,3.12274,2.37534,0.628149,3.33136}+F{0.311248,0.292198,0.220339,0.176215}+ASC+G4{0.985615}: 1_12405972-12407584.phylip,
+    GTR{1.31284,4.54028,1.27383,0.872942,4.01655}+F{0.179577,0.232385,0.281552,0.306486}+ASC+G4{0.880579}: 1_12541960-12543439.phylip,
+    GTR{1.01075,3.15735,1.45836,0.658001,2.54767}+F{0.182132,0.34243,0.248492,0.226946}+ASC+G4{0.966647}: 1_12876551-12878089.phylip,
+    GTR{5.1147,7.07862,4.13407,7.25433,8.35542}+F{0.266344,0.223366,0.153148,0.357143}+ASC+G4{998.521}: 1_13408153-13408621.phylip,
+    GTR{2.87453,11.7965,2.28325,0.591383,2.20592}+F{0.0573664,0.32073,0.241199,0.380704}+ASC+G4{998.44}: 1_13618305-13618586.phylip,
+    GTR{0.699934,0.921622,0.368796,0.0001,0.937754}+F{0.413685,0.146893,0.170747,0.268675}+ASC+G4{998.445}: 1_13836402-13836859.phylip,
+    GTR{2.56716,7.07764,2.9066,1.01113,5.59241}+F{0.186441,0.256484,0.245661,0.311415}+ASC+G4{0.932087}: 1_14140335-14141873.phylip,
+    GTR{0.753769,2.78798,1.33784,1.01351,2.15685}+F{0.241695,0.203051,0.232203,0.323051}+ASC+G4{0.790354}: 1_14431376-14431828.phylip,
+    GTR{1.51494,4.38897,1.16378,0.483652,2.50863}+F{0.342778,0.316721,0.152289,0.188211}+ASC+G4{0.987868}: 1_15017451-15018375.phylip,
+    GTR{0.908629,2.92851,0.413995,0.400296,3.229}+F{0.300025,0.187706,0.283582,0.228687}+ASC+G4{0.977436}: 1_15840109-15841663.phylip,
+    GTR{0.956892,3.29054,1.06027,0.811509,3.35458}+F{0.251695,0.264237,0.241017,0.243051}+ASC+G4{0.78872}: 1_15931140-15932324.phylip,
+    GTR{0.183647,1.81775,0.301261,0.512169,0.858329}+F{0.231525,0.224746,0.144746,0.398983}+ASC+G4{1.24503}: 1_15975892-15976692.phylip,
+    GTR{0.843529,2.92816,0.45344,0.356588,2.64165}+F{0.196999,0.343429,0.248402,0.21117}+ASC+G4{0.855363}: 1_16025309-16026736.phylip,
+    GTR{1.19688,19.9789,17.004,2.58032,13.5595}+F{0.218601,0.302912,0.284007,0.194481}+ASC+G4{0.878381}: 1_16090808-16092281.phylip,
+    GTR{0.283292,0.750387,0.516272,0.0001,1.20934}+F{0.405569,0.183414,0.153148,0.257869}+ASC+G4{1.15914}: 1_16560395-16560788.phylip,
+    GTR{0.650415,2.52084,0.612303,0.601282,6.07657}+F{0.244231,0.333469,0.306923,0.115377}+ASC+G4{0.874513}: 1_16776217-16777715.phylip,
+    GTR{0.117073,1.10656,0.56133,0.343697,1.47388}+F{0.255035,0.250648,0.298106,0.196211}+ASC+G4{1.11527}: 1_17025734-17027227.phylip,
+    GTR{0.69706,1.97845,1.32918,0.445592,1.41786}+F{0.25886,0.20381,0.209413,0.327917}+ASC+G4{0.860241}: 1_17163103-17164646.phylip,
+    GTR{0.522597,0.797197,0.626067,0.59182,0.782789}+F{0.25485,0.265673,0.184399,0.295079}+ASC+G4{0.851383}: 1_18672411-18673973.phylip,
+    GTR{0.896806,1.21547,1.1157,0.246217,0.702411}+F{0.151958,0.237288,0.232028,0.378726}+ASC+G4{0.944573}: 1_18703937-18704712.phylip,
+    GTR{1.80825,10.2244,3.04557,2.30405,10.6257}+F{0.307953,0.263625,0.148631,0.279791}+ASC+G4{1.12766}: 1_18711489-18712354.phylip,
+    GTR{3.21162,8.67609,2.67026,1.21688,6.98758}+F{0.267029,0.299009,0.236649,0.197314}+ASC+G4{1.28485}: 1_18850386-18850916.phylip,
+    GTR{2.07734,3.94056,0.469196,2.12459,3.81762}+F{0.253132,0.307296,0.177966,0.261606}+ASC+G4{1.02531}: 1_19180380-19180879.phylip,
+    GTR{1.62859,7.08493,1.51307,0.655994,2.9964}+F{0.181877,0.245763,0.254672,0.317688}+ASC+G4{0.853052}: 1_19955256-19956207.phylip,
+    GTR{1.30658,4.89906,2.507,0.849836,4.17241}+F{0.24058,0.228021,0.283624,0.247775}+ASC+G4{0.775605}: 1_20057101-20058670.phylip,
+    GTR{0.738869,2.692,0.756945,3.48391,1.71611}+F{0.238701,0.200212,0.200212,0.360876}+ASC+G4{1.26539}: 1_20300661-20301413.phylip,
+    GTR{3.90025,3.47098,2.10734,1.23609,6.40533}+F{0.200123,0.249132,0.294874,0.255871}+ASC+G4{0.752663}: 1_20349299-20350235.phylip,
+    GTR{1.23675,0.96863,1.17199,0.509993,3.12257}+F{0.196699,0.208742,0.330062,0.264496}+ASC+G4{1.33671}: 1_20453707-20454138.phylip,
+    GTR{1.18011,3.18921,0.796274,0.103762,3.00605}+F{0.204433,0.24824,0.274576,0.272751}+ASC+G4{0.977784}: 1_20706770-20708324.phylip,
+    GTR{0.708339,1.25179,0.43642,0.497664,1.52136}+F{0.220534,0.208455,0.353205,0.217806}+ASC+G4{1.02373}: 1_20723978-20725344.phylip,
+    GTR{2.16264,5.66022,1.2172,0.538068,5.70791}+F{0.315981,0.165617,0.188378,0.330024}+ASC+G4{0.935018}: 1_20729375-20730225.phylip,
+    GTR{1.01613,1.82819,0.283116,0.362486,2.39298}+F{0.307411,0.180126,0.208707,0.303755}+ASC+G4{0.931201}: 1_22264850-22265533.phylip,
+    GTR{0.929731,8.66397,1.94962,0.547407,6.2719}+F{0.203651,0.343677,0.237549,0.215124}+ASC+G4{0.502788}: 1_2344836-2345481.phylip,
+    GTR{0.420363,3.20003,1.12869,1.02115,4.01821}+F{0.222613,0.227367,0.259611,0.290409}+ASC+G4{0.920297}: 1_2477249-2478617.phylip,
+    GTR{0.389685,1.36808,0.27493,0.290405,1.18995}+F{0.190494,0.393515,0.200442,0.215549}+ASC+G4{0.840184}: 1_25081035-25081515.phylip,
+    GTR{0.180781,2.53786,0.130593,0.387355,1.41505}+F{0.297441,0.250582,0.156198,0.295779}+ASC+G4{0.61867}: 1_25335438-25336275.phylip,
+    GTR{1.1481,6.4312,1.79751,3.46166,7.689}+F{0.248901,0.324231,0.22693,0.199937}+ASC+G4{0.747471}: 1_25387704-25388806.phylip,
+    GTR{4.20931,3.6686,1.35637,3.38085,3.02082}+F{0.218109,0.162355,0.234166,0.38537}+ASC+G4{0.456454}: 1_25400344-25400917.phylip,
+    GTR{0.443021,4.67972,0.543977,1.24056,2.98477}+F{0.236538,0.246138,0.226789,0.290535}+ASC+G4{0.890695}: 1_25618763-25619938.phylip,
+    GTR{0.722192,3.51329,1.3391,0.167239,4.50184}+F{0.204027,0.273353,0.308398,0.214222}+ASC+G4{0.86271}: 1_25631783-25633158.phylip,
+    GTR{0.767722,2.22673,0.936718,0.194153,2.23071}+F{0.262793,0.267635,0.278612,0.19096}+ASC+G4{1.27256}: 1_25957180-25958415.phylip,
+    GTR{0.647483,1.957,0.341982,0.147406,1.90538}+F{0.286925,0.216034,0.217514,0.279526}+ASC+G4{0.613186}: 1_27249825-27251248.phylip,
+    GTR{0.52751,1.80445,0.656624,0.094926,2.96612}+F{0.377802,0.164571,0.236195,0.221432}+ASC+G4{0.359995}: 1_27588170-27588524.phylip,
+    GTR{1.35704,1.39941,0.310658,1.64599,3.61113}+F{0.244149,0.240113,0.187248,0.328491}+ASC+G4{0.728276}: 1_27725317-27725764.phylip,
+    GTR{1.2702,7.3415,1.46051,1.3119,6.11383}+F{0.303202,0.200161,0.288136,0.208501}+ASC+G4{0.978525}: 1_27987476-27988428.phylip,
+    GTR{2.49468,6.02737,1.88535,1.68103,5.04637}+F{0.289661,0.201525,0.162373,0.346441}+ASC+G4{0.86802}: 1_28198111-28199630.phylip,
+    GTR{1.82106,1.61477,0.320614,0.0001,2.2403}+F{0.285938,0.104206,0.281858,0.327997}+ASC+G4{1.15955}: 1_28945028-28945728.phylip,
+    GTR{0.740219,2.47715,0.987673,1.73461,3.89369}+F{0.225097,0.302111,0.209634,0.263158}+ASC+G4{0.969665}: 1_30176433-30177067.phylip,
+    GTR{3.00902,1.99517,2.41215,1.12708,2.8138}+F{0.316079,0.116354,0.214842,0.352726}+ASC+G4{1.04323}: 1_30191555-30192180.phylip,
+    GTR{0.250973,2.24781,0.30137,1.30139,2.02562}+F{0.295069,0.217514,0.228557,0.25886}+ASC+G4{0.777626}: 1_30338154-30338988.phylip,
+    GTR{0.86882,3.02888,0.768,0.454166,3.74006}+F{0.322034,0.146412,0.237649,0.293906}+ASC+G4{0.934028}: 1_30732795-30734360.phylip,
+    GTR{1.72613,5.07571,1.08346,1.08288,3.78808}+F{0.22609,0.211864,0.253632,0.308414}+ASC+G4{0.897666}: 1_30939957-30941047.phylip,
+    GTR{0.84228,3.40777,1.32676,0.147504,2.1859}+F{0.161749,0.28688,0.258632,0.292739}+ASC+G4{0.827459}: 1_31402551-31403861.phylip,
+    GTR{0.73507,3.66865,0.21512,0.527841,1.9583}+F{0.358726,0.210467,0.122555,0.308251}+ASC+G4{0.78988}: 1_31984743-31986138.phylip,
+    GTR{0.529796,2.90305,0.766128,1.23405,2.42341}+F{0.250298,0.28921,0.165672,0.29482}+ASC+G4{0.939992}: 1_32287924-32289367.phylip,
+    GTR{0.484487,1.25358,0.695569,0.488006,1.23321}+F{0.311319,0.303721,0.17631,0.20865}+ASC+G4{0.743803}: 1_32857457-32858368.phylip,
+    GTR{1.10686,2.967,1.01809,0.59757,2.97179}+F{0.298493,0.232715,0.235808,0.232984}+ASC+G4{0.976888}: 1_34075410-34076920.phylip,
+    GTR{0.952082,2.50789,0.864328,1.82164,3.29283}+F{0.237448,0.153981,0.298369,0.310201}+ASC+G4{0.775295}: 1_3459727-3460748.phylip,
+    GTR{0.373262,2.92048,1.53015,0.695932,4.07442}+F{0.28396,0.291329,0.271186,0.153525}+ASC+G4{998.72}: 1_35664002-35664909.phylip,
+    GTR{16.0621,47.9201,95.1274,14.1537,100}+F{0.352941,0.292124,0.272183,0.0827517}+ASC+G4{1.10052}: 1_35692189-35692816.phylip,
+    GTR{0.747608,3.79376,1.42512,0.698322,3.26307}+F{0.306649,0.264668,0.163233,0.26545}+ASC+G4{1.02659}: 1_36522744-36523610.phylip,
+    GTR{0.366891,1.19714,0.748969,0.061718,1.13033}+F{0.278281,0.24596,0.214032,0.261726}+ASC+G4{0.862799}: 1_3664580-3664960.phylip,
+    GTR{1.19899,4.5137,0.854676,1.01635,5.10026}+F{0.281801,0.213662,0.219141,0.285396}+ASC+G4{1.07556}: 1_36868807-36870333.phylip,
+    GTR{0.429534,1.90226,0.160052,0.338494,4.34678}+F{0.204706,0.287971,0.321376,0.185947}+ASC+G4{0.467501}: 1_3712658-3713550.phylip,
+    GTR{0.612738,4.5293,1.92512,1.14679,3.754}+F{0.229162,0.241932,0.326213,0.202693}+ASC+G4{1.10065}: 1_37841064-37842608.phylip,
+    GTR{1.69428,7.55729,2.7101,0.519875,9.07218}+F{0.256965,0.203779,0.289889,0.249367}+ASC+G4{0.991339}: 1_37886560-37888111.phylip,
+    GTR{0.0001,2.36125,0.498792,0.420162,9.58623}+F{0.24322,0.252542,0.310734,0.193503}+ASC+G4{0.715881}: 1_38280102-38280703.phylip,
+    GTR{1.73071,5.57727,1.35784,1.01653,5.8997}+F{0.254802,0.246186,0.323023,0.175989}+ASC+G4{0.825591}: 1_3997614-3999164.phylip,
+    GTR{0.0801206,3.08197,0.594834,1.41552,1.65304}+F{0.316641,0.23151,0.1953,0.256549}+ASC+G4{0.789034}: 1_4065728-4066339.phylip,
+    GTR{1.1811,3.61862,1.35739,0.815126,3.20121}+F{0.193733,0.313362,0.245369,0.247536}+ASC+G4{0.862864}: 1_4171993-4173548.phylip,
+    GTR{0.994321,1.66388,1.07513,0.130485,1.70631}+F{0.187438,0.30334,0.2834,0.225823}+ASC+G4{1.08087}: 1_41865507-41867034.phylip,
+    GTR{1.06499,2.5461,1.41529,0.682056,3.44766}+F{0.245264,0.229561,0.281904,0.24327}+ASC+G4{1.37216}: 1_41975813-41976393.phylip,
+    GTR{0.429302,2.42351,0.42763,0.803766,2.81843}+F{0.323653,0.20814,0.178236,0.289971}+ASC+G4{0.689459}: 1_42381310-42382787.phylip,
+    GTR{0.551986,1.32046,1.09169,0.280232,2.33532}+F{0.281465,0.224604,0.236741,0.25719}+ASC+G4{0.657415}: 1_42669088-42670126.phylip,
+    GTR{1.51503,12.5824,1.35993,6.04215,13.6144}+F{0.282486,0.247705,0.178319,0.29149}+ASC+G4{0.426156}: 1_43982405-43983156.phylip,
+    GTR{0.0904189,1.98649,0.0385621,0.463132,3.11492}+F{0.257922,0.223287,0.318718,0.200074}+ASC+G4{0.512311}: 1_44670203-44671148.phylip,
+    GTR{1.01769,6.81008,0.836292,0.889732,3.70509}+F{0.1689,0.318289,0.22231,0.290501}+ASC+G4{0.805876}: 1_44683778-44685322.phylip,
+    GTR{1.79638,3.49741,0.735028,2.46901,8.82171}+F{0.312304,0.160703,0.208098,0.318895}+ASC+G4{0.241176}: 1_5211150-5211863.phylip,
+    GTR{0.828983,6.9719,1.26202,0.718208,5.91383}+F{0.209855,0.271186,0.287611,0.231347}+ASC+G4{0.663948}: 1_5214424-5215779.phylip,
+    GTR{0.88505,2.74394,2.02455,0.375825,2.14644}+F{0.214426,0.301537,0.253449,0.230587}+ASC+G4{1.00842}: 1_5790344-5790796.phylip,
+    GTR{1.30442,5.09529,0.622199,0.179081,4.78113}+F{0.359776,0.192207,0.168094,0.279923}+ASC+G4{0.974703}: 1_6384176-6385618.phylip,
+    GTR{5.27011,7.44974,3.83904,0.0001,7.35732}+F{0.366037,0.15515,0.164928,0.313885}+ASC+G4{0.664894}: 1_6482638-6483277.phylip,
+    GTR{2.62065,6.61615,1.43162,1.11949,3.11118}+F{0.187368,0.310911,0.275424,0.226298}+ASC+G4{0.936815}: 1_6716982-6718496.phylip,
+    GTR{0.40076,2.19589,0.580293,0.2702,2.85012}+F{0.316236,0.283229,0.229037,0.171499}+ASC+G4{0.817484}: 1_6838034-6839133.phylip,
+    GTR{0.809649,7.94768,2.12393,0.573555,3.10451}+F{0.204613,0.343002,0.194478,0.257907}+ASC+G4{0.702775}: 1_7259825-7260806.phylip,
+    GTR{0.317628,1.98283,0.381204,0.813372,4.69541}+F{0.260525,0.311646,0.278021,0.149809}+ASC+G4{0.673373}: 1_7538286-7538845.phylip,
+    GTR{0.789352,2.85744,0.884823,0.638119,2.8496}+F{0.215105,0.265703,0.284895,0.234297}+ASC+G4{0.866852}: 1_7636418-7637157.phylip,
+    GTR{0.782194,5.75168,1.13084,0.615574,3.3759}+F{0.311824,0.273637,0.139882,0.274658}+ASC+G4{0.498487}: 1_7694512-7695428.phylip,
+    GTR{1.16482,3.47,0.784961,0.728244,2.17874}+F{0.258683,0.277299,0.205474,0.258544}+ASC+G4{1.0985}: 1_7826075-7827308.phylip,
+    GTR{1.78282,3.19225,1.25593,1.46868,5.46885}+F{0.33322,0.211186,0.215085,0.240508}+ASC+G4{1.04242}: 1_7843277-7844578.phylip,
+    GTR{0.820179,2.71199,1.91887,0.688544,2.96552}+F{0.279341,0.192837,0.317557,0.210265}+ASC+G4{0.737936}: 1_7882514-7884065.phylip,
+    GTR{0.602848,2.66747,1.19846,0.688638,2.41669}+F{0.228119,0.241178,0.285357,0.245346}+ASC+G4{0.943429}: 1_9901640-9902439.phylip,
+    GTR{1.83317,2.62593,1.56417,2.19038,6.29418}+F{0.242103,0.157935,0.211479,0.388482}+ASC+G4{0.650141}: 2_1181226-1181985.phylip,
+    GTR{1.31796,7.54885,1.77544,1.87578,7.71191}+F{0.315055,0.215603,0.208873,0.260469}+ASC+G4{0.954123}: 2_13161097-13162354.phylip,
+    GTR{0.393521,1.19315,0.584822,0.150822,1.73533}+F{0.260683,0.255789,0.284674,0.198854}+ASC+G4{0.830239}: 2_1319532-1321034.phylip,
+    GTR{1.76789,3.02396,4.13107,0.268861,7.02196}+F{0.332768,0.24774,0.235311,0.184181}+ASC+G4{0.895721}: 2_14101671-14102680.phylip,
+    GTR{8.41186,16.3403,1.12327,8.48724,17.9499}+F{0.201606,0.173506,0.202052,0.422837}+ASC+G4{0.692165}: 2_15892783-15893251.phylip,
+    GTR{0.717214,3.90223,0.738889,0.376027,3.68612}+F{0.185942,0.284272,0.310942,0.218843}+ASC+G4{0.662327}: 2_2027280-2030243.phylip,
+    GTR{0.629697,6.90968,0.798113,1.30909,4.34833}+F{0.229598,0.266008,0.243095,0.261299}+ASC+G4{0.804438}: 2_2054167-2055343.phylip,
+    GTR{0.390173,0.995805,0.26698,0.515107,1.65911}+F{0.300885,0.222589,0.239388,0.237138}+ASC+G4{1.16101}: 2_2472193-2473416.phylip,
+    GTR{1.75118,7.79012,3.36145,0.489645,6.28241}+F{0.159418,0.348577,0.216501,0.275504}+ASC+G4{0.767129}: 2_29513686-29515232.phylip,
+    GTR{0.232967,2.38363,0.1331,0.27156,1.30752}+F{0.241525,0.290678,0.217458,0.250339}+ASC+G4{1.08779}: 2_29735106-29736528.phylip,
+    GTR{0.821668,2.65219,1.84939,1.35463,4.81297}+F{0.209831,0.305085,0.271299,0.213785}+ASC+G4{0.726319}: 2_29785169-29786722.phylip,
+    GTR{0.508718,9.25731,1.0655,1.7017,6.16863}+F{0.240321,0.250847,0.22694,0.281891}+ASC+G4{0.526241}: 2_29855445-29856973.phylip,
+    GTR{0.376206,5.10897,1.30549,0.657582,5.45058}+F{0.215668,0.270119,0.227279,0.286934}+ASC+G4{0.720833}: 2_3191228-3192526.phylip,
+    GTR{2.12892,6.19913,2.91448,1.66081,6.76601}+F{0.263131,0.221346,0.268501,0.247021}+ASC+G4{1.0904}: 2_32822684-32824246.phylip,
+    GTR{1.81605,3.58645,1.34529,1.60534,5.75739}+F{0.263444,0.263235,0.207156,0.266164}+ASC+G4{0.752714}: 2_33486486-33488049.phylip,
+    GTR{0.798305,1.44321,1.10264,0.457685,1.34228}+F{0.210675,0.236247,0.275052,0.278026}+ASC+G4{1.10821}: 2_34308328-34309862.phylip,
+    GTR{0.0001,1.96109,1.89373,0.594158,10.7791}+F{0.269533,0.228607,0.365027,0.136833}+ASC+G4{0.940117}: 2_34456870-34457415.phylip,
+    GTR{1.24537,6.83827,1.07524,0.357121,2.62956}+F{0.253679,0.24716,0.121252,0.37791}+ASC+G4{1.03198}: 2_3459805-3460969.phylip,
+    GTR{1.1943,2.04454,0.918765,0.518699,1.68187}+F{0.246441,0.235085,0.195593,0.322881}+ASC+G4{998.387}: 2_34632486-34634047.phylip,
+    GTR{0.442736,2.18707,0.920994,0.378017,2.96326}+F{0.261184,0.312309,0.24229,0.184218}+ASC+G4{998.426}: 2_34855421-34856905.phylip,
+    GTR{0.488813,1.86385,0.834893,1.59985,2.7392}+F{0.261084,0.256594,0.220002,0.262319}+ASC+G4{0.462896}: 2_34857596-34858865.phylip,
+    GTR{0.854844,2.36045,0.52573,0.521981,2.25927}+F{0.267633,0.226763,0.119601,0.386003}+ASC+G4{0.769747}: 2_39482725-39484079.phylip,
+    GTR{1.88056,11.1726,2.10443,1.55443,5.07527}+F{0.224183,0.283767,0.250044,0.242006}+ASC+G4{0.560089}: 2_41378757-41379759.phylip,
+    GTR{2.92883,3.27044,0.555213,0.272605,2.62742}+F{0.206458,0.313852,0.243279,0.236411}+ASC+G4{0.934613}: 2_42258449-42259757.phylip,
+    GTR{3.70217,6.34209,1.74212,1.18415,11.0749}+F{0.289874,0.261625,0.290743,0.157757}+ASC+G4{0.908676}: 2_42336295-42337159.phylip,
+    GTR{0.192242,1.40994,0.379318,0.145316,1.96707}+F{0.308912,0.265719,0.212138,0.213231}+ASC+G4{0.787116}: 2_42338053-42338582.phylip,
+    GTR{0.619609,3.41519,1.45761,1.60543,4.03733}+F{0.168986,0.18897,0.290159,0.351885}+ASC+G4{0.87339}: 2_4248412-4249362.phylip,
+    GTR{0.362204,5.52434,1.57991,1.08556,3.00055}+F{0.173467,0.242938,0.335635,0.24796}+ASC+G4{0.954248}: 2_43715942-43717080.phylip,
+    GTR{0.592782,1.3465,0.50729,0.502027,2.45796}+F{0.270728,0.16743,0.420751,0.14109}+ASC+G4{998.26}: 2_4570262-4571043.phylip,
+    GTR{0.217558,1.17024,0.621425,0.293955,1.22289}+F{0.314998,0.297729,0.268948,0.118324}+ASC+G4{0.863058}: 2_4578161-4578896.phylip,
+    GTR{1.01466,4.67795,1.76084,0.332207,3.76759}+F{0.201039,0.258196,0.274156,0.266609}+ASC+G4{1.0247}: 2_4580080-4581606.phylip,
+    GTR{1.66568,6.27665,1.64377,2.45215,7.11898}+F{0.22455,0.216233,0.285925,0.273292}+ASC+G4{0.744773}: 2_4824727-4826056.phylip,
+    GTR{0.839541,3.9932,2.83893,1.22468,11.1147}+F{0.228475,0.159661,0.346441,0.265424}+ASC+G4{0.52745}: 2_5290397-5291315.phylip,
+    GTR{0.730847,2.04741,0.789518,0.197309,1.9444}+F{0.197981,0.332853,0.278279,0.190888}+ASC+G4{0.942699}: 2_6903321-6904871.phylip,
+    GTR{1.08413,4.25019,1.65302,0.806901,5.11268}+F{0.246596,0.237844,0.194776,0.320784}+ASC+G4{1.02357}: 2_6980843-6982289.phylip,
+    GTR{2.79972,3.26258,1.60106,0.902621,3.48841}+F{0.207022,0.282486,0.328491,0.182002}+ASC+G4{0.379387}: 2_9486735-9487423.phylip,
+    GTR{5.1869,51.7054,19.1642,10.8694,37.9167}+F{0.189947,0.228521,0.248393,0.333139}+ASC+G4{998.48}: 3_10016595-10017495.phylip,
+    GTR{0.597197,4.11471,0.499985,0.519917,2.67703}+F{0.278386,0.268037,0.148193,0.305385}+ASC+G4{0.822296}: 3_10372668-10374162.phylip,
+    GTR{1.29114,2.87662,0.541687,0.444832,1.07392}+F{0.292124,0.286142,0.163509,0.258225}+ASC+G4{998.456}: 3_10429446-10429803.phylip,
+    GTR{1.67187,7.90113,1.39024,1.61114,4.76493}+F{0.253345,0.222123,0.2022,0.322331}+ASC+G4{0.960605}: 3_10483005-10483561.phylip,
+    GTR{1.43782,4.68889,1.49046,0.888746,3.49931}+F{0.276641,0.213326,0.231249,0.278784}+ASC+G4{1.05421}: 3_14297994-14298968.phylip,
+    GTR{2.05174,4.63862,1.96345,2.24238,3.708}+F{0.236704,0.209819,0.326125,0.227352}+ASC+G4{0.690808}: 3_14602431-14603108.phylip,
+    GTR{1.26847,2.31318,0.586377,0.139101,2.00101}+F{0.162712,0.227966,0.222034,0.387288}+ASC+G4{0.816723}: 3_14627303-14628575.phylip,
+    GTR{1.24244,3.84396,1.15118,1.62403,4.92618}+F{0.299169,0.175088,0.254397,0.271346}+ASC+G4{1.16194}: 3_18450067-18451373.phylip,
+    GTR{0.295872,2.46839,0.988712,0.833112,2.93364}+F{0.217403,0.261311,0.310957,0.21033}+ASC+G4{0.588842}: 3_18454303-18455387.phylip,
+    GTR{0.359222,0.858347,0.538879,0.545538,1.93419}+F{0.294189,0.177966,0.291768,0.236077}+ASC+G4{0.981252}: 3_18895533-18895891.phylip,
+    GTR{1.3576,2.53448,0.999788,1.38651,2.69795}+F{0.21336,0.182203,0.270189,0.334247}+ASC+G4{2.96002}: 3_18896453-18897511.phylip,
+    GTR{4.57355,2.93071,4.86631,3.13322,7.52172}+F{0.226616,0.173258,0.233522,0.366604}+ASC+G4{0.815962}: 3_19783263-19783975.phylip,
+    GTR{0.834103,3.67399,1.15061,0.603367,2.95668}+F{0.246111,0.303924,0.247736,0.202229}+ASC+G4{1.37656}: 3_20064883-20066437.phylip,
+    GTR{0.257648,7.93902,3.10042,1.87861,2.29403}+F{0.158461,0.314501,0.242938,0.2841}+ASC+G4{0.614921}: 3_20579472-20580215.phylip,
+    GTR{0.703419,0.929468,0.810642,0.0488452,1.69627}+F{0.252542,0.271563,0.237288,0.238606}+ASC+G4{0.741156}: 3_22717838-22718903.phylip,
+    GTR{0.49477,2.04014,1.28279,0.0766885,1.43948}+F{0.193684,0.314356,0.216428,0.275532}+ASC+G4{0.910526}: 3_22826163-22827689.phylip,
+    GTR{0.613949,2.2005,0.49178,0.17182,1.15343}+F{0.316819,0.216754,0.226206,0.240222}+ASC+G4{0.841172}: 3_23897807-23899101.phylip,
+    GTR{0.931913,4.33804,1.42305,0.540617,3.42668}+F{0.228913,0.236491,0.297507,0.237089}+ASC+G4{0.845473}: 3_23949623-23951179.phylip,
+    GTR{1.59538,5.87973,1.32105,2.32401,4.86327}+F{0.281385,0.246481,0.184861,0.287274}+ASC+G4{0.755558}: 3_24293677-24295269.phylip,
+    GTR{0.552525,1.70398,1.03169,0.8136,2.17893}+F{0.254566,0.244529,0.291591,0.209314}+ASC+G4{0.926102}: 3_27914756-27915939.phylip,
+    GTR{1.72172,5.41635,1.06175,1.53625,2.23826}+F{0.354237,0.247175,0.169774,0.228814}+ASC+G4{1.03765}: 3_28802249-28803194.phylip,
+    GTR{0.917086,3.88766,0.91038,0.944653,4.78471}+F{0.29446,0.269669,0.223375,0.212497}+ASC+G4{0.901734}: 3_29097271-29098818.phylip,
+    GTR{1.15277,1.45923,0.919023,0.641441,2.18909}+F{0.239027,0.190135,0.29183,0.279009}+ASC+G4{1.17962}: 3_29242972-29244424.phylip,
+    GTR{0.394212,3.36563,0.893558,1.47037,2.19615}+F{0.258273,0.186979,0.238633,0.316115}+ASC+G4{0.819022}: 3_29551212-29552099.phylip,
+    GTR{4.1567,25.9594,8.37751,0.814756,15.0331}+F{0.18477,0.286465,0.307472,0.221294}+ASC+G4{0.5991}: 3_29709027-29709817.phylip,
+    GTR{1.30491,2.54419,2.73743,1.34173,4.92521}+F{0.322822,0.259361,0.180134,0.237682}+ASC+G4{998.718}: 3_30050818-30051468.phylip,
+    GTR{0.482711,1.51363,0.357094,0.436924,3.15451}+F{0.272224,0.23037,0.302663,0.194742}+ASC+G4{0.969215}: 3_30576665-30577709.phylip,
+    GTR{0.679902,3.38013,1.17208,0.817463,4.22315}+F{0.298579,0.271186,0.203903,0.226331}+ASC+G4{1.09304}: 3_30798826-30800365.phylip,
+    GTR{0.715078,1.78817,0.547274,0.203238,2.43747}+F{0.196783,0.203964,0.371158,0.228095}+ASC+G4{0.78776}: 3_31228548-31229619.phylip,
+    GTR{0.914011,2.45384,0.769308,0.290361,2.73118}+F{0.218681,0.327192,0.250184,0.203943}+ASC+G4{0.799006}: 3_31248471-31250018.phylip,
+    GTR{0.887985,5.96204,1.73726,1.08416,3.63855}+F{0.238829,0.325116,0.194145,0.241911}+ASC+G4{0.654748}: 3_31332188-31332941.phylip,
+    GTR{1.02936,3.63414,1.47773,1.22706,3.84206}+F{0.182845,0.19774,0.222907,0.396507}+ASC+G4{998.542}: 3_31694245-31694654.phylip,
+    GTR{2.47606,4.23133,2.04345,1.34439,1.97531}+F{0.208686,0.339336,0.195268,0.256709}+ASC+G4{0.820069}: 3_31966641-31967192.phylip,
+    GTR{0.614257,1.90378,0.876099,0.936756,3.19094}+F{0.313303,0.225989,0.209296,0.251412}+ASC+G4{998.435}: 3_34387671-34388306.phylip,
+    GTR{1.75698,4.25973,3.22782,1.26864,5.01378}+F{0.264407,0.230508,0.23372,0.271365}+ASC+G4{0.78896}: 3_35469159-35470708.phylip,
+    GTR{1.60551,4.58377,0.374069,1.03351,4.05541}+F{0.274071,0.251713,0.25027,0.223945}+ASC+G4{1.25601}: 3_35699825-35700796.phylip,
+    GTR{0.836025,2.61929,2.35203,0.450379,4.58792}+F{0.181647,0.269474,0.334018,0.21486}+ASC+G4{0.904097}: 3_36202097-36203613.phylip,
+    GTR{0.496002,2.92723,1.57552,0.486355,2.45766}+F{0.161339,0.280626,0.24115,0.316885}+ASC+G4{1.0899}: 3_36362308-36363875.phylip,
+    GTR{4.76388,6.57177,1.41928,2.6064,8.19734}+F{0.263771,0.218927,0.335805,0.181497}+ASC+G4{0.733603}: 3_36469034-36470045.phylip,
+    GTR{0.581953,4.47307,1.05259,0.260654,3.37483}+F{0.286995,0.260919,0.196219,0.255867}+ASC+G4{0.743736}: 3_36578585-36579646.phylip,
+    GTR{0.607868,2.36061,0.541211,0.413811,4.2244}+F{0.219586,0.202072,0.322599,0.255744}+ASC+G4{1.03777}: 3_36673996-36675556.phylip,
+    GTR{0.534959,3.85599,0.126308,0.138842,3.08842}+F{0.242772,0.2333,0.237288,0.28664}+ASC+G4{0.844407}: 3_36867166-36867685.phylip,
+    GTR{0.281184,1.59161,0.788852,0.26644,1.84364}+F{0.297185,0.276501,0.25237,0.173944}+ASC+G4{0.79842}: 3_36933083-36934286.phylip,
+    GTR{1.0246,3.86908,2.16268,0.617498,4.68308}+F{0.244016,0.216716,0.338724,0.200543}+ASC+G4{0.877474}: 3_37545085-37546713.phylip,
+    GTR{2.29343,6.4359,1.0615,0.755573,13.105}+F{0.313379,0.174901,0.258745,0.252975}+ASC+G4{0.768826}: 3_37966428-37967561.phylip,
+    GTR{1.76505,4.77557,0.785039,0.291767,6.93539}+F{0.342442,0.255967,0.257696,0.143895}+ASC+G4{0.668831}: 3_38020342-38020869.phylip,
+    GTR{1.45687,2.86353,1.35697,0.625497,3.47302}+F{0.297914,0.178292,0.279335,0.244459}+ASC+G4{0.852582}: 3_39954466-39955990.phylip,
+    GTR{0.329075,2.52698,0.498024,0.620827,2.30688}+F{0.271476,0.207881,0.188179,0.332464}+ASC+G4{0.260498}: 3_40001700-40002980.phylip,
+    GTR{0.943329,4.35826,1.49572,0.947109,5.47796}+F{0.1654,0.212157,0.369082,0.253361}+ASC+G4{0.559486}: 3_40040380-40041153.phylip,
+    GTR{0.443812,1.81376,0.38465,0.247571,1.28918}+F{0.419654,0.157757,0.224087,0.198501}+ASC+G4{1.12028}: 3_40101768-40103301.phylip,
+    GTR{0.816521,2.52618,0.733085,0.926863,2.00666}+F{0.268332,0.168599,0.268689,0.29438}+ASC+G4{1.00661}: 3_40411496-40412936.phylip,
+    GTR{0.411746,2.56865,0.64166,0.205491,1.50205}+F{0.322518,0.245884,0.179177,0.252421}+ASC+G4{0.826581}: 3_41310348-41311890.phylip,
+    GTR{3.07762,8.38667,2.66416,0.473632,5.93396}+F{0.209612,0.320103,0.257885,0.212401}+ASC+G4{0.88134}: 3_41796554-41798109.phylip,
+    GTR{0.747696,4.08262,2.93324,0.91805,6.54622}+F{0.257931,0.215124,0.30465,0.222295}+ASC+G4{0.744876}: 3_42160937-42162232.phylip,
+    GTR{3.17525,5.77742,1.87489,0.660766,4.30387}+F{0.198007,0.321118,0.241754,0.23912}+ASC+G4{0.955707}: 3_42359687-42361250.phylip,
+    GTR{3.39628,32.5173,2.53325,0.0001,10.7344}+F{0.26362,0.140133,0.0974576,0.498789}+ASC+G4{0.422513}: 3_43761478-43762169.phylip,
+    GTR{0.994497,3.37192,1.31077,0.502007,3.19919}+F{0.234442,0.315306,0.280502,0.16975}+ASC+G4{1.04}: 3_44136262-44137583.phylip,
+    GTR{0.680518,1.37374,0.619015,0.082108,2.27356}+F{0.327929,0.187423,0.199214,0.285434}+ASC+G4{0.894657}: 3_44567539-44568846.phylip,
+    GTR{1.11058,5.31068,3.02047,0.426049,5.03387}+F{0.181392,0.306527,0.317706,0.194374}+ASC+G4{1.18122}: 3_8683675-8684741.phylip,
+    GTR{2.38031,4.171,1.69709,0.0001,5.12648}+F{0.200212,0.239407,0.369703,0.190678}+ASC+G4{0.614672}: 4_10866587-10867147.phylip,
+    GTR{20.5412,99.9922,65.5963,25.3099,95.4388}+F{0.184019,0.414044,0.231437,0.1705}+ASC+G4{0.884371}: 4_11272292-11273522.phylip,
+    GTR{0.0001,3.50938,0.359677,1.90897,4.53178}+F{0.132203,0.0881356,0.395254,0.384407}+ASC+G4{998.464}: 4_11592299-11592628.phylip,
+    GTR{0.428087,2.1125,0.332555,0.53741,4.46369}+F{0.248863,0.181067,0.31666,0.253411}+ASC+G4{1.24442}: 4_11764721-11765353.phylip,
+    GTR{1.84393,3.69575,2.96062,0.397644,3.14386}+F{0.241808,0.267232,0.166102,0.324859}+ASC+G4{1.05137}: 4_11832818-11833491.phylip,
+    GTR{1.19061,2.18479,0.232581,0.160011,1.50691}+F{0.22734,0.142594,0.240604,0.389462}+ASC+G4{1.09885}: 4_11844726-11845656.phylip,
+    GTR{2.08221,5.54088,0.930341,1.51869,2.91973}+F{0.208412,0.349027,0.187068,0.255493}+ASC+G4{0.924309}: 4_13569096-13569687.phylip,
+    GTR{0.918411,3.44221,1.52952,1.42575,2.57951}+F{0.312098,0.215517,0.164378,0.308007}+ASC+G4{0.839005}: 4_1372128-1373562.phylip,
+    GTR{0.446626,2.24608,0.716312,0.561119,2.08565}+F{0.184254,0.274831,0.301622,0.239293}+ASC+G4{0.76337}: 4_13845419-13846887.phylip,
+    GTR{0.680206,2.26096,1.41295,0.863905,3.4622}+F{0.31083,0.185004,0.254094,0.250072}+ASC+G4{998.435}: 4_15278320-15279837.phylip,
+    GTR{0.370466,1.60962,0.148787,0.52231,2.33832}+F{0.231761,0.376013,0.195652,0.196573}+ASC+G4{0.822234}: 4_19780398-19781799.phylip,
+    GTR{0.488917,2.98014,1.53307,0.443701,2.97035}+F{0.251677,0.300085,0.182051,0.266187}+ASC+G4{1.22755}: 4_21344405-21345989.phylip,
+    GTR{0.228548,1.18067,0.711247,0.216643,2.50675}+F{0.281972,0.246687,0.318644,0.152696}+ASC+G4{0.836787}: 4_2389072-2390523.phylip,
+    GTR{1.15689,4.16365,1.82284,0.978504,3.27214}+F{0.280412,0.207895,0.277623,0.23407}+ASC+G4{0.874512}: 4_2392928-2393793.phylip,
+    GTR{0.901516,2.96289,1.33214,0.579156,2.05058}+F{0.20339,0.276378,0.223546,0.296687}+ASC+G4{0.808254}: 4_2405367-2406680.phylip,
+    GTR{0.857362,1.09072,0.969147,0.0785485,2.23373}+F{0.256394,0.253005,0.270878,0.219723}+ASC+G4{4.02381}: 4_2445452-2446156.phylip,
+    GTR{0.330355,1.91945,0.842442,1.01677,2.73365}+F{0.306559,0.194547,0.198231,0.300663}+ASC+G4{998.356}: 4_2844529-2844811.phylip,
+    GTR{1.90753,12.4759,1.27694,0.0001,4.53946}+F{0.216707,0.117131,0.256659,0.409504}+ASC+G4{0.253056}: 4_28697910-28698442.phylip,
+    GTR{1.42274,4.50354,1.96497,1.79384,5.25188}+F{0.302024,0.243409,0.278955,0.175612}+ASC+G4{0.849804}: 4_29248329-29249888.phylip,
+    GTR{0.437065,1.62042,0.350758,0.234104,1.28995}+F{0.276418,0.242938,0.249215,0.231429}+ASC+G4{1.02827}: 4_29870095-29871068.phylip,
+    GTR{1.94102,14.2676,3.52617,3.28401,11.2689}+F{0.266812,0.236195,0.165664,0.331329}+ASC+G4{998.491}: 4_30422016-30422405.phylip,
+    GTR{1.48024,7.61714,1.54151,1.33991,4.62983}+F{0.232996,0.323795,0.215056,0.228153}+ASC+G4{0.555514}: 4_30672710-30674097.phylip,
+    GTR{1.16349,3.40798,1.07249,0.803443,3.69976}+F{0.217709,0.266511,0.266219,0.249562}+ASC+G4{2.2927}: 4_30709553-30710230.phylip,
+    GTR{0.3961,6.34109,1.16613,0.803074,3.62177}+F{0.22888,0.338049,0.242226,0.190845}+ASC+G4{0.812384}: 4_32731727-32733180.phylip,
+    GTR{0.891289,2.97423,0.648991,0.51449,5.34483}+F{0.301622,0.254966,0.193913,0.249499}+ASC+G4{0.894406}: 4_33036331-33037438.phylip,
+    GTR{1.13665,3.07322,0.597827,0.0001,4.67839}+F{0.405515,0.181634,0.252466,0.160385}+ASC+G4{0.918882}: 4_3409825-3410606.phylip,
+    GTR{1.38366,3.56958,1.28792,1.02704,6.22659}+F{0.249453,0.201613,0.300301,0.248633}+ASC+G4{0.606734}: 4_34305826-34307239.phylip,
+    GTR{0.328736,1.73369,0.689714,0.490456,2.28931}+F{0.255017,0.285019,0.215469,0.244496}+ASC+G4{0.690265}: 4_34558083-34559642.phylip,
+    GTR{0.178512,0.730463,0.861838,0.152559,1.21073}+F{0.301301,0.246217,0.226998,0.225484}+ASC+G4{1.01199}: 4_3456192-3457745.phylip,
+    GTR{1.1927,4.5811,0.669318,0.545927,3.57669}+F{0.336191,0.225523,0.227318,0.210967}+ASC+G4{0.586855}: 4_34811577-34813014.phylip,
+    GTR{1.33188,1.8618,0.351512,0.426958,3.13931}+F{0.184988,0.294915,0.247942,0.272155}+ASC+G4{1.72641}: 4_34843333-34843948.phylip,
+    GTR{0.274264,2.06074,1.05031,0.498524,1.53122}+F{0.387372,0.233665,0.24311,0.135852}+ASC+G4{0.471299}: 4_35190091-35191206.phylip,
+    GTR{3.42664,12.9943,2.97645,0.563274,12.0053}+F{0.324912,0.235369,0.230572,0.209146}+ASC+G4{0.732518}: 4_35285961-35287476.phylip,
+    GTR{0.29316,2.74978,0.938564,0.422123,1.48648}+F{0.287371,0.243915,0.287626,0.181088}+ASC+G4{0.750597}: 4_35538073-35539484.phylip,
+    GTR{2.86644,4.3227,0.869746,1.16785,20.7246}+F{0.30572,0.185381,0.343856,0.165042}+ASC+G4{0.507608}: 4_35680131-35681008.phylip,
+    GTR{0.409023,10.6551,0.751739,0.253522,1.80152}+F{0.123744,0.268487,0.344533,0.263237}+ASC+G4{0.492118}: 4_35974643-35975745.phylip,
+    GTR{8.99696,58.6077,11.5115,14.0328,32.3906}+F{0.253585,0.246904,0.18693,0.312581}+ASC+G4{0.686182}: 4_36060529-36062050.phylip,
+    GTR{1.41821,4.06002,1.04349,0.505498,3.83154}+F{0.249667,0.354409,0.180727,0.215197}+ASC+G4{0.951683}: 4_3638898-3640449.phylip,
+    GTR{0.0413036,2.30525,0.374946,2.95343,0.512541}+F{0.425723,0.153539,0.119641,0.301097}+ASC+G4{0.633991}: 4_36532709-36533255.phylip,
+    GTR{0.80233,3.02151,0.626642,0.584504,2.12743}+F{0.238101,0.258417,0.184815,0.318667}+ASC+G4{0.600033}: 4_37317558-37319199.phylip,
+    GTR{1.27106,4.94047,1.09916,0.571097,4.42515}+F{0.268637,0.20444,0.145343,0.381581}+ASC+G4{0.632652}: 4_38088626-38089922.phylip,
+    GTR{0.758176,1.21438,0.424994,0.0001,1.67297}+F{0.37611,0.0960452,0.271994,0.255851}+ASC+G4{998.314}: 4_38211206-38211835.phylip,
+    GTR{4.24149,7.41698,2.51897,2.78655,7.31129}+F{0.313425,0.234598,0.215765,0.236212}+ASC+G4{0.764912}: 4_38231292-38232177.phylip,
+    GTR{2.93376,4.26696,0.180454,2.70256,4.94529}+F{0.278918,0.222123,0.225097,0.273863}+ASC+G4{1.29106}: 4_4514095-4514864.phylip,
+    GTR{1.68702,2.02962,1.03286,3.08692,5.77154}+F{0.409438,0.174809,0.224327,0.191426}+ASC+G4{1.16266}: 4_5302218-5302962.phylip,
+    GTR{1.39439,2.9877,1.99404,0.820084,2.38344}+F{0.195361,0.308653,0.314451,0.181534}+ASC+G4{1.98084}: 4_5787196-5788537.phylip,
+    GTR{0.709231,2.24031,0.734014,0.713484,2.5934}+F{0.250471,0.207156,0.252354,0.290019}+ASC+G4{0.840097}: 4_6727835-6728597.phylip,
+    GTR{1.86855,4.85142,3.04124,1.43991,4.24832}+F{0.27821,0.216827,0.291648,0.213315}+ASC+G4{0.947698}: 5_10703552-10704931.phylip,
+    GTR{0.381365,2.88784,0.604493,0.517291,1.02652}+F{0.251224,0.301883,0.124859,0.322034}+ASC+G4{0.804748}: 5_11619676-11620728.phylip,
+    GTR{1.54079,3.43824,2.10397,1.25511,3.31204}+F{0.226905,0.285845,0.285387,0.201863}+ASC+G4{0.760569}: 5_12305607-12306945.phylip,
+    GTR{2.23723,7.13216,2.64111,0.601637,8.20454}+F{0.21516,0.265419,0.297316,0.222105}+ASC+G4{0.244939}: 5_1332123-1333668.phylip,
+    GTR{2.98445,13.6879,6.69025,7.10819,19.2672}+F{0.258475,0.193503,0.26024,0.287782}+ASC+G4{1.11824}: 5_13636116-13636807.phylip,
+    GTR{1.23403,2.85935,1.44332,0.605371,1.80266}+F{0.245226,0.220768,0.303154,0.230852}+ASC+G4{1.3833}: 5_14095802-14096690.phylip,
+    GTR{1.53126,6.31462,1.54986,0.947596,1.69099}+F{0.336527,0.244166,0.240236,0.179071}+ASC+G4{0.996468}: 5_14186788-14187847.phylip,
+    GTR{0.628512,1.52118,0.926457,0.229925,1.59408}+F{0.332526,0.221684,0.188055,0.257735}+ASC+G4{1.0608}: 5_14345707-14346492.phylip,
+    GTR{2.37788,8.49841,0.824388,0.600045,5.6981}+F{0.283639,0.309236,0.221031,0.186095}+ASC+G4{0.92885}: 5_14441786-14442510.phylip,
+    GTR{1.48458,2.89419,1.20184,0.870573,2.29491}+F{0.238714,0.205291,0.20735,0.348646}+ASC+G4{1.08349}: 5_14657858-14659145.phylip,
+    GTR{2.00273,7.61591,1.72316,0.857807,5.63271}+F{0.178465,0.284945,0.281954,0.254636}+ASC+G4{0.728}: 5_14875927-14877346.phylip,
+    GTR{4.85033,8.41457,2.38285,0.863861,8.27555}+F{0.28174,0.178766,0.2504,0.289095}+ASC+G4{0.813302}: 5_15641242-15641879.phylip,
+    GTR{0.600573,0.520219,0.301611,0.151168,0.371808}+F{0.116761,0.334589,0.24796,0.300691}+ASC+G4{0.963107}: 5_15736531-15736831.phylip,
+    GTR{1.64328,6.02156,1.8836,0.380056,4.3494}+F{0.264192,0.193705,0.256928,0.285176}+ASC+G4{0.914927}: 5_15736964-15737723.phylip,
+    GTR{1.21381,3.06689,1.91931,1.20037,3.10771}+F{0.229888,0.296252,0.287897,0.185963}+ASC+G4{0.884899}: 5_16267402-16268290.phylip,
+    GTR{0.316426,0.882509,0.418859,0.187836,1.40139}+F{0.191768,0.292978,0.206295,0.308959}+ASC+G4{1.14171}: 5_16393874-16394217.phylip,
+    GTR{1.09822,2.99211,1.6002,1.02788,3.94723}+F{0.294697,0.256151,0.229634,0.219519}+ASC+G4{1.04922}: 5_16670634-16671535.phylip,
+    GTR{0.741907,2.37489,0.462478,0.0511052,2.88527}+F{0.239964,0.252007,0.265388,0.24264}+ASC+G4{0.161505}: 5_16923315-16923801.phylip,
+    GTR{1.35843,8.12662,1.05053,3.72655,4.12915}+F{0.122121,0.201217,0.225989,0.450674}+ASC+G4{0.732339}: 5_21402746-21403226.phylip,
+    GTR{0.950406,4.21442,1.14749,0.930751,4.15837}+F{0.256608,0.26846,0.283632,0.1913}+ASC+G4{0.947558}: 5_22190166-22191652.phylip,
+    GTR{0.439604,1.32381,0.691417,0.545341,1.37576}+F{0.261446,0.216637,0.199104,0.322813}+ASC+G4{1.32321}: 5_22352833-22353508.phylip,
+    GTR{0.295902,3.83124,1.16774,0.517781,1.87709}+F{0.219156,0.281829,0.188017,0.310997}+ASC+G4{0.992284}: 5_22360025-22360702.phylip,
+    GTR{1.16884,9.24817,4.08533,0.944601,10.8948}+F{0.210308,0.180733,0.303528,0.305431}+ASC+G4{1.09579}: 5_22570269-22571412.phylip,
+    GTR{1.54235,1.5477,0.64338,0.171693,3.39926}+F{0.250238,0.199391,0.25119,0.299181}+ASC+G4{0.616201}: 5_23353229-23354741.phylip,
+    GTR{0.613682,2.43922,0.821946,0.164887,2.16619}+F{0.200172,0.291568,0.289423,0.218837}+ASC+G4{1.02662}: 5_23749797-23751265.phylip,
+    GTR{0.0001,9.02655,2.17329,1.71019,8.04738}+F{0.213559,0.222599,0.214124,0.349718}+ASC+G4{998.598}: 5_23847694-23848066.phylip,
+    GTR{0.917315,1.23992,0.802321,0.65516,2.11783}+F{0.217466,0.297041,0.286699,0.198793}+ASC+G4{0.841173}: 5_24058916-24059832.phylip,
+    GTR{1.89355,7.05424,1.85393,0.651625,2.19957}+F{0.185028,0.260452,0.209463,0.345056}+ASC+G4{0.816088}: 5_24128925-24130278.phylip,
+    GTR{1.4557,6.37776,1.2991,1.99957,6.3523}+F{0.25031,0.201323,0.170938,0.377429}+ASC+G4{0.911514}: 5_24134307-24135588.phylip,
+    GTR{1.19312,2.24546,0.636385,0.140809,4.54447}+F{0.300911,0.218189,0.255123,0.225778}+ASC+G4{0.798353}: 5_2445811-2447350.phylip,
+    GTR{1.0958,4.89022,0.903379,0.519542,3.86178}+F{0.273812,0.307233,0.21079,0.208164}+ASC+G4{0.890195}: 5_25645278-25646188.phylip,
+    GTR{0.380266,1.07631,0.785098,0.328651,2.37491}+F{0.297585,0.20789,0.240588,0.253937}+ASC+G4{1.06777}: 5_26748794-26750338.phylip,
+    GTR{1.89467,8.83423,2.14615,5.17382,6.77821}+F{0.198063,0.295642,0.266344,0.239952}+ASC+G4{0.969528}: 5_27908948-27910494.phylip,
+    GTR{0.672769,2.04036,1.90049,1.03256,2.62311}+F{0.273517,0.218644,0.333051,0.174788}+ASC+G4{0.816009}: 5_28163187-28164179.phylip,
+    GTR{1.89902,4.05031,1.09294,0.583611,4.67573}+F{0.180884,0.243123,0.217283,0.358711}+ASC+G4{0.890468}: 5_28385608-28386445.phylip,
+    GTR{1.54579,3.99346,1.45325,1.06646,5.48829}+F{0.222281,0.266419,0.325388,0.185911}+ASC+G4{0.964248}: 5_30601631-30603168.phylip,
+    GTR{1.60894,5.14307,3.22378,2.24878,4.86256}+F{0.267541,0.247494,0.207217,0.277747}+ASC+G4{1.02727}: 5_31060407-31061622.phylip,
+    GTR{1.93113,5.42799,1.09316,0.540401,4.67724}+F{0.251412,0.246469,0.180791,0.321328}+ASC+G4{0.676528}: 5_31524551-31524846.phylip,
+    GTR{1.24385,2.71621,2.12439,0.260789,3.60206}+F{0.412871,0.134004,0.243909,0.209216}+ASC+G4{0.870516}: 5_31741765-31742974.phylip,
+    GTR{1.17663,2.42218,1.4734,0.425939,3.19729}+F{0.302072,0.229002,0.26064,0.208286}+ASC+G4{998.433}: 5_32541954-32542574.phylip,
+    GTR{0.481087,2.85512,1.11306,0.455642,4.41774}+F{0.231415,0.18879,0.331096,0.248699}+ASC+G4{0.765818}: 5_32689786-32691324.phylip,
+    GTR{1.00956,3.05371,0.56925,0.782618,2.03794}+F{0.195319,0.228141,0.243476,0.333064}+ASC+G4{0.752042}: 5_32763255-32764338.phylip,
+    GTR{0.98175,2.6532,0.68021,0.433644,3.66849}+F{0.240795,0.181181,0.316189,0.261835}+ASC+G4{0.814952}: 5_32923028-32924519.phylip,
+    GTR{0.508877,5.74283,1.71399,0.369476,3.79074}+F{0.309371,0.245276,0.270797,0.174557}+ASC+G4{0.755544}: 5_33846778-33848275.phylip,
+    GTR{5.84741,83.8752,5.87059,7.59304,73.6003}+F{0.325517,0.184815,0.250058,0.23961}+ASC+G4{0.795628}: 5_33852454-33853397.phylip,
+    GTR{1.45113,2.22848,0.632182,0.60163,4.13287}+F{0.284673,0.178786,0.25041,0.286131}+ASC+G4{0.626073}: 5_33918796-33919720.phylip,
+    GTR{0.100383,1.60795,0.461224,0.915793,2.26782}+F{0.269774,0.278249,0.229096,0.222881}+ASC+G4{0.569504}: 5_35586639-35587219.phylip,
+    GTR{1.19012,2.32798,0.773146,0.571627,5.82646}+F{0.208877,0.226802,0.357639,0.206682}+ASC+G4{0.830848}: 5_37031760-37033301.phylip,
+    GTR{1.54275,3.57688,1.62654,2.16651,4.57481}+F{0.244489,0.225878,0.293342,0.236291}+ASC+G4{0.74622}: 5_37108157-37109730.phylip,
+    GTR{1.20007,2.33733,0.815937,0.48342,2.39764}+F{0.279025,0.207203,0.244068,0.269703}+ASC+G4{0.652619}: 5_39779357-39780208.phylip,
+    GTR{0.881678,5.36882,1.15502,2.03182,10.2491}+F{0.309668,0.182177,0.209679,0.298476}+ASC+G4{0.507077}: 5_40036623-40038132.phylip,
+    GTR{1.08227,8.38558,1.91555,1.04008,3.83393}+F{0.180638,0.258818,0.273171,0.287372}+ASC+G4{0.594797}: 5_40061562-40062916.phylip,
+    GTR{2.61384,2.25572,0.643114,1.1257,5.60036}+F{0.310188,0.189357,0.256242,0.244214}+ASC+G4{0.8698}: 5_6066959-6067842.phylip,
+    GTR{2.59089,8.06843,1.1568,1.19216,3.11557}+F{0.220944,0.183717,0.430387,0.164952}+ASC+G4{0.579457}: 5_6941741-6942265.phylip,
+    GTR{1.03408,6.51003,1.53314,1.46673,6.00659}+F{0.2584,0.25171,0.17083,0.31906}+ASC+G4{0.927623}: 5_9248915-9250451.phylip,
+    GTR{0.344007,2.13526,0.819212,0.425853,3.20617}+F{0.306196,0.19172,0.130036,0.372048}+ASC+G4{0.777918}: 5_9256175-9257027.phylip,
+    GTR{0.660833,2.15644,1.26817,0.547439,5.13826}+F{0.247248,0.181548,0.252665,0.318539}+ASC+G4{0.743046}: 6_20700442-20701929.phylip,
+    GTR{0.512764,1.9956,0.678209,0.729213,2.23061}+F{0.23753,0.243947,0.278087,0.240436}+ASC+G4{0.897718}: 6_21008323-21009828.phylip,
+    GTR{0.806811,5.57471,1.35883,0.79636,4.45333}+F{0.224933,0.205766,0.294313,0.274988}+ASC+G4{1.35636}: 6_22063542-22064923.phylip,
+    GTR{0.597274,4.51491,1.98444,0.484063,6.12425}+F{0.178991,0.245483,0.352021,0.223505}+ASC+G4{0.868479}: 6_22445818-22447201.phylip,
+    GTR{2.30152,8.93935,1.48402,6.42227,99.8618}+F{0.312872,0.164453,0.258818,0.263857}+ASC+G4{0.275574}: 6_22695627-22696137.phylip,
+    GTR{0.762652,5.56255,1.96306,0.359181,8.16858}+F{0.214366,0.28523,0.258434,0.241969}+ASC+G4{1.1394}: 6_23185571-23187135.phylip,
+    GTR{1.40339,3.91913,2.54986,0.454808,5.37987}+F{0.21336,0.272931,0.221336,0.292373}+ASC+G4{1.16287}: 6_23738766-23740288.phylip,
+    GTR{0.839459,5.904,0.860715,0.578307,8.98048}+F{0.26481,0.243833,0.278235,0.213123}+ASC+G4{0.924452}: 6_23815628-23817059.phylip,
+    GTR{2.27001,15.0252,2.96954,1.35469,9.99818}+F{0.190781,0.248243,0.258165,0.302811}+ASC+G4{0.644853}: 6_24120991-24121766.phylip,
+    GTR{2.27022,10.1156,3.0115,3.87228,5.63825}+F{0.270535,0.212299,0.223816,0.293351}+ASC+G4{0.907834}: 6_24134595-24135373.phylip,
+    GTR{1.35932,5.38558,0.79691,0.539815,2.97675}+F{0.190139,0.295223,0.123575,0.391063}+ASC+G4{0.893034}: 6_24284483-24286002.phylip,
+    GTR{1.24155,2.34475,0.970321,1.41523,3.88011}+F{0.290601,0.208783,0.28228,0.218336}+ASC+G4{0.725368}: 6_24332732-24334177.phylip,
+    GTR{3.90424,13.1478,7.04415,0.443077,13.8724}+F{0.185444,0.17996,0.301595,0.333001}+ASC+G4{0.630618}: 6_24476359-24477431.phylip,
+    GTR{4.48537,3.2716,1.0127,0.09308,3.95756}+F{0.228383,0.172077,0.396438,0.203103}+ASC+G4{0.824217}: 6_24900540-24901982.phylip,
+    GTR{0.543229,0.633597,0.176829,0.204952,1.23375}+F{0.287399,0.200197,0.28224,0.230165}+ASC+G4{0.877797}: 6_27070150-27071098.phylip,
+    GTR{2.69293,5.0429,1.07439,2.34287,9.05726}+F{0.310489,0.156227,0.291575,0.24171}+ASC+G4{0.763457}: 6_27321971-27323132.phylip,
+    GTR{1.64408,4.9504,1.841,0.286633,3.55732}+F{0.301977,0.250847,0.204096,0.243079}+ASC+G4{0.712025}: 6_28327875-28328849.phylip,
+    GTR{2.25045,3.16447,1.27608,0.492483,1.73481}+F{0.160768,0.330508,0.305334,0.20339}+ASC+G4{0.846335}: 6_29111543-29112328.phylip,
+    GTR{0.114275,3.06559,0.976502,0.139465,2.08497}+F{0.269439,0.326402,0.216844,0.187314}+ASC+G4{0.729069}: 6_29190841-29192390.phylip,
+    GTR{1.49866,3.54368,0.837054,0.764635,5.58429}+F{0.207937,0.236461,0.302191,0.253411}+ASC+G4{0.462448}: 6_29455671-29456400.phylip,
+    GTR{0.973764,8.9324,1.91488,0.609513,11.9401}+F{0.270105,0.243539,0.264094,0.222262}+ASC+G4{0.65436}: 6_29880079-29881567.phylip,
+    GTR{1.07731,3.5201,1.5095,0.310913,15.1878}+F{0.276029,0.228006,0.200969,0.294996}+ASC+G4{0.628864}: 6_30385424-30386057.phylip,
+    GTR{0.225103,0.521032,0.266774,0.0537901,0.913152}+F{0.207748,0.229056,0.278935,0.284262}+ASC+G4{1.15835}: 6_30388728-30389481.phylip,
+    GTR{0.519121,3.21341,0.756006,0.373837,2.24833}+F{0.300773,0.266726,0.213946,0.218555}+ASC+G4{0.805519}: 6_30817192-30818747.phylip,
+    GTR{3.38312,7.52915,2.37461,0.855462,6.07533}+F{0.199021,0.304386,0.218067,0.278525}+ASC+G4{0.711518}: 6_30825644-30826958.phylip,
+    GTR{0.361021,2.63678,1.25187,0.906098,3.36108}+F{0.270353,0.204362,0.31217,0.213115}+ASC+G4{0.297847}: 6_31588631-31590184.phylip,
+    GTR{0.873255,2.57841,0.874919,0.344711,2.67866}+F{0.229661,0.223305,0.219209,0.327825}+ASC+G4{0.511993}: 6_31763080-31764165.phylip,
+    GTR{1.46853,6.48661,0.753723,0.869228,4.15213}+F{0.183263,0.285075,0.219515,0.312147}+ASC+G4{0.590683}: 6_31978677-31980122.phylip,
+    GTR{0.155495,2.43548,1.12288,0.711951,2.86963}+F{0.206624,0.263553,0.271575,0.258248}+ASC+G4{0.561927}: 6_32317901-32319415.phylip,
+    GTR{0.901066,2.0791,0.665897,0.0749579,2.35439}+F{0.278334,0.248111,0.180314,0.293241}+ASC+G4{0.488531}: 6_32833006-32834101.phylip,
+    GTR{1.57028,5.85709,1.71719,1.68697,10.2211}+F{0.309657,0.19603,0.289251,0.205062}+ASC+G4{0.426256}: 6_32870535-32871990.phylip,
+    GTR{0.0001,8.41922,1.39414,2.5027,7.24005}+F{0.261441,0.14661,0.361017,0.230932}+ASC+G4{0.563147}: 6_5159757-5160344.phylip,
+    GTR{2.0428,3.4163,0.926349,0.878974,1.791}+F{0.277899,0.180232,0.265649,0.276221}+ASC+G4{1.2702}: 6_6804096-6805252.phylip,
+    GTR{2.87766,3.78528,1.69426,1.37211,4.23683}+F{0.236623,0.229811,0.301097,0.232469}+ASC+G4{0.841027}: 6_8313722-8314976.phylip,
+    GTR{2.03018,9.01532,1.4321,0.768966,5.33925}+F{0.260745,0.238801,0.255448,0.245006}+ASC+G4{0.937183}: 7_10202289-10203830.phylip,
+    GTR{1.45101,1.95109,0.497883,0.803027,2.41608}+F{0.400798,0.202891,0.178963,0.217348}+ASC+G4{0.89206}: 7_10899036-10899342.phylip,
+    GTR{1.33292,5.83537,4.95143,1.46146,3.42863}+F{0.18317,0.247398,0.328576,0.240856}+ASC+G4{0.95246}: 7_10984509-10985372.phylip,
+    GTR{0.691046,2.4769,0.811714,0.596181,1.67189}+F{0.237397,0.229962,0.224057,0.308584}+ASC+G4{1.93273}: 7_11244178-11245683.phylip,
+    GTR{0.502591,1.82357,0.929489,0.837843,3.26886}+F{0.362668,0.175141,0.178618,0.283572}+ASC+G4{0.89038}: 7_11901037-11901853.phylip,
+    GTR{0.80028,1.48794,0.874159,0.692874,2.63288}+F{0.29661,0.234521,0.238499,0.23037}+ASC+G4{0.797079}: 7_12509114-12509976.phylip,
+    GTR{0.578627,8.38879,2.62122,0.304718,3.36718}+F{0.141996,0.418079,0.2258,0.214124}+ASC+G4{0.685568}: 7_13660695-13662233.phylip,
+    GTR{0.924739,1.76384,1.58622,0.21135,3.09363}+F{0.223624,0.211273,0.352647,0.212456}+ASC+G4{0.768915}: 7_14161910-14163267.phylip,
+    GTR{0.470661,1.86343,0.707472,0.546381,6.4258}+F{0.279286,0.20129,0.234288,0.285136}+ASC+G4{0.75198}: 7_1466868-1468346.phylip,
+    GTR{0.724618,1.48393,0.810891,0.375666,1.2634}+F{0.282933,0.12737,0.285786,0.30391}+ASC+G4{0.998676}: 7_14747797-14749158.phylip,
+    GTR{0.111886,2.95285,0.277576,1.34915,1.68907}+F{0.259369,0.299487,0.224071,0.217074}+ASC+G4{0.318402}: 7_1480629-1482084.phylip,
+    GTR{0.457938,2.41953,0.422191,0.695909,2.14961}+F{0.211556,0.229738,0.332512,0.226194}+ASC+G4{0.606776}: 7_1529100-1530523.phylip,
+    GTR{32.8558,92.4365,11.421,12.3106,100}+F{0.353672,0.272316,0.240678,0.133333}+ASC+G4{0.872024}: 7_1704679-1705594.phylip,
+    GTR{0.639996,1.9323,1.13146,0.346552,2.9365}+F{0.194816,0.372881,0.232502,0.199801}+ASC+G4{0.890354}: 7_17197729-17199138.phylip,
+    GTR{0.747054,2.23716,1.08822,0.572397,2.51551}+F{0.278078,0.207674,0.200596,0.313652}+ASC+G4{998.263}: 7_17492109-17493540.phylip,
+    GTR{2.21842,4.73707,2.16656,0.929364,6.04257}+F{0.224666,0.266679,0.278399,0.230256}+ASC+G4{0.967644}: 7_17639209-17640624.phylip,
+    GTR{0.336081,3.67835,1.77614,0.647828,2.09014}+F{0.20103,0.25767,0.37095,0.17035}+ASC+G4{0.375797}: 7_18463331-18464826.phylip,
+    GTR{0.235691,2.39291,0.906748,0.610905,1.76983}+F{0.277374,0.230024,0.296476,0.196126}+ASC+G4{0.919725}: 7_18728407-18729330.phylip,
+    GTR{1.70839,12.9874,1.06863,1.66559,3.89519}+F{0.224004,0.361887,0.158956,0.255153}+ASC+G4{0.930804}: 7_18783519-18784535.phylip,
+    GTR{0.638989,2.19478,0.713191,1.16567,2.88198}+F{0.232073,0.291302,0.218663,0.257962}+ASC+G4{1.09429}: 7_18941786-18943299.phylip,
+    GTR{0.76919,4.1719,0.790744,0.555972,1.73801}+F{0.187489,0.274856,0.256858,0.280797}+ASC+G4{0.915173}: 7_18981748-18982780.phylip,
+    GTR{1.10495,6.83134,3.06209,0.0001,3.88827}+F{0.250978,0.243807,0.228814,0.276402}+ASC+G4{998.454}: 7_20441414-20442071.phylip,
+    GTR{0.668809,2.9722,0.0765535,0.83817,1.87067}+F{0.195817,0.295709,0.193292,0.315182}+ASC+G4{1.23151}: 7_21115366-21116104.phylip,
+    GTR{0.987339,2.31962,0.757804,0.957857,1.31705}+F{0.186441,0.273883,0.3047,0.234977}+ASC+G4{0.952356}: 7_21481289-21481873.phylip,
+    GTR{0.691145,6.80425,3.16625,1.06887,7.15275}+F{0.219406,0.274452,0.305707,0.200435}+ASC+G4{0.89233}: 7_21489243-21490622.phylip,
+    GTR{0.662428,2.77702,0.554109,0.616576,2.20303}+F{0.261582,0.262373,0.234124,0.241921}+ASC+G4{0.797875}: 7_2150593-2152031.phylip,
+    GTR{0.485341,1.80523,0.434097,0.0001,1.45095}+F{0.254576,0.295593,0.189492,0.260339}+ASC+G4{0.887088}: 7_22415159-22415781.phylip,
+    GTR{0.392823,2.7209,0.31286,0.357869,0.538251}+F{0.217348,0.295115,0.132602,0.354935}+ASC+G4{1.37077}: 7_22709437-22710284.phylip,
+    GTR{0.82683,1.54284,0.974636,0.845624,1.88452}+F{0.276579,0.24602,0.337699,0.139702}+ASC+G4{1.01528}: 7_22798374-22799363.phylip,
+    GTR{0.891651,3.74922,2.4489,0.553004,2.89279}+F{0.266643,0.345623,0.15062,0.237113}+ASC+G4{1.00014}: 7_22824743-22826291.phylip,
+    GTR{0.542718,5.68322,2.32989,0.962999,2.90311}+F{0.334686,0.260444,0.213655,0.191215}+ASC+G4{0.800501}: 7_23045973-23046888.phylip,
+    GTR{0.783504,3.48139,1.97318,1.02813,3.06005}+F{0.22145,0.300778,0.286468,0.191303}+ASC+G4{0.869781}: 7_23491748-23493244.phylip,
+    GTR{1.10054,1.2188,2.17375,0.397161,1.45866}+F{0.196362,0.289789,0.293716,0.220132}+ASC+G4{0.559888}: 7_2408328-2409408.phylip,
+    GTR{0.810502,3.89889,2.87844,0.480074,4.11868}+F{0.162132,0.305196,0.346008,0.186664}+ASC+G4{0.864898}: 7_24266836-24268335.phylip,
+    GTR{0.359336,2.03215,0.58953,0.172474,1.9143}+F{0.25502,0.34811,0.245111,0.15176}+ASC+G4{998.355}: 7_24419543-24420417.phylip,
+    GTR{0.692956,1.3039,0.38266,0.45233,1.52247}+F{0.270551,0.22839,0.210169,0.29089}+ASC+G4{0.799464}: 7_25055332-25056854.phylip,
+    GTR{0.992539,2.71402,1.04197,0.837216,5.2921}+F{0.290826,0.209847,0.276836,0.222491}+ASC+G4{1.05004}: 7_25943566-25945730.phylip,
+    GTR{0.255339,1.78085,0.594281,0.0524686,1.58685}+F{0.312393,0.235111,0.22998,0.222516}+ASC+G4{0.685981}: 7_25963787-25965342.phylip,
+    GTR{0.893611,2.16803,0.611129,0.909115,1.9225}+F{0.201179,0.224392,0.347089,0.22734}+ASC+G4{1.06656}: 7_26394495-26395759.phylip,
+    GTR{1.58792,3.56137,1.98476,0.821759,1.86485}+F{0.251561,0.32694,0.15388,0.267618}+ASC+G4{0.800598}: 7_26484866-26485501.phylip,
+    GTR{0.20952,0.65254,0.300468,0.348658,1.46762}+F{0.205119,0.336562,0.32999,0.128329}+ASC+G4{998.475}: 7_27139495-27140785.phylip,
+    GTR{0.501481,1.29016,0.688425,0.573899,1.52506}+F{0.280175,0.212635,0.243195,0.263996}+ASC+G4{998.379}: 7_27181613-27182405.phylip,
+    GTR{2.07193,6.65962,3.08228,2.07694,3.39144}+F{0.279151,0.244844,0.211762,0.264243}+ASC+G4{998.234}: 7_27250739-27251947.phylip,
+    GTR{1.13193,3.14226,0.770124,0.708911,2.52017}+F{0.208794,0.308032,0.237902,0.245271}+ASC+G4{1.01168}: 7_28004926-28006455.phylip,
+    GTR{1.08417,3.04055,1.19814,0.707478,2.55443}+F{0.242938,0.252354,0.200126,0.304583}+ASC+G4{0.900809}: 7_28122081-28123616.phylip,
+    GTR{0.868507,2.44224,1.83363,0.424573,3.19673}+F{0.268592,0.241093,0.28312,0.207195}+ASC+G4{0.79702}: 7_28353971-28355503.phylip,
+    GTR{0.929822,2.88059,1.40163,0.551588,3.35124}+F{0.176708,0.397718,0.234435,0.191139}+ASC+G4{0.899194}: 7_28480789-28482338.phylip,
+    GTR{0.541153,4.13224,0.470279,0.812323,2.9646}+F{0.208915,0.232231,0.236914,0.32194}+ASC+G4{0.285602}: 7_2858035-2859274.phylip,
+    GTR{1.56871,2.47885,1.12756,0.463502,2.12589}+F{0.20023,0.341569,0.251939,0.206263}+ASC+G4{0.960978}: 7_28802645-28803505.phylip,
+    GTR{0.146762,1.11704,1.57426,1.07729,3.00679}+F{0.305085,0.34347,0.158524,0.192921}+ASC+G4{0.739373}: 7_28828144-28828795.phylip,
+    GTR{0.199422,1.70274,0.598482,0.227802,1.50306}+F{0.262463,0.248754,0.188684,0.3001}+ASC+G4{0.939425}: 7_28860369-28861364.phylip,
+    GTR{0.79388,4.65023,0.414413,0.707914,3.84292}+F{0.190183,0.29716,0.22276,0.289897}+ASC+G4{0.978168}: 7_29024040-29025563.phylip,
+    GTR{1.76389,4.08776,1.83683,0.410898,3.39773}+F{0.242245,0.244803,0.228814,0.284138}+ASC+G4{0.833429}: 7_29120031-29121553.phylip,
+    GTR{0.3174,4.35172,1.34028,0.237128,2.2799}+F{0.20371,0.339942,0.181644,0.274704}+ASC+G4{1.04285}: 7_29599945-29600760.phylip,
+    GTR{1.54859,4.90945,1.69455,1.35836,4.83312}+F{0.243947,0.297367,0.253329,0.205357}+ASC+G4{1.34403}: 7_29724446-29725610.phylip,
+    GTR{1.15152,2.55072,0.48233,0.942577,4.72998}+F{0.256021,0.168005,0.278918,0.297056}+ASC+G4{0.738198}: 7_29730470-29731089.phylip,
+    GTR{0.704254,3.52368,1.3338,0.535658,3.78747}+F{0.221488,0.374892,0.191612,0.212008}+ASC+G4{0.892388}: 7_32092299-32093180.phylip,
+    GTR{0.57842,4.42404,1.40909,0.688052,1.64064}+F{0.244735,0.261171,0.208526,0.285568}+ASC+G4{0.621256}: 7_32355433-32356250.phylip,
+    GTR{1.16332,11.279,5.43248,1.51819,11.0423}+F{0.23483,0.24958,0.2347,0.28089}+ASC+G4{1.01323}: 7_32932779-32934326.phylip,
+    GTR{2.00332,6.01648,0.971553,0.596045,3.6144}+F{0.197552,0.285687,0.222599,0.294162}+ASC+G4{1.06067}: 7_3295980-3297489.phylip,
+    GTR{0.999091,4.14235,1.86584,1.10518,7.27809}+F{0.261251,0.249269,0.220923,0.268556}+ASC+G4{0.900767}: 7_33168502-33169000.phylip,
+    GTR{2.27506,7.86021,4.35231,0.339392,6.10936}+F{0.185329,0.377049,0.237288,0.200333}+ASC+G4{0.918518}: 7_33228903-33230043.phylip,
+    GTR{1.17208,7.36968,0.999633,0.169811,6.34499}+F{0.164531,0.43055,0.209591,0.195329}+ASC+G4{998.271}: 7_3394080-3395612.phylip,
+    GTR{0.663465,0.280189,0.639503,0.396878,0.968208}+F{0.189432,0.430708,0.188435,0.191426}+ASC+G4{1.16765}: 7_34093887-34094286.phylip,
+    GTR{0.572912,0.973421,0.92193,0.811665,2.7082}+F{0.255527,0.189388,0.331798,0.223287}+ASC+G4{0.743339}: 7_34724248-34725612.phylip,
+    GTR{49.568,30.3497,14.9583,26.2686,56.8045}+F{0.289519,0.220685,0.265652,0.224144}+ASC+G4{0.583234}: 7_36087271-36087798.phylip,
+    GTR{0.384502,1.31688,0.267587,0.0001,2.49333}+F{0.244617,0.285845,0.187815,0.281722}+ASC+G4{0.567707}: 7_36107233-36107675.phylip,
+    GTR{0.4696,4.70325,1.3849,0.41853,2.19394}+F{0.32919,0.27646,0.217702,0.176648}+ASC+G4{0.979342}: 7_36406446-36407067.phylip,
+    GTR{1.15337,2.35208,0.259278,0.0001,9.3655}+F{0.455085,0.185593,0.100847,0.258475}+ASC+G4{1.20956}: 7_36929832-36930119.phylip,
+    GTR{0.88732,2.33692,1.24541,0.285791,2.90272}+F{0.284476,0.210516,0.26406,0.240948}+ASC+G4{0.904087}: 7_37381167-37382664.phylip,
+    GTR{0.865974,6.71491,1.59859,0.829966,5.50345}+F{0.283272,0.210022,0.219749,0.286957}+ASC+G4{1.12729}: 7_38564701-38565602.phylip,
+    GTR{0.241183,3.26585,0.384327,0.201987,2.54676}+F{0.211003,0.331514,0.239012,0.218472}+ASC+G4{0.640058}: 7_39027471-39028541.phylip,
+    GTR{1.76634,8.62565,2.72632,2.53691,7.20619}+F{0.223795,0.331414,0.235478,0.209314}+ASC+G4{0.897245}: 7_40560697-40562250.phylip,
+    GTR{1.10686,3.96377,0.626899,1.0069,3.21287}+F{0.256083,0.295184,0.231247,0.217486}+ASC+G4{0.809731}: 7_40886073-40887168.phylip,
+    GTR{3.91245,4.44703,1.32078,1.99913,5.03748}+F{0.298921,0.213867,0.229276,0.257935}+ASC+G4{998.395}: 7_40989664-40990363.phylip,
+    GTR{5.78772,5.70286,2.23467,1.19421,8.16406}+F{0.32073,0.234941,0.241982,0.202347}+ASC+G4{1.01246}: 7_41281041-41281714.phylip,
+    GTR{0.399434,1.8587,1.28664,1.34835,6.89112}+F{0.274393,0.139945,0.274164,0.311498}+ASC+G4{0.330893}: 7_41348763-41349411.phylip,
+    GTR{0.355796,3.15374,0.457174,0.263731,1.87227}+F{0.216375,0.281301,0.210634,0.291689}+ASC+G4{0.42072}: 7_41484363-41485778.phylip,
+    GTR{0.680406,2.23568,0.270367,0.458473,1.23727}+F{0.209746,0.246645,0.245233,0.298376}+ASC+G4{0.603794}: 7_41595639-41596628.phylip,
+    GTR{0.0451128,1.88281,0.736362,0.236388,1.50951}+F{0.244222,0.211094,0.208398,0.336287}+ASC+G4{0.975223}: 7_41936885-41937681.phylip,
+    GTR{1.87931,7.04169,1.28163,0.179401,4.69315}+F{0.15228,0.396663,0.262909,0.188149}+ASC+G4{0.723944}: 7_42042194-42043350.phylip,
+    GTR{2.01675,3.5306,0.801798,2.09262,7.44122}+F{0.18198,0.191347,0.323521,0.303152}+ASC+G4{0.882605}: 7_42297463-42298998.phylip,
+    GTR{1.93843,4.0905,1.56879,1.13306,5.17603}+F{0.267328,0.203528,0.299022,0.230123}+ASC+G4{1.14896}: 7_42309709-42311272.phylip,
+    GTR{5.96675,10.4114,1.55905,2.11208,9.18238}+F{0.1986,0.219234,0.224945,0.357222}+ASC+G4{0.866931}: 7_43554806-43555748.phylip,
+    GTR{2.01629,2.22581,1.42864,1.78056,11.9329}+F{0.383883,0.112994,0.281891,0.221231}+ASC+G4{0.760343}: 7_44197754-44198217.phylip,
+    GTR{0.43051,2.40796,1.26235,0.612761,4.60784}+F{0.308283,0.205948,0.230892,0.254877}+ASC+G4{1.06545}: 7_4572832-4574324.phylip,
+    GTR{0.444053,1.53498,0.32865,0.106643,2.27752}+F{0.427764,0.138822,0.237288,0.196126}+ASC+G4{0.685522}: 7_541446-542212.phylip,
+    GTR{2.34779,4.32565,0.799826,0.463472,5.82222}+F{0.31346,0.18993,0.212064,0.284546}+ASC+G4{0.457446}: 7_552150-553410.phylip,
+    GTR{0.752586,2.12898,3.50138,0.697073,2.50855}+F{0.241083,0.32039,0.247154,0.191374}+ASC+G4{0.620541}: 7_662483-663799.phylip,
+    GTR{0.392653,1.3666,0.31295,0.413505,1.17942}+F{0.22964,0.240389,0.338983,0.190988}+ASC+G4{0.874943}: 7_6671435-6672664.phylip,
+    GTR{1.82119,11.4481,4.12944,2.5718,17.0752}+F{0.286284,0.26962,0.309785,0.134311}+ASC+G4{0.625133}: 7_7616269-7617730.phylip,
+    GTR{2.66488,2.78192,0.789125,1.04887,3.83029}+F{0.21802,0.212667,0.332917,0.236396}+ASC+G4{0.512089}: 7_7819434-7820667.phylip,
+    GTR{0.524578,2.89189,5.41494,0.554699,2.47645}+F{0.126554,0.364407,0.346328,0.162712}+ASC+G4{0.65725}: 7_8019996-8020561.phylip,
+    GTR{0.390821,2.22885,0.693663,0.765676,1.75552}+F{0.301026,0.239437,0.260444,0.199093}+ASC+G4{0.858489}: 7_888343-889865.phylip,
+    GTR{0.618509,4.33102,0.638323,1.84307,3.37828}+F{0.263668,0.252581,0.185039,0.298713}+ASC+G4{0.650608}: 7_9307114-9308368.phylip,
+    GTR{0.987363,2.84866,1.01194,0.553667,10.5527}+F{0.291499,0.204735,0.258676,0.24509}+ASC+G4{0.468127}: 8_102630-104176.phylip,
+    GTR{1.4752,3.5577,1.77728,1.7619,5.10929}+F{0.315981,0.227603,0.237288,0.219128}+ASC+G4{0.831829}: 8_11502313-11503685.phylip,
+    GTR{2.14275,6.06768,1.75698,1.36731,7.31245}+F{0.3166,0.254496,0.243887,0.185017}+ASC+G4{0.849145}: 8_12322660-12324197.phylip,
+    GTR{0.606214,2.53916,0.923161,0.434948,2.58514}+F{0.320705,0.210701,0.176471,0.292124}+ASC+G4{0.905208}: 8_12836432-12837177.phylip,
+    GTR{0.326375,1.15518,0.418506,0.255497,0.866472}+F{0.30678,0.268856,0.166737,0.257627}+ASC+G4{0.888917}: 8_13314694-13315605.phylip,
+    GTR{0.683029,1.89591,1.08995,0.384243,1.40313}+F{0.233016,0.214414,0.270911,0.281659}+ASC+G4{0.826469}: 8_1465647-1467065.phylip,
+    GTR{0.458974,1.96481,0.285014,0.144023,1.78362}+F{0.286859,0.214767,0.210587,0.287787}+ASC+G4{0.841269}: 8_15004146-15005681.phylip,
+    GTR{2.61112,10.453,8.03798,1.53829,16.6029}+F{0.292373,0.287606,0.188383,0.231638}+ASC+G4{0.884416}: 8_15506295-15507851.phylip,
+    GTR{1.13434,1.55259,0.819649,1.11436,3.32131}+F{0.319641,0.157527,0.244865,0.277966}+ASC+G4{1.00236}: 8_16030318-16031847.phylip,
+    GTR{0.519213,1.13195,0.785307,0.156702,1.38922}+F{0.248467,0.234764,0.229895,0.286873}+ASC+G4{0.862487}: 8_16462680-16464239.phylip,
+    GTR{3.30388,13.1354,2.92184,1.80616,14.0075}+F{0.239499,0.318534,0.249447,0.19252}+ASC+G4{0.931397}: 8_20730542-20732101.phylip,
+    GTR{0.760662,1.24007,0.804833,0.409565,2.00126}+F{0.149565,0.401283,0.286532,0.16262}+ASC+G4{0.937875}: 8_20991652-20993054.phylip,
+    GTR{0.935191,2.67795,0.70889,1.07101,3.44123}+F{0.30449,0.190306,0.26405,0.241154}+ASC+G4{0.934422}: 8_22560380-22561124.phylip,
+    GTR{1.03495,4.27101,0.707395,0.53281,5.10345}+F{0.266226,0.254485,0.302191,0.177098}+ASC+G4{0.495902}: 8_2303809-2305299.phylip,
+    GTR{0.828489,2.71588,1.61702,0.536573,2.28608}+F{0.18178,0.374364,0.208898,0.234958}+ASC+G4{0.872575}: 8_23997337-23998392.phylip,
+    GTR{1.44887,7.30266,0.843804,0.831901,10.4593}+F{0.252092,0.265823,0.24823,0.233855}+ASC+G4{0.962071}: 8_2644818-2645909.phylip,
+    GTR{0.709157,6.80398,0.595274,1.82107,3.03866}+F{0.20904,0.258434,0.256174,0.276352}+ASC+G4{0.569546}: 8_26627720-26629099.phylip,
+    GTR{0.470552,1.75387,0.633099,0.598257,4.38718}+F{0.240559,0.220636,0.296164,0.24264}+ASC+G4{0.869584}: 8_27632897-27634440.phylip,
+    GTR{2.89018,25.8192,21.4548,1.65061,27.5143}+F{0.141781,0.37611,0.3788,0.103309}+ASC+G4{0.709299}: 8_27903597-27905106.phylip,
+    GTR{0.379329,2.06751,0.640076,0.67417,1.39696}+F{0.223087,0.281493,0.208887,0.286532}+ASC+G4{1.21456}: 8_28120088-28120965.phylip,
+    GTR{0.125079,0.997913,0.397061,0.481006,2.14289}+F{0.346838,0.131873,0.243489,0.277801}+ASC+G4{1.82474}: 8_2853778-2854250.phylip,
+    GTR{0.883711,6.09461,1.81514,1.15987,4.72577}+F{0.266469,0.280098,0.204613,0.248821}+ASC+G4{1.03542}: 8_28957948-28959433.phylip,
+    GTR{1.66525,2.16936,0.517479,0.432126,1.35577}+F{0.17988,0.239475,0.318936,0.261709}+ASC+G4{0.860305}: 8_29095033-29096071.phylip,
+    GTR{0.643053,1.7553,0.496628,0.392911,1.16419}+F{0.317918,0.250847,0.220581,0.210654}+ASC+G4{1.08143}: 8_29406669-29407594.phylip,
+    GTR{1.5104,6.74251,10.3811,2.05307,8.52349}+F{0.202684,0.272834,0.321798,0.202684}+ASC+G4{1.29066}: 8_29664438-29665139.phylip,
+    GTR{1.25949,2.03247,1.0517,0.501369,2.66308}+F{0.385842,0.210701,0.212363,0.191093}+ASC+G4{1.00179}: 8_31805566-31806277.phylip,
+    GTR{2.29287,5.06444,2.1599,0.772965,8.53005}+F{0.280923,0.233502,0.349261,0.136314}+ASC+G4{1.00665}: 8_33017553-33019088.phylip,
+    GTR{1.04897,4.36418,1.67726,0.295915,4.04531}+F{0.309927,0.165219,0.247116,0.277738}+ASC+G4{1.00519}: 8_34600816-34602361.phylip,
+    GTR{1.03485,3.20066,0.673332,0.134751,2.14766}+F{0.264167,0.21486,0.235747,0.285225}+ASC+G4{1.31796}: 8_34650878-34652077.phylip,
+    GTR{0.38803,1.89976,0.912027,0.697429,1.6694}+F{0.325,0.240466,0.195339,0.239195}+ASC+G4{0.993206}: 8_35443415-35444361.phylip,
+    GTR{0.670082,6.65971,1.13072,0.0985629,7.92418}+F{0.230537,0.324476,0.22867,0.216317}+ASC+G4{0.861031}: 8_36182960-36184500.phylip,
+    GTR{0.706404,1.62861,0.610947,0.562601,3.49361}+F{0.234832,0.242692,0.221813,0.300663}+ASC+G4{1.03613}: 8_38696837-38698184.phylip,
+    GTR{0.94071,0.875185,0.521819,0.344577,1.44459}+F{0.277577,0.202556,0.225618,0.294248}+ASC+G4{1.07382}: 8_40119049-40119867.phylip,
+    GTR{1.03096,3.11079,1.26419,0.234036,4.90929}+F{0.228284,0.243379,0.321239,0.207097}+ASC+G4{998.432}: 8_41165112-41166062.phylip,
+    GTR{0.95592,3.21009,0.714737,1.04429,4.19178}+F{0.284693,0.163136,0.264831,0.287341}+ASC+G4{1.08094}: 8_41172597-41173658.phylip,
+    GTR{2.30779,5.69914,1.7666,0.664949,10.3611}+F{0.246042,0.278264,0.321661,0.154032}+ASC+G4{1.11012}: 8_41292967-41294482.phylip,
+    GTR{1.66534,4.18445,1.49385,0.942443,4.70303}+F{0.25214,0.23292,0.267168,0.247772}+ASC+G4{0.367385}: 8_43473475-43474604.phylip,
+    GTR{2.00251,3.33238,0.67119,0.977191,4.75579}+F{0.236804,0.260533,0.249233,0.25343}+ASC+G4{0.821595}: 8_44931670-44933031.phylip,
+    GTR{0.645015,4.17935,0.760888,1.09617,4.25365}+F{0.259787,0.313184,0.231738,0.19529}+ASC+G4{10.719}: 8_45475547-45477088.phylip,
+    GTR{1.73551,8.26551,2.41392,0.952765,7.35006}+F{0.260075,0.240301,0.203202,0.296422}+ASC+G4{0.413107}: 8_4641232-4642693.phylip,
+    GTR{2.36967,22.6457,0.7192,0.0334169,6.0392}+F{0.127316,0.22704,0.301143,0.344501}+ASC+G4{0.803373}: 8_6443762-6444205.phylip,
+    GTR{0.606959,0.919182,0.469212,1.02512,1.02719}+F{0.347323,0.206618,0.255044,0.191014}+ASC+G4{0.866883}: 8_706693-707372.phylip,
+    GTR{1.73824,1.40638,0.736635,0.506023,2.73439}+F{0.272952,0.170374,0.267655,0.289018}+ASC+G4{0.756388}: 8_8368350-8369893.phylip,
+    GTR{2.78741,4.92354,0.787152,0.802252,2.33355}+F{0.189363,0.236704,0.250146,0.323787}+ASC+G4{1.15352}: 8_8648428-8649420.phylip,
+    GTR{2.03395,4.46057,0.858083,0.611263,4.58547}+F{0.116191,0.260705,0.462533,0.160571}+ASC+G4{1.18479}: 8_9087965-9088642.phylip;
+end;
