@@ -1,0 +1,28 @@
+﻿Species,Name,Code,CodeNumeric,Latitude,Longitude,Source,Date
+M. cardinalis,O’Neil Creek,ONC,1,41.8098,-123.1189,A. Angert,ND
+M. cardinalis,Indian Creek,IND,2,40.6574,-122.9132,A. Stathos,2010
+M. cardinalis,Slate Creek,SLA,3,39.5836,-121.0619,A. Stathos,2010
+M. cardinalis,Carlon CARD (Tuolumne),CAR-C,4,37.8124,-119.8593,A. Stathos,2010
+M. cardinalis,Redwood Creek,RED,5,36.7048,-118.9154,A. Stathos,2010
+M. cardinalis,Manzana Creek,MNZ,6,34.7717,-119.9436,A. Angert,2010
+M. cardinalis,Arroyo Sequit,ARS,7,34.0651,-118.9328,A. Angert,2010
+M. cardinalis,W. Fork Mojave,WFM,8,34.2843,-117.3754,A. Angert,2010
+M. cardinalis,Cuyamaca Rancho ,CUY,9,32.8991,-116.5865,A. Angert,2010
+M. cardinalis,Cedros Island,CED,10,28.296,-115.215,R. Vickery,1994
+M. cardinalis,Summerhaven,SHV,11,32.4449,-110.761,A. Stathos,2011
+M. cardinalis,Mt. Graham,GRM,12,32.6925,-109.9,A. Stathos,2011
+M. lewisii,10-Mile,10M,0,44.3971,-122.1306,J.& L. Sobel,2010
+M. lewisii,Spruce Camp ,SPC,1,44.5827,-114.4161,T. Mitchell-Olds,2010
+M. lewisii,Lonestar Trail,YLS,2,44.4412,-110.8042,M. Hendrick,2010
+M. lewisii,Eureka Peak (Lew ,LH,3,39.7526,-120.7478,A. Stathos,2010
+M. lewisii,Jackson Creek,JAC,4,39.4576,-120.6026,A. Stathos,2010
+M. lewisii,Pilot Peak,PPK,5,39.7848,-120.864,A. Stathos,2010
+M. lewisii,Carlon LEW (Tuolumne),Car-L,6,37.8124,-119.8593,A. Stathos,2010
+M. lewisii,Snow Creek,SNO,7,37.8185,-119.5094,A. Stathos,2010
+M. lewisii,High Sierra Trail,HST,8,36.5566,-118.7198,A. Stathos,2010
+M. parishii,Lower Covington Flats ,PAR1366,NA,34.0211,-116.2961,S. Sheth,2010
+M. parishii,Granite Cove Spring,PAR1490,NA,34.7858,-115.6588,S. Sheth,2010
+M. rupestris,Cliffs of Sierra de Tepoztlan,RUP,NA,19.001, -99.1012,R. Vickery ,ND
+M. verbenaceus,West Fork Oak Creek,V480,NA,34.9931,-111.749,S.Sheth,2009
+M. eastwoodiae,Canyon de Chelly ,E697,NA,36.1292,-109.4545,S. Sheth,2009
+M. bicolor,Pinecrest (population pool),BIC,NA,38.094,-120.1552,B. Kern,2015
